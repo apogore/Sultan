@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr; /* 1 часть отступ слева, 6 частей контента, 1 часть отступ справа */
+}
+
+.content { /*Обозначил границы для удобства, можно убрать */
+    border-left: 1px solid #000; /* Добавление границы слева */
+    border-right: 1px solid #000; /* Добавление границы справа */
+}
+.section { /*Разграничил секции, при их реализации стоит убрать отступы и границы */
+    padding: 4px;
+    margin: 4px;
+    text-align: none;
+    min-height: 100px;
+    border: 1px solid #000;
+}
