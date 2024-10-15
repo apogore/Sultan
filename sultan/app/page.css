@@ -1,6 +1,7 @@
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr; /* 1 часть отступ слева, 6 частей контента, 1 часть отступ справа */
+.container {
+    width: 67%;
+    max-width: 1367px;
+    margin: 0 auto;
 }
 
 .content { /*Обозначил границы для удобства, можно убрать */
