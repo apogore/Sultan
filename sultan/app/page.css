@@ -3,15 +3,143 @@
     max-width: 1367px;
     margin: 0 auto;
 }
-
-.content { /*Обозначил границы для удобства, можно убрать */
-    border-left: 1px solid #000; /* Добавление границы слева */
-    border-right: 1px solid #000; /* Добавление границы справа */
-}
 .section { /*Разграничил секции, при их реализации стоит убрать отступы и границы */
     padding: 4px;
     margin: 4px;
-    text-align: none;
-    min-height: 100px;
-    border: 1px solid #000;
+    z-index: 1;
+    height: fit-content;
 }
+.banner {
+    height: 796px;
+    max-height: 100%;
+}
+.banner_image {
+    background-image: url('../public/banner_home.png');
+    height: 100%;
+    max-height: 796px;
+    width: 100%;
+    max-width: 1920px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+.blur {
+    height: inherit;
+    backdrop-filter: blur(13px); /* Эффект размытия фона */
+    mask-image: linear-gradient(to right, black, transparent);
+    background: linear-gradient(90deg, rgba(138, 148, 171, 1) 0%, rgba(138, 148, 171, 0) 100%);
+    opacity: 1;
+}
+.banner_info {
+    width: 67%;
+    height: 100%;
+    max-height: 796px;
+    max-width: 1367px;
+    
+    color: #fff;
+    white-space: nowrap;
+
+    margin: 0 auto;
+    margin-left: 8px;
+    margin-top: 98px;
+}
+
+.banner_info h1 {
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 110%;
+}
+.banner_info h2 {
+    margin-top: 40px;
+    margin-left: 5px;
+
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0;
+}
+.banner_info h2 span {
+    font-weight: 800;
+}
+
+.banner_info .btn {
+    width: 300px;
+    height: 95px;
+    margin-top: 60px;
+    margin-left: 5px;
+
+    background-color: #FFC85E;
+    border-radius: 80px;
+    border: none;
+    transition: background-color 0.3s ease;
+
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 4px;
+
+
+}
+
+/* Стили при наведении курсора */
+.banner_info .btn:hover {
+    background-color: #ffa000;
+    cursor: pointer;
+}
+
+/* Стили при нажатии */
+.banner_info .btn:active {
+    background-color: #FFA500; /* Цвет фона при нажатии */
+    transform: scale(0.99); /* Уменьшаем размер кнопки при нажатии */
+}
+
+
+.banner_info .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 540px;
+    height: auto;
+
+    margin-top: 90px;
+}
+
+.banner_info .advant {
+    width: 250px;
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+.banner_info .circle {
+    width: 39px; /* Ширина кружка */
+    height: 39px; /* Высота кружка */
+    background-color: #FFC85E;
+    border-radius: 50%; /* Округление до круга */
+    display: flex; /* Используйте flex для центрирования содержимого */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    margin: auto ;
+    margin-right: 10px;
+}
+.circle b {
+    font-size: 20px;
+    cursor: default;
+    user-select: none;
+}
+
+.banner_info .advant span {
+    font-size: 14;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+
+
+
