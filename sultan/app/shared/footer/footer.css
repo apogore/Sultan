@@ -1,71 +1,68 @@
 .footer {
-    display: flex;
-    justify-content: space-between;
-    background-color: #3b4b61;
-    color: #FFFFFF;
-    padding: 20px;
-    font-size: 14px;
-    line-height: 150%;
-    font-weight: 400;
-    
-  }
-  
-  .footer-list a {
-    text-decoration: none; /* Убирает подчеркивание */
-    color: inherit; /* Наследует цвет от родительского элемента */
-    transition: color 0.3s ease; /* Добавляет плавный переход при наведении */
-  }
-  
-  .footer-list li {
-    margin-bottom: 16px; /* Добавляет отступы между элементами списка */
-  }
+  display: flex;
+  justify-content: space-between;
+  background-color: #3b4b61;
+  color: #ffffff;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+}
 
-  .footer-input {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    margin-right: 5px;
-  }
-  
-  .footer-button {
-    background-color:#FFC85E;
-    ;
-    color: #FFFFFF;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+.footer-list a {
+  text-decoration: none; /* Убирает подчеркивание */
+  color: inherit; /* Наследует цвет от родительского элемента */
+  transition: color 0.3s ease; /* Добавляет плавный переход при наведении */
+}
 
-  }
-  
-  .footer-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .footer-messenger {
-    margin: 5px;
-    display: inline-block;
-  }
-  
-  .footer-icon {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .footer-payment img {
-    margin-right: 10px;
-  }
-  .footer-section a{
-    text-decoration: none; /* Убирает подчеркивание */
-    color: inherit; /* Наследует цвет от родительского элемента */
-    transition: color 0.3s ease; /* Добавляет плавный переход при наведении */
-  }
-  .footer-section {
+.footer-list li {
+  margin-bottom: 16px; /* Добавляет отступы между элементами списка */
+}
+
+.footer-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 5px;
+}
+
+.footer-button {
+  background-color: #ffc85e;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-messenger {
+  margin: 5px;
+  display: inline-block;
+}
+
+.footer-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-payment img {
+  margin-right: 10px;
+}
+.footer-section a {
+  text-decoration: none; /* Убирает подчеркивание */
+  color: inherit; /* Наследует цвет от родительского элемента */
+  transition: color 0.3s ease; /* Добавляет плавный переход при наведении */
+}
+.footer-section {
   flex: 1;
   margin: 0 8px;
   font-size: 10px;
 }
-.footer-list{
+.footer-list {
   font-size: 10px;
 }
