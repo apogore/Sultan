@@ -5,8 +5,7 @@ import MiniCard from './shared/mini-card/mini-card';
 
 const HomePage = () => {
     return (
-        <div className="grid-container">
-            <div className="spacer" />
+        <div className="container">
             <div className="content">
               <Header className="header" />
 
@@ -35,7 +34,6 @@ const HomePage = () => {
               <Footer className="footer" />
 
             </div>
-            <div className="spacer" />
         </div>
     );
 };
