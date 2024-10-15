@@ -1,0 +1,25 @@
+[
+    {
+      "id": 1,
+      "name": "AOS Ср-во для мытья посуды",
+      "volume": "450 мл",
+      "price": 48.76,
+      "imageUrl": "/aos.svg",
+      "barcode": "4604049097548",
+      "manufacturer": "Нэфис",
+      "brand": "AOS",
+      "isPopular": true
+    },
+    {
+      "id": 2,
+      "name": "Fairy Средство для мытья посуды Лимон",
+      "volume": "500 мл",
+      "price": 55.20,
+      "imageUrl": "/sorti.svg",
+      "barcode": "4604049097549",
+      "manufacturer": "Procter & Gamble",
+      "brand": "Fairy",
+      "isPopular": false
+    }
+  ]
+  
