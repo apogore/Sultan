@@ -2,7 +2,6 @@
 
 import React from "react";
 import "./footer.css";
-import Icon from "@/app/ui/icon";
 
 const Footer = () => {
   return (
