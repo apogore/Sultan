@@ -1,6 +1,332 @@
-/* Здесь стили для шапки, которые будут изменять расположение UI компонентов, делать уникальные стили для них и т.д. */
-header { /*убрать на своё усмотрение*/
-    background-color: #c6c6c6;
+header {
+    background-color: white;
     padding: 20px;
     text-align: center;
+}
+
+/* Group 179 */
+
+.header-section-1 { /* 1ый div в фигме (контакты + навигация) */
+    display: grid;
+    grid-template-columns: 2fr 1fr 3fr; /* 2 части на контакты, 3 части навигации */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.header-address {
+    border-right: 1px dashed rgba(63, 78, 101, 0.1);
+}
+
+.header-address p, .header-mail p {
+    margin: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    text-wrap: nowrap;
+}
+
+.header-info img {
+    float: left;
+    padding-top: 10px;
+}
+
+.header-mail {
+    padding-left: 20px;
+}
+
+.header-mail a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-mail a:hover { /* изменение цвета почты при наведении */
+    color: rgb(196, 148, 52);
+}
+
+.header-mail a:active { /* изменение цвета и нижней границы почты при клике */
+    color: rgb(196, 148, 52);
+    border-bottom: 1px solid rgba(196, 148, 0.1);
+}
+
+.header-signature {
+    font-size: x-small;
+    color: gray;
+}
+
+.header-navigation ul { /* отображение списка навигации (о компании, доставка и пр.) */
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-navigation ul li {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.header-navigation ul li:not(:last-child) { /* правые границы ссылок из списка (кроме последней) */
+    border-right: 1px dashed  rgba(63, 78, 101, 0.1);
+}
+
+.header-navigation-link a {
+    color: #3F4E65;
+    text-decoration: none;
+    flex: none;
+}
+
+.header-navigation-link a:hover { /* изменение цвета ссылки навигации при наведении */
+    color: rgb(196, 148, 52);
+}
+
+.header-navigation-link a:active { /* изменение цвета и нижней границы ссылки навигации при клике */
+    color: rgb(196, 148, 52);
+    border-bottom: 1px solid rgba(196, 148, 0.1);
+}
+
+.header hr { /* разделение div-ов горизонтальной чертой */
+    border-bottom-width: 0;
+    color: rgba(63, 78, 101, 0.2);
+}
+
+.header-section-2 { /* 2ой div из фигмы (лого, прайс, корзина и пр.) */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header-catalog {
+    padding-left: 4px;
+    min-width: 150px;
+    max-width: 192px;
+    height: 59px;
+}
+
+.header-catalog button { /* кнопка каталог */
+    border: none;
+    background-color: rgba(255, 200, 94, 1);
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 79px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header-catalog button:hover { /* изменение тени кнопки каталога при наведении */
+    box-shadow: 0 0 10px 0px rgb(211, 210, 210);
+}
+
+.header-catalog button:active { /* изменение цвета кнопки каталога при клике */
+    background-color: rgb(196, 148, 52);
+}
+
+.header-catalog-button p {
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+}
+
+.header-catalog-button img {
+    padding-left: 10px;
+}
+
+.header-search-form {
+    padding-left: 4px;
+}
+
+form { /* блок поиска внутри div "header-search-form"*/
+    position: relative;
+}
+
+.header-search-form * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-search-form input {
+    min-width: 163px;
+    max-width: 263px;
+    height: 59px;
+    padding-left: 15px;
+    border-radius: 36px;
+    border: none;
+    background: rgba(237, 237, 237, 1);
+    outline: none;
+    position: relative;
+    transition: .3s linear;
+}
+
+.header-search-form input:hover { /* изменение тени поля поиска при наведении */
+    box-shadow: 0 0 10px 0px rgb(211, 210, 210);
+}
+
+.header-search-form input:focus { /* изменение цвета поля поиска при наборе текста */
+    background: rgb(211, 210, 210);
+}
+
+.header-search-form button { 
+    width: 39px;
+    height: 39px;
+    background: none;
+    border: none;
+    border-radius: 1000px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.header-search-form button:hover { /* изменение тени кнопки поиска при наведении */
+    box-shadow: 0 0 5px 5px rgb(255, 255, 255, 1);
+}
+
+.header-search-form button:active { /* изменение тени кнопки поиска при клике */
+    box-shadow: 0 0 5px 5px rgba(255, 200, 94, 1);
+}
+
+.header-operator { /* блок с телефоном и картинкой оператора */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-left: 4px;
+}
+
+.header-operator p {
+    margin: 0px;
+    padding-right: 20px;
+    text-align: right;
+    text-justify: right;
+    text-wrap: nowrap;
+}
+
+.header-operator a {
+    text-decoration: none;
+    color: rgba(17, 17, 17, 1);
+    font-weight: bold;
+}
+
+.header-operator a:hover { /* изменение цвета номера телефона при наведении */
+    color: rgb(196, 148, 52);
+}
+
+.header-operator a:active { /* изменение цвета и нижней границы номера телефона при клике */
+    color: rgb(196, 148, 52);
+    border-bottom: 1px solid rgba(196, 148, 0.1);
+}
+
+.header-operator-photo img {
+    border-radius: 50px;
+}
+
+.header-operator-shadow-point { /* зелёная точка возле фото оператора */
+    width: 8px;
+    height: 8px;
+    background: rgba(31, 216, 93, 1);
+    margin: 0;
+    border-radius: 50%;
+    position: relative;
+    top: 40px;
+    left: 60px;
+    animation: shadow 1s infinite alternate;
+    z-index: 999;
+  }
+  
+@keyframes shadow { /* мерцание зелёной точки */
+    from {
+      box-shadow: 0 0 0px 0px rgba(31, 216, 93, 1);
+    }
+    to {
+      box-shadow: 0px 0px 10px 2px rgba(31, 216, 93, 1);
+    }
+  }
+
+.header-price {
+    padding-left: 4px;
+    min-width: 150px;
+    max-width: 192px;
+    height: 59px;
+}
+
+.header-price button { /* кнопка прайс-лист */
+    border: none;
+    background-color: rgba(255, 200, 94, 1);
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 79px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header-price button:hover { /* изменение тени кнопки каталога при наведении */
+    box-shadow: 0 0 10px 0px rgb(211, 210, 210);
+}
+
+.header-price button:active { /* изменение цвета кнопки каталога при клике */
+    background-color: rgb(196, 148, 52);
+}
+
+.header-price-button p {
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+}
+
+.header-price-button img {
+    padding-left: 10px;
+}
+
+.header-cart { /* блок корзины */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: start;
+    padding-left: 4px;
+}
+
+.header-cart img {
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+.header-cart a {
+    text-decoration: none;
+    color: rgba(17, 17, 17, 1);
+}
+
+.header-cart a:hover { /* изменение цвета суммы корзины при наведении */
+    color: rgb(196, 148, 52);
+}
+
+.header-cart a:active { /* изменение цвета и нижней границы суммы корзины при клике */
+    color: rgb(196, 148, 52);
+    border-bottom: 1px solid rgba(196, 148, 0.1);
+}
+
+.header-cart p {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0;
+    text-align: left;
+    text-wrap: nowrap;
 }
