@@ -1,5 +1,3 @@
-"use client"; // Указываем, что это клиентский компонент, так как будет происходить взаимодействие
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -7,7 +5,6 @@ import "swiper/css/pagination";
 
 import "./promo-carousel.css";
 
-// Дополнительные модули Swiper (по желанию)
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const PromoCarousel = () => {
@@ -92,7 +89,6 @@ const PromoCarousel = () => {
           <div className="image-background"></div>
         </div>
       </SwiperSlide>
-      {/* Добавьте дополнительные слайды по мере необходимости */}
     </Swiper>
       <div className="swiper-button-next">
         <i className="fas fa-chevron-right"></i>
