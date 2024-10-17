@@ -63,6 +63,7 @@
     font-weight: 700;
     line-height: 150%;
     letter-spacing: 0;
+    text-transform: uppercase;
 }
 .banner_info h2 span {
     font-weight: 800;

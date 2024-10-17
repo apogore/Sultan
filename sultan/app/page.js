@@ -4,6 +4,7 @@ import "./page.css"; // Импорт стилей
 import Header from "./shared/header/header"; // Импорт компонента заголовка
 import Footer from "./shared/footer/footer";
 import MiniCard from "./shared/mini-card/mini-card";
+import PromoCarousel from "./shared/promo-carousel/promo-carousel";
 
 const HomePage = () => {
   const handleButtonClick = () => {
@@ -21,13 +22,12 @@ const HomePage = () => {
             </div>
             <div className="banner_info">
               <h1>
-                Бытовая химия,
-                <br />
-                косметика
-                <br />и хозтовары
+                Бытовая химия, <br />
+                косметика <br />
+                и хозтовары
               </h1>
               <h2>
-                <span>ОПТОМ</span> ПО КЕКЧАТОВУ И ОБЛАСТИ
+                <span>оптом</span> по кекчатову и области
               </h2>
               <button className="btn"
               onClick={handleButtonClick}>В КАТАЛОГ</button>
@@ -57,7 +57,7 @@ const HomePage = () => {
             <h3>Категории товаров</h3>
           </div>
           <div className="section carousel">
-            <h3>Карусель акций</h3>
+            <PromoCarousel className="carousel" />
           </div>
           <div className="section best">
             <h3>Лучшие товары</h3>
