@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Button from "../../ui/button/button"; // Убедитесь, что путь корректен
 import "./mini-card.css";
 
 const MiniCard = ({ className }) => {
-  const [product, setProduct] = useState(null); // Используем состояние для продукта
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
     // Загружаем данные из JSON
@@ -23,14 +24,47 @@ const MiniCard = ({ className }) => {
   return (
     <div className="mini-card">
       {product.isPopular && <div className="mini-card__badge">Популярное</div>}
-      <img src={product.imageUrl} alt={product.name} className="mini-card__image" />
+      <img
+        src={product.image}
+        alt={product.nameRu}
+        className="mini-card__image"
+      />
       <div className="mini-card__details">
-        <p className="mini-card__volume">{product.volume}</p>
-        <h2 className="mini-card__name"><strong>{product.brand}</strong> {product.name}</h2>
-        <p className="mini-card__barcode">Штрихкод: {product.barcode}</p>
-        <p className="mini-card__manufacturer">Производитель: {product.manufacturer}</p>
-        <p className="mini-card__price">{product.price.toFixed(2)} ₸</p>
-        <button className="mini-card__button">В корзину</button>
+        <p className="mini-card__volume">
+          <img
+            src={product.sizeType === "volume" ? "/bottle.svg" : "/box.svg"}
+            alt={product.sizeType === "volume" ? "Bottle" : "Box"}
+            className="mini-card__icon"
+          />
+          {product.size} {product.sizeType === "volume" ? "мл" : "г"}
+        </p>
+        <p className="mini-card__name">
+          <strong>{product.brand.name}</strong> {product.nameRu}
+        </p>
+        <div className="mini-card__manufacturer-brand-info">
+          <p>
+            <span className="mini-card__label">Штрихкод:</span>{" "}
+            <strong>{product.barcode}</strong>
+          </p>
+          <p>
+            <span className="mini-card__label">Производитель:</span>{" "}
+            <strong>{product.manufacturer}</strong>
+          </p>
+          <p>
+            <span className="mini-card__label">Бренд:</span>{" "}
+            <strong>{product.brand.name}</strong>
+          </p>
+        </div>
+
+        <div className="mini-card__price-button">
+          <p className="mini-card__price">{product.price.toFixed(2)} ₸</p>
+          <Button
+            onClick={() => console.log("Товар добавлен в корзину")} // Обработчик клика
+            text="В корзину"
+            icon="/cart.svg" // Ссылка на иконку
+            className="mini-card__button" // Пользовательский класс, если нужно
+          />
+        </div>
       </div>
     </div>
   );

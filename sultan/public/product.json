@@ -1,25 +1,49 @@
 [
-    {
-      "id": 1,
-      "name": "AOS Ср-во для мытья посуды",
-      "volume": "450 мл",
-      "price": 48.76,
-      "imageUrl": "/aos.svg",
-      "barcode": "4604049097548",
-      "manufacturer": "Нэфис",
-      "brand": "AOS",
-      "isPopular": true
+  {
+    "id": 1,
+    "shortNameRu": "AOS",
+    "shortNameEn": "AOS",
+    "nameRu": "Ср-во для мытья посуды AOS",
+    "nameEn": "Dishwashing liquid AOS",
+    "image": "/aos.svg",
+    "sizeType": "volume",
+    "size": 450,
+    "category": ["hygiene", "hands"],
+    "manufacturer":"Нэфис",
+    "barcode": 4604049097548,
+    "brand": {
+      "name": "AOS",
+      "number": 101
     },
-    {
-      "id": 2,
-      "name": "Fairy Средство для мытья посуды Лимон",
-      "volume": "500 мл",
-      "price": 55.20,
-      "imageUrl": "/sorti.svg",
-      "barcode": "4604049097549",
-      "manufacturer": "Procter & Gamble",
-      "brand": "Fairy",
-      "isPopular": false
-    }
-  ]
-  
+    "article": 10101,
+    "descriptionRu": "Средство для мытья посуды AOS с эффектом глубокого очищения.",
+    "descriptionEn": "AOS dishwashing liquid with deep cleaning effect.",
+    "price": 48.76,
+    "amount": 100,
+    "isPopular": true
+    
+  },
+  {
+    "id": 2,
+    "shortNameRu": "Fairy",
+    "shortNameEn": "Fairy",
+    "nameRu": "Средство для мытья посуды Лимон Fairy",
+    "nameEn": "Dishwashing liquid Lemon Fairy",
+    "image": "/sorti.svg",
+    "sizeType": "volume",
+    "manufacturer":"Нэфис",
+    "size": 500,
+    "category": ["hygiene", "hands"],
+    "barcode": 4604049097549,
+    "brand": {
+      "name": "Fairy",
+      "number": 102
+    },
+    "article": 10201,
+    "descriptionRu": "Средство для мытья посуды Fairy с ароматом лимона.",
+    "descriptionEn": "Fairy dishwashing liquid with lemon fragrance.",
+    "price": 55.20,
+    "amount": 200,
+    "isPopular": true
+  }
+]
