@@ -66,10 +66,16 @@ const Footer = () => {
         <h3>Скачать прайс-лист:</h3>
         <Button
           onClick={() => {
-            console.log("Товар добавлен в корзину"); // Обработчик клика
-            window.open("https://t.me/kot_Shreda", "_blank"); // Открываем ссылку в новой вкладке
+            const link = document.createElement("a");
+            link.href = "/price.txt"; 
+            link.download = "price-list.txt"; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
           }}
           text="Прайс-лист"
+          icon={"/download.svg"}
+          className="price-list-button"
         />
         <p>Связь в мессенджерах:</p>
 

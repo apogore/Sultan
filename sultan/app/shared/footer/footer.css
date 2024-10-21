@@ -150,16 +150,16 @@
   align-items: center;
 }
 .availability {
-  font-size: 10px; /* Уменьшаем размер шрифта */
-  line-height: 1; /* Уменьшаем высоту строки */
-  margin-top: 0; /* Убираем верхний отступ */
+  font-size: 10px; 
+  line-height: 1; 
+  margin-top: 0; 
 }
 
 .work-hours {
   margin-top:5px
 }
 .call-order {
-  margin-bottom: 15px; /* Увеличиваем расстояние после "Заказать звонок" */
+  margin-bottom: 15px;
 }
 
 .contact-info {
@@ -168,5 +168,46 @@
 }
 
 .footer-email {
-  margin-bottom: 5px; /* Уменьшаем расстояние между email и текстом ниже */
+  margin-bottom: 5px; 
+}
+
+.price-list-button {
+  background-color: #FFC85E;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 79px;
+  padding: 10px 25px !important;
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  cursor: pointer;
+  display: flex;
+
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+  width: 100%; /* изменено с фиксированной ширины на 100% */
+  max-width: 300px !important; /* добавлено ограничение максимальной ширины */
+  height: 40px;
+  position: relative; /* Добавлено */
+
+}
+.footer .price-list-button span {
+  position: absolute; /* Добавлено */
+  left: 50%; /* Добавлено */
+  transform: translateX(-50%); /* Добавлено */
+}
+
+.footer .price-list-button img {
+  position: absolute; /* Добавлено */
+  right: 30px; /* Добавлено */
+  width: 10px;
+  height: auto; /* Сохраняем пропорции */
+
+}
+.price-list-button:hover {
+  background-color: #F3A50D;
+}
+
+.price-list-button img {
+  margin-left: 10px;
 }
