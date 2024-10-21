@@ -5,6 +5,7 @@ import Header from "./shared/header/header"; // Импорт компонент�
 import Footer from "./shared/footer/footer";
 import MiniCard from "./shared/mini-card/mini-card";
 import PromoCarousel from "./shared/promo-carousel/promo-carousel";
+import ProductCategories from "./shared/product-categories/product-categories";
 
 const HomePage = () => {
   const handleButtonClick = () => {
@@ -53,9 +54,9 @@ const HomePage = () => {
             <h3>Акционные товары</h3>
             <MiniCard className="mini-card" />
           </div>
-          <div className="section category">
-            <h3>Категории товаров</h3>
-          </div>
+          
+          <ProductCategories className="product-categories" />
+
           <div className="section carousel">
             <PromoCarousel className="carousel" />
           </div>
