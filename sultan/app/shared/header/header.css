@@ -4,7 +4,18 @@ header {
     text-align: center;
 }
 
-/* Group 179 */
+.logo-sultan-link {
+    display: inline-block;
+}
+
+.logo-sultan {
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.logo-sultan-link:hover .logo-sultan {
+    transform: scale(1.1); /* Увеличение изображения */
+    filter: brightness(0.8); /* Затемнение изображения */
+}
 
 .header-section-1 { /* 1ый div в фигме (контакты + навигация) */
     display: grid;
@@ -43,32 +54,77 @@ header {
 
 .header-mail a {
     color: black;
-    text-decoration: none;
-    font-weight: bold;
+    text-decoration: solid;
+    position: relative;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+.header-mail a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #fbc44b;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
 }
 
-.header-mail a:hover { /* изменение цвета почты при наведении */
-    color: rgb(196, 148, 52);
+.header-mail a:hover {
+    color: #fbc44b;
 }
 
-.header-mail a:active { /* изменение цвета и нижней границы почты при клике */
-    color: rgb(196, 148, 52);
-    border-bottom: 1px solid rgba(196, 148, 0.1);
+.header-mail a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
 }
 
 .header-signature {
-    font-size: x-small;
+    font-size: 12px;
+    margin: 2px 0;
     color: gray;
 }
+
+.order-call-link {
+    text-decoration: underline; /* Добавление подчеркивания */
+    position: relative;
+    color: gray; /* Унаследовать цвет от родительского элемента */
+    transition: color 0.3s ease;
+}
+
+.order-call-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fbc44b;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .order-call-link:hover {
+    color: #fbc44b;
+  }
+  
+  .order-call-link:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
 
 .header-navigation ul { /* отображение списка навигации (о компании, доставка и пр.) */
     list-style-type: none;
     padding-left: 0;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+ 
 }
+
 
 .header-navigation ul li {
     padding-left: 10px;
@@ -79,14 +135,46 @@ header {
     border-right: 1px dashed  rgba(63, 78, 101, 0.1);
 }
 
+.header-navigation-link {
+    padding: 0 10px;
+    position: relative;
+}
+.header-navigation-link:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 1px;
+    background-color: rgba(63, 78, 101, 0.1);
+}
 .header-navigation-link a {
     color: #3F4E65;
     text-decoration: none;
-    flex: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.header-navigation-link a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #fbc44b;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
 }
 
-.header-navigation-link a:hover { /* изменение цвета ссылки навигации при наведении */
-    color: rgb(196, 148, 52);
+.header-navigation-link a:hover {
+    color: #fbc44b;
+}
+
+.header-navigation-link a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
 }
 
 .header-navigation-link a:active { /* изменение цвета и нижней границы ссылки навигации при клике */
@@ -214,8 +302,14 @@ form { /* блок поиска внутри div "header-search-form"*/
     text-align: right;
     text-justify: right;
     text-wrap: nowrap;
+    line-height: 2; 
 }
-
+.header-telephone-number {
+    color: black;
+    font-weight: bold; /* Жирный шрифт */
+    font-size:  15px;
+    letter-spacing: -0.5px; /* Уменьшение межсимвольного расстояния */
+}
 .header-operator a {
     text-decoration: none;
     color: rgba(17, 17, 17, 1);

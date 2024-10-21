@@ -49,7 +49,9 @@ const Header = () => {
 
             <div className="header-section-2">
                 <div className="header-logo-sultan">
-                    <img src="/logo-sultan.svg" alt="Султан" width={156} height={66} />
+                    <a href="/" className="logo-sultan-link">
+                    <img src="/logo-sultan.svg" alt="Султан" width={156} height={66} className="logo-sultan" />
+                    </a>
                 </div>
 
                 <div className="header-catalog">
@@ -67,11 +69,15 @@ const Header = () => {
                 </div>
 
                 <div className="header-operator">
-                    <div className="header-operator-info">
-                        <p><a href="tel:77774900091" className="header-telephone-number">+7 (777) 490-00-91</a></p>
-                        <p className="header-signature">время работы: 9:00-20:00</p>
-                        <p className="header-signature"><b><u>Заказать звонок</u></b></p>
-                    </div>
+            <div className="header-operator-info">
+                <p
+                    className="header-telephone-number" >+ 7 (777) 490-00-91
+                </p>
+                <p className="header-signature">время работы: 9:00-20:00</p>
+                <p className="header-signature">
+                    <a href="tel:77774900091" className="order-call-link"><b>Заказать звонок</b></a>
+                </p>
+            </div>
 
                     <div className="header-operator-photo">
                         <div class="header-operator-shadow-point" />
