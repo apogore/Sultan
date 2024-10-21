@@ -1,125 +1,139 @@
-.product-categories { /* отступ блока "категории товаров" сверху и снизу от других блоков */
-    margin: 100px 0;
+.product-categories {
+  /* отступ блока "категории товаров" сверху и снизу от других блоков */
+  margin: 100px 0;
 }
 
-.product-categories h2{ /* стилизация 1го слова заголовка */
-    text-transform: uppercase;
-    font-weight: 800;
-    color: rgba(255, 200, 94);
-    margin: 15px 0;
+.product-categories h2 {
+  /* стилизация 1го слова заголовка */
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgba(255, 200, 94);
+  margin: 15px 0;
 }
 
-.product-categories h2 span{ /* стилизация 2го слова заголовка*/
-    font-weight: 500;
-    color: black;
+.product-categories h2 span {
+  /* стилизация 2го слова заголовка*/
+  font-weight: 500;
+  color: black;
 }
 
-.product-categories p { /* стилизация подписи под заголовком */
-    font-weight: 300;
-    color: rgba(63, 78, 101);
-    margin: 15px 0;
+.product-categories p {
+  /* стилизация подписи под заголовком */
+  font-weight: 300;
+  color: rgba(63, 78, 101);
+  margin: 15px 0;
 }
 
-.product-categories ul { /* отображение списка категорий товаров */
-    list-style-type: none;
-    padding-left: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: center;
+.product-categories ul {
+  /* отображение списка категорий товаров */
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
 }
 
 .product-categories ul li {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
-.product-categories ul li:not(:last-child) { /* отступ справа для категорий из списка (кроме последнего) */
-    margin-right: 20px;
+.product-categories ul li:not(:last-child) {
+  /* отступ справа для категорий из списка (кроме последнего) */
+  margin-right: 20px;
 }
 
-.product-categories-button { /* кнопки категорий */
-    border: none;
-    background: none;
-    padding: 0;
-    width: 250px;
-    height: 291px;
-    cursor: pointer;
+.product-categories-button {
+  /* кнопки категорий */
+  border: none;
+  background: none;
+  padding: 0;
+  width: 250px;
+  height: 291px;
+  cursor: pointer;
 }
 
-.product-categories-button:hover { /* откуда-то прокинулся стиль на все кнопки страницы, убрала его для кнопок блока категорий */
-    background: none;
+.product-categories-button:hover {
+  /* откуда-то прокинулся стиль на все кнопки страницы, убрала его для кнопок блока категорий */
+  background: none;
 }
 
-.product-categories-button-background { /* фон для картинок категорий */
-    width: 250px;
-    height: 250px;
-    border-radius: 20px;
-    padding: 0px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.05);
+.product-categories-button-background {
+  /* фон для картинок категорий */
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  padding: 0px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.05);
 }
 
-.product-categories-button-background:hover { /* добавление тени у картинки при наведении */
-    box-shadow: 0px 14px 39px -3px rgba(0, 0, 0, 0.178);
+.product-categories-button-background:hover {
+  /* добавление тени у картинки при наведении */
+  box-shadow: 0px 14px 39px -3px rgba(0, 0, 0, 0.178);
 }
 
-.product-categories-button-background:active { /* изменение фона картинки при клике */
-    background: rgba(255, 200, 94);
+.product-categories-button-background:active {
+  /* изменение фона картинки при клике */
+  background: rgba(255, 200, 94);
 }
 
 .product-categories-button div img {
-    margin: 0px;
+  margin: 0px;
 }
 
 /* у изображений разные размеры, поэтому для каждого отдельно прописаны размеры и позиции относительно их  div-ов */
 .household-chemicals-img {
-    width: 225px;
-    height: 213px;
-    position: relative;
-    bottom: -43px;
-    left: -15px;
+  width: 225px;
+  height: 213px;
+  position: relative;
+  bottom: -43px;
+  left: -15px;
 }
 
 .cosmetics-img {
-    width: 243px;
-    height: 208px;
-    position: relative;
-    bottom: -45px;
-    left: -5px;
+  width: 243px;
+  height: 208px;
+  position: relative;
+  bottom: -45px;
+  left: -5px;
 }
 
 .household-goods-img {
-    width: 250px;
-    height: 189px;
-    position: relative;
-    bottom: -60px;
+  width: 250px;
+  height: 189px;
+  position: relative;
+  bottom: -60px;
 }
 
 .mom-and-child-img {
-    width: 250px;
-    height: 193px;
-    position: relative;
-    bottom: -56px;
+  width: 250px;
+  height: 193px;
+  position: relative;
+  bottom: -56px;
 }
 
 .kitchenware-img {
-    width: 250px;
-    height: 215px;
-    position: relative;
-    bottom: -35px;
+  width: 250px;
+  height: 215px;
+  position: relative;
+  bottom: -35px;
 }
 
-.product-categories-button p { /* название категории */
-    font-weight: bold;
-    color: black;
+.product-categories-button p {
+  /* название категории */
+  font-weight: bold;
+  color: black;
 }
 
-.product-categories-button p:hover { /* подчёркивание названия категории при наведении */
-    text-decoration: underline;
+.product-categories-button p:hover {
+  /* подчёркивание названия категории при наведении */
+  text-decoration: underline;
 }
 
-.product-categories-button p:active { /* изменение цвета названия категории при клике */
-    color: rgba(255, 200, 94);
-    text-decoration: underline;
+.product-categories-button p:active {
+  /* изменение цвета названия категории при клике */
+  color: rgba(255, 200, 94);
+  text-decoration: underline;
 }
