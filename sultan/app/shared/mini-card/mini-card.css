@@ -1,11 +1,14 @@
 .mini-card {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 16px;
-  max-width: 150px;
+  padding: 32px;
+  max-width: 250px;
+  display: flex;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
+  flex-direction: column; 
+    align-items: center; 
 }
 
 .mini-card__badge {
@@ -20,25 +23,36 @@
 }
 
 .mini-card__image {
-  width: 100%;
+  width: 50%;
   height: auto;
   border-radius: 8px;
 }
 
 .mini-card__details {
   padding-top: 16px;
+
 }
 
 .mini-card__volume {
   font-size: 14px;
   color: #757575;
   margin-bottom: 8px;
+  display: flex; /* Используйте flexbox для выравнивания */
+  align-items: center; /* Вертикальное выравнивание */
+}
+
+.mini-card__icon {
+  margin-right: 8px; /* Отступ между иконкой и текстом */
+  width: 16px; /* Ширина иконки */
+  height: 16px; /* Высота иконки */
+  filter: grayscale(100%); /* Применяем серый цвет к иконке */
 }
 
 .mini-card__name {
+
+  font-weight: 500; /* Полужирный с помощью численного значения */
+
   font-size: 16px;
-  font-weight: bold;
-  color: #333;
   margin-bottom: 8px;
 }
 
@@ -50,24 +64,32 @@
 }
 
 .mini-card__price {
-  font-size: 18px;
+  
+  width: 100px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 16px;
+
 }
+
+
 
 .mini-card__button {
-  background-color: #ffc107;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  width: 80%;
+  aspect-ratio: 343 / 90;
 }
 
+/* Эффекты при наведении курсора */
+
+.mini-card__price-button {
+  display: flex; /* Устанавливаем flex-контейнер для цены и кнопки */
+  align-items: center; /* Вертикальное выравнивание по центру */
+}
 .mini-card__button:hover {
   background-color: #ffa000;
 }
-  
+
+.mini-card__label {
+  font-size: 14px; /* Match the font size with the other labels */
+  color: #757575; /* Set the color to gray */
+  margin-bottom: 4px; /* Maintain the margin for consistency */
+}

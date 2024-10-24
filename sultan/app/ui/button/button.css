@@ -1,0 +1,31 @@
+.custom-button {
+    background-color: #ffc85e;
+    color: #fff;
+    border: none;
+    border-radius: 80px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .custom-button:hover {
+    background-color: #ffa000;
+  }
+  
+  .custom-button:active {
+    background-color: #ffa500;
+    transform: scale(0.99);
+  }
+  
+  .custom-button__icon {
+    margin-left: 0px; /* Отступ между текстом и иконкой */
+    width: 20%; /* Ширина иконки */
+    height: 80%; /* Высота иконки */
+  }
+  

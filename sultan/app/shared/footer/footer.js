@@ -2,7 +2,7 @@
 
 import React from "react";
 import "./footer.css";
-
+import Button from "../../ui/button/button"; // Убедитесь, что путь корректен
 const Footer = () => {
   return (
     <footer className="footer">
@@ -12,21 +12,19 @@ const Footer = () => {
           Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в
           Кокшетау и Акмолинской области
         </p>
-        <div>
-          <label htmlFor="subscribe">Подпишись на скидки и акции</label>
-          <br />
-          <input
-            type="email"
-            id="subscribe"
-            placeholder="Введите ваш E-mail"
-            className="footer-input"
-          />
-          <button className="footer-button">➤</button>
+        <div class="subscribe-container">
+          <p>Подпишись на скидки и акции</p>
+          <div class="subscribe-form">
+            <input type="email" placeholder="Введите ваш E-mail" />
+            <button type="submit">
+              <span>➔</span>
+            </button>
+          </div>
         </div>
       </div>
 
       <div className="footer-section">
-        <h3>Меню сайта:</h3>
+        <h2>Меню сайта:</h2>
         <ul className="footer-list">
           <li>
             <a href="/about">О компании</a>
@@ -44,7 +42,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-section">
-        <h3>Категории:</h3>
+        <h2>Категории:</h2>
         <ul className="footer-list">
           <li>
             <a href="/chemistry">Бытовая химия</a>
@@ -66,37 +64,67 @@ const Footer = () => {
 
       <div className="footer-section">
         <h3>Скачать прайс-лист:</h3>
-        <a href="https://t.me/kot_Shreda" download className="footer-messenger">
-          <img src="/button_price.svg" alt="bx" width={150} height={60} />
-        </a>
+        <Button
+          onClick={() => {
+            const link = document.createElement("a");
+            link.href = "/price.txt"; 
+            link.download = "price-list.txt"; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }}
+          text="Прайс-лист"
+          icon={"/download.svg"}
+          className="price-list-button"
+        />
         <p>Связь в мессенджерах:</p>
 
-        <a href="https://t.me/kot_Shreda" download className="footer-messenger">
-          <img
-            src="/Whatsapp_icon.svg"
-            alt="Telegram"
-            className="footer-icon"
-          />
-        </a>
+        <div className="button-container">
+          <a
+            href="https://t.me/kot_Shreda"
+            className="footer-messenger"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/Whatsapp_icon.svg"
+              alt="WhatsApp"
+              className="footer-icon"
+            />
+          </a>
 
-        <a href="https://t.me/kot_Shreda" download className="footer-messenger">
-          <img
-            src="/Telegram_icon.svg"
-            alt="Telegram"
-            className="footer-icon"
-          />
-        </a>
+          <a
+            href="https://t.me/kot_Shreda"
+            className="footer-messenger"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/Telegram_icon.svg"
+              alt="Telegram"
+              className="footer-icon"
+            />
+          </a>
+        </div>
       </div>
 
       <div className="footer-section">
-        <h3>Контакты:</h3>
+        <h2>Контакты:</h2>
 
-        <p>+7 (777) 490-00-91</p>
+        <h3>+7 (777) 490-00-91</h3>
         <p>время работы: 9:00-20:00</p>
-        <a href="tel:+77774900091">Заказать звонок</a>
-        <p>opt.sultan@mail.ru</p>
-
-        <p>На связи в любое время</p>
+        <a href="tel:+77774900091" className="footer-link call-order">
+          Заказать звонок
+        </a>
+        <div className="contact-info">
+          <a
+            href="mailto:opt.sultan@mail.ru"
+            className="footer-link footer-email"
+          >
+            opt.sultan@mail.ru
+          </a>
+          <p className="availability">На связи в любое время</p>
+        </div>
         <div className="footer-payment">
           <img src="/Visa.svg" alt="Visa" className="footer-icon" />
           <img src="/Mastercard.svg" alt="MasterCard" className="footer-icon" />
