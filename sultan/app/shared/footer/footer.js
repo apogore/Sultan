@@ -9,8 +9,7 @@ const Footer = () => {
       <div className="footer-section">
         <img src="/sultan.svg" alt="Visa" width={150} height={70} />
         <p>
-          Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в
-          Кокшетау и Акмолинской области
+          Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в Кокшетау и Акмолинской области
         </p>
         <div class="subscribe-container">
           <p>Подпишись на скидки и акции</p>
@@ -77,7 +76,7 @@ const Footer = () => {
           icon={"/download.svg"}
           className="price-list-button"
         />
-        <p>Связь в мессенджерах:</p>
+        <p >Связь в мессенджерах:</p>
 
         <div className="button-container">
           <a
@@ -111,8 +110,8 @@ const Footer = () => {
       <div className="footer-section">
         <h2>Контакты:</h2>
 
-        <h3>+7 (777) 490-00-91</h3>
-        <p>время работы: 9:00-20:00</p>
+        <p className="number">+7 (777) 490-00-91</p>
+        <p className="availability">время работы: 9:00-20:00</p>
         <a href="tel:+77774900091" className="footer-link call-order">
           Заказать звонок
         </a>
