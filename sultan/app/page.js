@@ -1,8 +1,7 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import "./page.css"; // Импорт стилей
-import Header from "./shared/header/header"; // Импорт компонента заголовка
-import Footer from "./shared/footer/footer";
+
 import MiniCard from "./shared/mini-card/mini-card";
 import PromoCarousel from "./shared/promo-carousel/promo-carousel";
 import ProductCategories from "./shared/product-categories/product-categories";
@@ -10,51 +9,67 @@ import ProductCategories from "./shared/product-categories/product-categories";
 const HomePage = () => {
   const handleButtonClick = () => {
     window.location.href = window.location.href;
-  }
+  };
+  const router = useRouter();
+
+  const handleCardClick = (productId) => {
+    router.push(`/shared/product/${productId}`);
+  };
+
   return (
     <div className="container">
       <div className="content">
-        <Header className="header" />
 
         <div className="body">
           <div className="section banner">
             <div className="banner_image">
               <div className="blur"></div>
             </div>
+
             <div className="banner_info">
               <h1>
                 Бытовая химия, <br />
-                косметика <br />
-                и хозтовары
+                косметика <br />и хозтовары
               </h1>
               <h2>
                 <span>оптом</span> по кекчатову и области
               </h2>
-              <button className="btn"
-              onClick={handleButtonClick}>В КАТАЛОГ</button>
+              <button className="btn" onClick={handleButtonClick}>
+                В КАТАЛОГ
+              </button>
               <div className="list">
                 <div className="advant adv_p1">
                   <div className="circle">
                     <b>+</b>
                   </div>
-                  <span>Только самые<br/>
-                  выгодные предложения</span>
+                  <span>
+                    Только самые
+                    <br />
+                    выгодные предложения
+                  </span>
                 </div>
                 <div className="advant adv_p1">
                   <div className="circle">
                     <b>+</b>
                   </div>
-                  <span>Бесплатная доствка<br/>
-                  <b>по Кокчетаву от 10 тыч ₸</b></span>
+                  <span>
+                    Бесплатная доствка
+                    <br />
+                    <b>по Кокчетаву от 10 тыч ₸</b>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
           <div className="section cards">
             <h3>Акционные товары</h3>
-            <MiniCard className="mini-card" />
+            <div className="mini-card-container">
+              <MiniCard onClick={() => handleCardClick(1)} />
+              <MiniCard onClick={() => handleCardClick(2)} />
+              {/* Добавьте больше MiniCard компонентов по необходимости */}
+            </div>
           </div>
-          
+
           <ProductCategories className="product-categories" />
 
           <div className="section carousel">
@@ -67,8 +82,6 @@ const HomePage = () => {
             <h3>Геолокация</h3>
           </div>
         </div>
-
-        <Footer className="footer" />
       </div>
     </div>
   );

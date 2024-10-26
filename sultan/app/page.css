@@ -138,6 +138,19 @@
     line-height: 150%;
 }
 
-
+.mini-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .mini-card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .mini-card:hover {
+    transform: scale(1.05);
+  }
 
 
