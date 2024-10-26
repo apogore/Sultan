@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Button from "../../ui/button/button"; // Убедитесь, что путь корректен
 import "./mini-card.css";
 
-const MiniCard = ({ className }) => {
+const MiniCard = ({ productId, onClick }) => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const MiniCard = ({ className }) => {
   }
 
   return (
-    <div className="mini-card">
+    <div className="mini-card" onClick={() => onClick(productId)}>
       {product.isPopular && <div className="mini-card__badge">Популярное</div>}
       <img
         src={product.image}
