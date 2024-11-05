@@ -3,7 +3,7 @@
     max-width: 1367px;
     margin: 0 auto;
 }
-.section { /*Разграничил секции, при их реализации стоит убрать отступы и границы */
+.section { 
     padding: 4px;
     margin: 4px;
     z-index: 1;

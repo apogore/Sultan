@@ -6,6 +6,8 @@ import Footer from "./shared/footer/footer";
 import MiniCard from "./shared/mini-card/mini-card";
 import PromoCarousel from "./shared/promo-carousel/promo-carousel";
 import ProductCategories from "./shared/product-categories/product-categories";
+import BestProducts from "./shared/best-products/best-products";
+import Geolocation from "./shared/geolocation/geolocation"
 
 const HomePage = () => {
   const handleButtonClick = () => {
@@ -61,10 +63,10 @@ const HomePage = () => {
             <PromoCarousel className="carousel" />
           </div>
           <div className="section best">
-            <h3>Лучшие товары</h3>
+            <BestProducts className="best" />
           </div>
           <div className="section map">
-            <h3>Геолокация</h3>
+            <Geolocation className="geolocation"/>
           </div>
         </div>
 

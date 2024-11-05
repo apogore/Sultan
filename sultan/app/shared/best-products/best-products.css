@@ -1,0 +1,59 @@
+.best-products h1 {
+    /*1-ое слово заголовка*/
+    text-transform: uppercase;
+    font-weight: 800;
+    color: rgba(255, 200, 94);
+    margin: 15px 0;
+}
+  
+.best-products h1 span {
+    /*2-ое слово заголовка*/
+    font-weight: 500;
+    color: black;
+}
+  
+.best-products p {
+    font-weight: 300;
+    color: rgba(63, 78, 101);
+    margin: 15px 0;
+}
+
+.best-products .slide {
+    height: 94px; 
+
+}
+.best-products .wrap-content {
+    height: 77px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.best-products .slide .img-container {
+    border-radius: 10px;
+}
+.best-products .slide img {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0px 10px;
+}
+  
+.best-products .swiper-pagination-bullet {
+    width: 16px;
+    height: 7px;
+    background-color: #3F4E65;
+    border-radius: 100px;
+    transition: 0.3s ease;
+    margin: 0 5px; 
+}
+
+/* Стиль для активной точки */
+.best-products .swiper-pagination-bullet-active {
+    background-color: #FFC85E; 
+    width: 26px;
+}
+
+.best-products .swiper-pagination {
+    bottom: 0px;
+}
