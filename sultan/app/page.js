@@ -3,7 +3,7 @@
 import "./page.css"; // Импорт стилей
 import Header from "./shared/header/header"; // Импорт компонента заголовка
 import Footer from "./shared/footer/footer";
-import MiniCard from "./shared/mini-card/mini-card";
+import ProductList from "./shared/product-list/product-list";
 import PromoCarousel from "./shared/promo-carousel/promo-carousel";
 import ProductCategories from "./shared/product-categories/product-categories";
 
@@ -51,8 +51,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="section cards">
-            <h3>Акционные товары</h3>
-            <MiniCard className="mini-card" />
+            <ProductList className="product-list" />
           </div>
           
           <ProductCategories className="product-categories" />
