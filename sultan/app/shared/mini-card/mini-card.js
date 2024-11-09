@@ -4,13 +4,15 @@ import React from "react";
 import Button from "../../ui/button/button"; // Убедитесь, что путь корректен
 import "./mini-card.css";
 
+
 const MiniCard = ({ product }) => {
+
   if (!product) {
     return null;
   }
 
   return (
-    <div className="mini-card">
+    <div className="mini-card" onClick={() => onClick(productId)}>
       {product.isPopular && <div className="mini-card__badge">Популярное</div>}
       <img
         src={product.image}
