@@ -25,12 +25,15 @@ header {
 }
 
 .header-section-1 {
+    margin: 0 10%;
+    width: 80%;
     /* 1ый div в фигме (контакты + навигация) */
-    display: grid;
-    grid-template-columns: 2fr 1fr 3fr;
+    display: flex;
+    flex-direction: row;
+    /*grid-template-columns: 2fr 1fr 3fr;*/
     /* 2 части на контакты, 3 части навигации */
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .header-info {
@@ -446,6 +449,8 @@ form {
 .header-search-form button:active {
     /* изменение тени кнопки поиска при клике */
     box-shadow: 0 0 5px 5px rgba(255, 200, 94, 1);
+    @media screen and (max-device-width: 768px) {
+        box-shadow: none;}
 }
 
 .header-operator {
@@ -648,9 +653,10 @@ form {
     @media screen and (max-device-width: 768px) {
         position: absolute;
         z-index: 9999; 
-        top: 80px;
+        top: 77px;
         left: 0;
         width: 100%;
+        padding-top: 4px;
         background-color: white;
     }
 }
@@ -784,6 +790,7 @@ form {
     width: 290px;
     height: 70px;
     margin: 22px 15px;
+    justify-self: center;
     display: flex;
     flex-direction: row;
     justify-content: center;

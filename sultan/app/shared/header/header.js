@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useState } from 'react';
-import ClickAwayListener from 'react-click-away-listener';
 import "./header.css";
 import { navigationLinks } from "@/app/shared/navigation-links.js";
 import Button from "../../ui/button/button";
@@ -121,10 +120,9 @@ const Header = () => {
                 <div class="header-mobile-1">
 
                     <Button
-                        onClick={() => setPopup(popup => !popup)}
+                        onClick={() => setPopup((popup) => !popup)}
                         className="dropdown-menu-button"
-                        icon={"/menu_button_open.svg"}
-                        type=""
+                        icon={popup ? "/menu_button_close.svg" : "/menu_button_open.svg"}
                     />
 
                     <div className="header-logo-sultan">
@@ -162,7 +160,6 @@ const Header = () => {
                 <hr />
 
                 {popup && (
-                    <ClickAwayListener onClickAway={() => setPopup(false)}>
                         <div className="popup-menu-content">
                             <div className="header-address">
                                 <img src="/geo-icon.svg" alt="geo" width={16} height={18} />
@@ -209,8 +206,7 @@ const Header = () => {
                             />
 
 
-                        </div>
-                    </ClickAwayListener>)}
+                        </div>)}
             </div>
         </header>
     );
