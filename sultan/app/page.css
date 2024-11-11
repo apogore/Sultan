@@ -14,8 +14,9 @@
     position: relative;
     overflow: visible;
 }
+
 .banner_image {
-    background-image: url('../public/banner_home.png');
+    background-image: url('../public/banner_home.webp');
     position: absolute;
     top: 0;
     left: -50%;
