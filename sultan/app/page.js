@@ -1,9 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
 import "./page.css"; // Импорт стилей
-
-import Header from "./shared/header/header"; // Импорт компонента заголовка
-import Footer from "./shared/footer/footer";
 import ProductList from "./shared/product-list/product-list";
 
 import PromoCarousel from "./shared/promo-carousel/promo-carousel";
@@ -29,6 +26,7 @@ const HomePage = () => {
               <div className="blur"></div>
             </div>
 
+            
             <div className="banner_info">
               <h1>
                 Бытовая химия, <br />
