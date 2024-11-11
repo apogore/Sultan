@@ -447,4 +447,170 @@ form { /* блок поиска внутри div "header-search-form"*/
     margin: 0;
     text-align: left;
     text-wrap: nowrap;
+<<<<<<< Updated upstream
+=======
+}
+
+/* мобильная версия */
+.header-mobile {
+    @media screen and (min-device-width: 769px) {
+        display: none;
+    }
+    @media screen and (max-device-width: 768px) {
+        position: relative;
+    }
+}
+
+.popup-menu-content {
+    @media screen and (max-device-width: 768px) {
+        position: absolute;
+        z-index: 9999; 
+        top: 77px;
+        left: 0;
+        width: 100%;
+        padding-top: 4px;
+        background-color: white;
+    }
+}
+
+.header-mobile-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.header-mobile .header-cart-button {
+    background-color: white;
+    margin-right: 15px;
+    border-radius: 1000px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-mobile .header-cart-button img {
+    width: 22px;
+    /* Ширина иконки */
+    height: 22px;
+    /* Высота иконки */
+}
+
+.header-mobile .dropdown-menu-button {
+    padding: 10px 10px;
+    margin-left: 15px;
+    border-radius: 1000px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.header-mobile .dropdown-menu-button img {
+    width: 9px;
+    height: 8px;
+}
+
+.header-mobile-2 {
+    min-width: 320px;
+    max-width: 768px;
+    height: 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+}
+
+.header-mobile .popup-menu-content {
+    margin: 20px 0;
+}
+
+.header-mobile .header-catalog-button {
+    background-color: #fff;
+    color: rgba(63, 78, 101, 1);
+    border-radius: 0px;
+    border-right: 1px dashed rgba(63, 78, 101, 0.1);
+    height: 40px;
+    min-width: 160px;
+    max-width: 384px;
+    margin: 0px;
+    letter-spacing: normal;
+    font-weight: 600;
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 0px;
+}
+
+.header-mobile .header-catalog-button img {
+    width: 15px;
+    height: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.header-mobile .header-order-call {
+    margin-top: 12px;
+    margin-bottom: 24px;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.header-mobile .header-order-call-button {
+    padding: 10px 10px;
+    border-radius: 1000px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-mobile .header-order-call-button img {
+    width: 8px;
+    height: 8px;
+}
+
+.header-mobile .header-order-call .header-signature {
+    padding-left: 8px;
+}
+
+.header-mobile .header-navigation {
+    border-top: 1px dashed rgba(63, 78, 101, 0.1);
+}
+
+.header-mobile .header-navigation h4 {
+    margin: 0;
+    font-weight: 600;
+    padding-top: 24px;
+    padding-left: 14px;
+    text-align: left;
+    color: rgba(63, 78, 101, 1);
+}
+
+.header-mobile .header-price-button {
+    width: 290px;
+    height: 70px;
+    margin: 22px 15px;
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header-mobile .header-price-button img {
+    width: 12px;
+    height: 13px;
+>>>>>>> Stashed changes
 }
