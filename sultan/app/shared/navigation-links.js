@@ -1,5 +1,5 @@
 export const navigationLinks = [{
-    ref: '/about', // Используется в JSX в качестве ключа, значение должно быть уникальным
+    ref: '/about',
     name: 'О компании',
   },
   {

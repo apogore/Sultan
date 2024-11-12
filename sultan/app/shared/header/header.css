@@ -19,19 +19,14 @@ header {
 
 .logo-sultan-link:hover .logo-sultan {
     transform: scale(1.1);
-    /* Увеличение изображения */
     filter: brightness(0.8);
-    /* Затемнение изображения */
 }
 
 .header-section-1 {
     margin: 0 10%;
     width: 80%;
-    /* 1ый div в фигме (контакты + навигация) */
     display: flex;
     flex-direction: row;
-    /*grid-template-columns: 2fr 1fr 3fr;*/
-    /* 2 части на контакты, 3 части навигации */
     align-items: center;
     justify-content: space-evenly;
 }
@@ -50,6 +45,7 @@ header {
         border: none;
         font-size: 14px;
         font-weight: 600;
+        padding-top: 20px;
     }
 }
 
@@ -76,6 +72,7 @@ header {
     margin: 0px;
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 14px;
     text-align: left;
     text-wrap: nowrap;
 }
@@ -89,7 +86,6 @@ header {
     padding-left: 20px;
 
     @media screen and (max-device-width: 768px) {
-        font-size: 14px;
         font-weight: 600;
         padding-left: 0px;
         padding-top: 14px;
@@ -154,7 +150,7 @@ header {
     transform: scaleX(1);
 }
 
-.header-signature {
+p.header-signature {
     font-size: 12px;
     margin: 2px 0;
     color: gray;
@@ -177,10 +173,8 @@ header {
 
 .order-call-link {
     text-decoration: underline;
-    /* Добавление подчеркивания */
     position: relative;
     color: gray;
-    /* Унаследовать цвет от родительского элемента */
     transition: color 0.3s ease;
 }
 
@@ -207,7 +201,6 @@ header {
 }
 
 .header-navigation ul {
-    /* отображение списка навигации (о компании, доставка и пр.) */
     list-style-type: none;
     padding-left: 0;
     display: flex;
@@ -220,18 +213,18 @@ header {
     }        
 }
 
-
-
 .header-navigation ul li {
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 14px;
     @media screen and (max-device-width: 768px){
         padding: 10px 0;
     }  
 }
 
 .header-navigation ul li:not(:last-child) {
-    /* правые границы ссылок из списка (кроме последней) */
     @media screen and (min-device-width: 768px){
         border-right: 1px dashed rgba(63, 78, 101, 0.1);
     }
@@ -282,13 +275,11 @@ header {
 }
 
 .header-navigation-link a:active {
-    /* изменение цвета и нижней границы ссылки навигации при клике */
     color: rgb(196, 148, 52);
     border-bottom: 1px solid rgba(196, 148, 0.1);
 }
 
 .header hr {
-    /* разделение div-ов горизонтальной чертой */
     border-bottom-width: 0;
     color: rgba(63, 78, 101, 0.1);
     width: 100%;
@@ -300,10 +291,9 @@ header {
 }
 
 .header-section-2 {
-    /* 2ой div из фигмы (лого, прайс, корзина и пр.) */
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -316,7 +306,6 @@ header {
 }
 
 .header-catalog button {
-    /* кнопка каталог */
     border: none;
     background-color: rgba(255, 200, 94, 1);
     padding: 0;
@@ -332,12 +321,10 @@ header {
 }
 
 .header-catalog button:hover {
-    /* изменение тени кнопки каталога при наведении */
     box-shadow: 0 0 10px 0px rgb(211, 210, 210);
 }
 
 .header-catalog button:active {
-    /* изменение цвета кнопки каталога при клике */
     background-color: rgb(196, 148, 52);
 }
 
@@ -362,7 +349,6 @@ header {
 }
 
 form {
-    /* блок поиска внутри div "header-search-form"*/
     position: relative;
 }
 
@@ -398,12 +384,10 @@ form {
 }
 
 .header-search-form input:hover {
-    /* изменение тени поля поиска при наведении */
     box-shadow: 0 0 10px 0px rgb(211, 210, 210);
 }
 
 .header-search-form input:focus {
-    /* изменение цвета поля поиска при наборе текста */
     background: rgb(211, 210, 210);
 
     @media screen and (max-device-width: 768px) {
@@ -442,19 +426,16 @@ form {
 }
 
 .header-search-form button:hover {
-    /* изменение тени кнопки поиска при наведении */
     box-shadow: 0 0 5px 5px rgb(255, 255, 255, 1);
 }
 
 .header-search-form button:active {
-    /* изменение тени кнопки поиска при клике */
     box-shadow: 0 0 5px 5px rgba(255, 200, 94, 1);
     @media screen and (max-device-width: 768px) {
         box-shadow: none;}
 }
 
 .header-operator {
-    /* блок с телефоном и картинкой оператора */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -483,10 +464,8 @@ form {
 .header-telephone-number {
     color: black;
     font-weight: bold;
-    /* Жирный шрифт */
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: -0.5px;
-    /* Уменьшение межсимвольного расстояния */
 }
 
 .header-operator a {
@@ -496,12 +475,10 @@ form {
 }
 
 .header-operator a:hover {
-    /* изменение цвета номера телефона при наведении */
     color: rgb(196, 148, 52);
 }
 
 .header-operator a:active {
-    /* изменение цвета и нижней границы номера телефона при клике */
     color: rgb(196, 148, 52);
     border-bottom: 1px solid rgba(196, 148, 0.1);
 }
@@ -511,7 +488,6 @@ form {
 }
 
 .header-operator-shadow-point {
-    /* зелёная точка возле фото оператора */
     width: 8px;
     height: 8px;
     background: rgba(31, 216, 93, 1);
@@ -525,12 +501,9 @@ form {
 }
 
 @keyframes shadow {
-
-    /* мерцание зелёной точки */
     from {
         box-shadow: 0 0 0px 0px rgba(31, 216, 93, 1);
     }
-
     to {
         box-shadow: 0px 0px 10px 2px rgba(31, 216, 93, 1);
     }
@@ -544,7 +517,6 @@ form {
 }
 
 .header-price button {
-    /* кнопка прайс-лист */
     border: none;
     background-color: rgba(255, 200, 94, 1);
     padding: 0;
@@ -560,12 +532,10 @@ form {
 }
 
 .header-price button:hover {
-    /* изменение тени кнопки каталога при наведении */
     box-shadow: 0 0 10px 0px rgb(211, 210, 210);
 }
 
 .header-price button:active {
-    /* изменение цвета кнопки каталога при клике */
     background-color: rgb(196, 148, 52);
 }
 
@@ -579,7 +549,6 @@ form {
 }
 
 .header-cart {
-    /* блок корзины */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -597,6 +566,7 @@ form {
     text-decoration: none;
     color: inherit;
     outline: none;
+    font-size: 14px;
 }
 
 .header-cart a:focus {
@@ -626,7 +596,6 @@ form {
 }
 
 .header-cart a:active {
-    /* изменение цвета и нижней границы суммы корзины при клике */
     color: rgb(196, 148, 52);
     border-bottom: 1px solid rgba(196, 148, 0.1);
 }
@@ -683,9 +652,7 @@ form {
 
 .header-mobile .header-cart-button img {
     width: 22px;
-    /* Ширина иконки */
     height: 22px;
-    /* Высота иконки */
 }
 
 .header-mobile .dropdown-menu-button {
