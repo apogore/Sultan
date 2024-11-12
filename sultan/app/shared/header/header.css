@@ -1,7 +1,12 @@
 header {
-    background-color: white;
-    padding: 20px;
     text-align: center;
+    background-color: white;
+}
+
+.header-desktop {
+    @media screen and (max-device-width: 768px) {
+        display: none;
+    }
 }
 
 .logo-sultan-link {
@@ -13,15 +18,17 @@ header {
 }
 
 .logo-sultan-link:hover .logo-sultan {
-    transform: scale(1.1); /* Увеличение изображения */
-    filter: brightness(0.8); /* Затемнение изображения */
+    transform: scale(1.1);
+    filter: brightness(0.8);
 }
 
-.header-section-1 { /* 1ый div в фигме (контакты + навигация) */
-    display: grid;
-    grid-template-columns: 2fr 1fr 3fr; /* 2 части на контакты, 3 части навигации */
+.header-section-1 {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin: 0 10%;
+    width: 80%;
 }
 
 .header-info {
@@ -33,12 +40,31 @@ header {
 
 .header-address {
     border-right: 1px dashed rgba(63, 78, 101, 0.1);
+
+    @media screen and (max-device-width: 768px) {
+        font-size: 14px;
+        font-weight: 600;
+        padding-top: 20px;
+        border: none;
+    }
 }
 
-.header-address p, .header-mail p {
+.header-address img,
+.header-mail img {
+    @media screen and (max-device-width: 768px) {
+        float: left;
+        padding-top: 10px;
+        padding-left: 16px;
+        padding-right: 8px;
+    }
+}
+
+.header-address p,
+.header-mail p {
     margin: 0px;
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 14px;
     text-align: left;
     text-wrap: nowrap;
 }
@@ -50,15 +76,50 @@ header {
 
 .header-mail {
     padding-left: 20px;
+
+    @media screen and (max-device-width: 768px) {
+        padding-left: 0px;
+        padding-top: 14px;
+        font-weight: 600;
+    }
+}
+
+.header-sales-dept {
+    @media screen and (max-device-width: 768px) {
+        padding-left: 0px;
+        padding-top: 14px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+.header-sales-dept p {
+    @media screen and (max-device-width: 768px) {
+        margin: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: left;
+        text-wrap: nowrap;
+    }
+}
+
+.header-sales-dept img {
+    @media screen and (max-device-width: 768px) {
+        float: left;
+        padding-top: 10px;
+        padding-left: 16px;
+        padding-right: 8px;
+    }
 }
 
 .header-mail a {
+    position: relative;
+    font-weight: 600;
     color: black;
     text-decoration: solid;
-    position: relative;
     transition: color 0.3s ease;
-    font-weight: 600;
 }
+
 .header-mail a::before {
     content: '';
     position: absolute;
@@ -67,9 +128,9 @@ header {
     bottom: -3px;
     left: 0;
     background-color: #fbc44b;
-    visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
+    visibility: hidden;
 }
 
 .header-mail a:hover {
@@ -77,20 +138,35 @@ header {
 }
 
 .header-mail a:hover::before {
-    visibility: visible;
     transform: scaleX(1);
+    visibility: visible;
 }
 
-.header-signature {
-    font-size: 12px;
+p.header-signature {
     margin: 2px 0;
+    font-size: 12px;
     color: gray;
+
+    @media screen and (max-device-width: 768px) {
+        font-weight: 300;
+    }
+}
+
+.header-sales-dept .header-signature-2 {
+    @media screen and (max-device-width: 768px) {
+        margin: 0 0;
+        padding-top: 5px;
+        padding-left: 40px;
+        font-size: 12px;
+        font-weight: 300;
+        color: gray;
+    }
 }
 
 .order-call-link {
-    text-decoration: underline; /* Добавление подчеркивания */
     position: relative;
-    color: gray; /* Унаследовать цвет от родительского элемента */
+    text-decoration: underline;
+    color: gray;
     transition: color 0.3s ease;
 }
 
@@ -102,59 +178,72 @@ header {
     bottom: -2px;
     left: 0;
     background-color: #fbc44b;
-    visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
-  }
-  
-  .order-call-link:hover {
-    color: #fbc44b;
-  }
-  
-  .order-call-link:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-  }
+    visibility: hidden;
+}
 
-.header-navigation ul { /* отображение списка навигации (о компании, доставка и пр.) */
-    list-style-type: none;
-    padding-left: 0;
+.order-call-link:hover {
+    color: #fbc44b;
+}
+
+.order-call-link:hover::before {
+    transform: scaleX(1);
+    visibility: visible;
+}
+
+.header-navigation ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
- 
+    padding-left: 0;
+    list-style-type: none;
+    @media screen and (max-device-width: 768px){
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 14px;
+    }        
 }
-
 
 .header-navigation ul li {
+    margin-top: auto;
+    margin-bottom: auto;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 14px;
+    @media screen and (max-device-width: 768px){
+        padding: 10px 0;
+    }  
 }
 
-.header-navigation ul li:not(:last-child) { /* правые границы ссылок из списка (кроме последней) */
-    border-right: 1px dashed  rgba(63, 78, 101, 0.1);
+.header-navigation ul li:not(:last-child) {
+    @media screen and (min-device-width: 768px){
+        border-right: 1px dashed rgba(63, 78, 101, 0.1);
+    }
 }
 
-.header-navigation-link {
-    padding: 0 10px;
-    position: relative;
-}
 .header-navigation-link:not(:last-child)::after {
     content: '';
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-50%);
     height: 60%;
     width: 1px;
     background-color: rgba(63, 78, 101, 0.1);
+    transform: translateY(-50%);
 }
+
 .header-navigation-link a {
+    position: relative;
     color: #3F4E65;
     text-decoration: none;
-    position: relative;
     transition: color 0.3s ease;
+    @media screen and (max-device-width: 768px){
+        font-size: 14px;
+        font-weight: 400;
+    }
 }
+
 .header-navigation-link a::before {
     content: '';
     position: absolute;
@@ -163,9 +252,9 @@ header {
     bottom: -3px;
     left: 0;
     background-color: #fbc44b;
-    visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
+    visibility: hidden;
 }
 
 .header-navigation-link a:hover {
@@ -173,61 +262,67 @@ header {
 }
 
 .header-navigation-link a:hover::before {
-    visibility: visible;
     transform: scaleX(1);
+    visibility: visible;
 }
 
-.header-navigation-link a:active { /* изменение цвета и нижней границы ссылки навигации при клике */
+.header-navigation-link a:active {
     color: rgb(196, 148, 52);
     border-bottom: 1px solid rgba(196, 148, 0.1);
 }
 
-.header hr { /* разделение div-ов горизонтальной чертой */
+.header hr {
+    width: 100%;
     border-bottom-width: 0;
-    color: rgba(63, 78, 101, 0.2);
+    color: rgba(63, 78, 101, 0.1);
+
+    @media screen and (max-device-width: 768px) {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
 }
 
-.header-section-2 { /* 2ой div из фигмы (лого, прайс, корзина и пр.) */
+.header-section-2 {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .header-catalog {
-    padding-left: 4px;
-    min-width: 150px;
+    padding-left: 38px;
+    min-width: 110px;
     max-width: 192px;
     height: 59px;
 }
 
-.header-catalog button { /* кнопка каталог */
-    border: none;
-    background-color: rgba(255, 200, 94, 1);
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 79px;
+.header-catalog button {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background-color: rgba(255, 200, 94, 1);
+    border-radius: 79px;
     cursor: pointer;
 }
 
-.header-catalog button:hover { /* изменение тени кнопки каталога при наведении */
+.header-catalog button:hover {
     box-shadow: 0 0 10px 0px rgb(211, 210, 210);
 }
 
-.header-catalog button:active { /* изменение цвета кнопки каталога при клике */
+.header-catalog button:active {
     background-color: rgb(196, 148, 52);
 }
 
 .header-catalog-button p {
-    color: rgba(255, 255, 255, 1);
     font-weight: bold;
+    color: rgba(255, 255, 255, 1);
 }
 
 .header-catalog-button img {
@@ -235,65 +330,109 @@ header {
 }
 
 .header-search-form {
-    padding-left: 4px;
+    padding-left: 15px;
+
+    @media screen and (max-device-width: 768px) {
+        padding: 0px;
+        max-width: 384px;
+        flex-grow: 1;
+        flex-basis: 0;
+    }
 }
 
-form { /* блок поиска внутри div "header-search-form"*/
+form {
     position: relative;
 }
 
 .header-search-form * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .header-search-form input {
-    min-width: 163px;
+    position: relative;
+    outline: none;
+    min-width: 110px;
     max-width: 263px;
     height: 59px;
     padding-left: 15px;
     border-radius: 36px;
     border: none;
     background: rgba(237, 237, 237, 1);
-    outline: none;
-    position: relative;
     transition: .3s linear;
+
+    @media screen and (max-device-width: 768px) {
+        min-width: 160px;
+        max-width: 260px;
+        height: 40px;
+        margin-left: 26px;
+        padding-left: 40px;
+        border-radius: 0px;
+        background: white;
+        border: none;
+        transition: none;
+    }
 }
 
-.header-search-form input:hover { /* изменение тени поля поиска при наведении */
+.header-search-form input:hover {
     box-shadow: 0 0 10px 0px rgb(211, 210, 210);
 }
 
-.header-search-form input:focus { /* изменение цвета поля поиска при наборе текста */
+.header-search-form input:focus {
     background: rgb(211, 210, 210);
+
+    @media screen and (max-device-width: 768px) {
+        background: white;
+        box-shadow: 0 0 10px 0px rgb(211, 210, 210);
+    }
 }
 
-.header-search-form button { 
+.header-search-form input::placeholder {
+    @media screen and (max-device-width: 768px) {
+        position: absolute;
+        left: 68px;
+        top: 14px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+.header-search-form button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     width: 39px;
     height: 39px;
     background: none;
     border: none;
     border-radius: 1000px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+
+    @media screen and (max-device-width: 768px) {
+        position: absolute;
+        left: 40px;
+        top: 12px;
+        width: 20px;
+        height: 20px;
+    }
 }
 
-.header-search-form button:hover { /* изменение тени кнопки поиска при наведении */
+.header-search-form button:hover {
     box-shadow: 0 0 5px 5px rgb(255, 255, 255, 1);
 }
 
-.header-search-form button:active { /* изменение тени кнопки поиска при клике */
+.header-search-form button:active {
     box-shadow: 0 0 5px 5px rgba(255, 200, 94, 1);
+    @media screen and (max-device-width: 768px) {
+        box-shadow: none;}
 }
 
-.header-operator { /* блок с телефоном и картинкой оператора */
+.header-operator {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    padding-left: 4px;
+    padding-left: 35px;
 }
 
 .header-operator p {
@@ -302,25 +441,35 @@ form { /* блок поиска внутри div "header-search-form"*/
     text-align: right;
     text-justify: right;
     text-wrap: nowrap;
-    line-height: 2; 
-}
-.header-telephone-number {
-    color: black;
-    font-weight: bold; /* Жирный шрифт */
-    font-size:  15px;
-    letter-spacing: -0.5px; /* Уменьшение межсимвольного расстояния */
-}
-.header-operator a {
-    text-decoration: none;
-    color: rgba(17, 17, 17, 1);
-    font-weight: bold;
+    line-height: 2;
 }
 
-.header-operator a:hover { /* изменение цвета номера телефона при наведении */
+.header-operator-info .header-operator-signature {
+    font-size: 12px;
+    margin: 2px 0;
+    line-height: 14px;
+    text-wrap: balance;
+    color: gray;
+}
+
+.header-telephone-number {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    color: black;
+}
+
+.header-operator a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgba(17, 17, 17, 1);
+}
+
+.header-operator a:hover {
     color: rgb(196, 148, 52);
 }
 
-.header-operator a:active { /* изменение цвета и нижней границы номера телефона при клике */
+.header-operator a:active {
     color: rgb(196, 148, 52);
     border-bottom: 1px solid rgba(196, 148, 0.1);
 }
@@ -329,73 +478,73 @@ form { /* блок поиска внутри div "header-search-form"*/
     border-radius: 50px;
 }
 
-.header-operator-shadow-point { /* зелёная точка возле фото оператора */
-    width: 8px;
-    height: 8px;
-    background: rgba(31, 216, 93, 1);
-    margin: 0;
-    border-radius: 50%;
+.header-operator-shadow-point {
     position: relative;
     top: 40px;
     left: 60px;
-    animation: shadow 1s infinite alternate;
     z-index: 999;
-  }
-  
-@keyframes shadow { /* мерцание зелёной точки */
-    from {
-      box-shadow: 0 0 0px 0px rgba(31, 216, 93, 1);
-    }
-    to {
-      box-shadow: 0px 0px 10px 2px rgba(31, 216, 93, 1);
-    }
-  }
-
-.header-price {
-    padding-left: 4px;
-    min-width: 150px;
-    max-width: 192px;
-    height: 59px;
+    width: 8px;
+    height: 8px;
+    margin: 0;
+    border-radius: 50%;
+    background: rgba(31, 216, 93, 1);
+    animation: shadow 1s infinite alternate;
 }
 
-.header-price button { /* кнопка прайс-лист */
-    border: none;
-    background-color: rgba(255, 200, 94, 1);
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 79px;
+@keyframes shadow {
+    from {
+        box-shadow: 0 0 0px 0px rgba(31, 216, 93, 1);
+    }
+    to {
+        box-shadow: 0px 0px 10px 2px rgba(31, 216, 93, 1);
+    }
+}
+
+.header-price {
+    min-width: 130px;
+    max-width: 192px;
+    height: 59px;
+    padding-left: 50px;
+}
+
+.header-price button {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgba(255, 200, 94, 1);
+    border-radius: 79px;
     cursor: pointer;
 }
 
-.header-price button:hover { /* изменение тени кнопки каталога при наведении */
+.header-price button:hover {
     box-shadow: 0 0 10px 0px rgb(211, 210, 210);
 }
 
-.header-price button:active { /* изменение цвета кнопки каталога при клике */
+.header-price button:active {
     background-color: rgb(196, 148, 52);
 }
 
 .header-price-button p {
-    color: rgba(255, 255, 255, 1);
     font-weight: bold;
+    color: rgba(255, 255, 255, 1);
 }
 
 .header-price-button img {
     padding-left: 10px;
 }
 
-.header-cart { /* блок корзины */
+.header-cart {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: start;
-    padding-left: 4px;
+    padding-left: 50px;
 }
 
 .header-cart img {
@@ -406,6 +555,7 @@ form { /* блок поиска внутри div "header-search-form"*/
 .header-cart a {
     position: relative;
     text-decoration: none;
+    font-size: 14px;
     color: inherit;
     outline: none;
 }
@@ -417,26 +567,26 @@ form { /* блок поиска внутри div "header-search-form"*/
 .header-cart a::before {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 2px;
     bottom: -3px;
     left: 0;
+    width: 100%;
+    height: 2px;
     background-color: #fbc44b;
-    visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
+    visibility: hidden;
 }
 
 .header-cart a:hover::before {
-    visibility: visible;
     transform: scaleX(1);
+    visibility: visible;
 }
 
 .header-cart a:hover {
     color: #fbc44b;
 }
 
-.header-cart a:active { /* изменение цвета и нижней границы суммы корзины при клике */
+.header-cart a:active {
     color: rgb(196, 148, 52);
     border-bottom: 1px solid rgba(196, 148, 0.1);
 }
@@ -447,4 +597,164 @@ form { /* блок поиска внутри div "header-search-form"*/
     margin: 0;
     text-align: left;
     text-wrap: nowrap;
+}
+
+/* мобильная версия */
+.header-mobile {
+    @media screen and (min-device-width: 769px) {
+        display: none;
+    }
+    @media screen and (max-device-width: 768px) {
+        position: relative;
+    }
+}
+
+.popup-menu-content {
+    @media screen and (max-device-width: 768px) {
+        position: absolute;
+        top: 77px;
+        left: 0;
+        z-index: 9999;
+        width: 100%;
+        padding-top: 4px;
+        background-color: white;
+    }
+}
+
+.header-mobile-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.header-mobile .header-cart-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+    border-radius: 1000px;
+    background-color: white;
+}
+
+.header-mobile .header-cart-button img {
+    width: 22px;
+    height: 22px;
+}
+
+.header-mobile .dropdown-menu-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 10px 10px;
+    margin-left: 15px;
+    border-radius: 1000px;
+}
+
+.header-mobile .dropdown-menu-button img {
+    width: 9px;
+    height: 8px;
+}
+
+.header-mobile-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+    min-width: 320px;
+    max-width: 768px;
+    height: 40px;
+    margin: 0;
+}
+
+.header-mobile .popup-menu-content {
+    margin: 20px 0;
+}
+
+.header-mobile .header-catalog-button {
+    flex-direction: row-reverse;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 40px;
+    min-width: 160px;
+    max-width: 384px;
+    padding: 0px;
+    margin: 0px;
+    letter-spacing: normal;
+    font-weight: 600;
+    border-radius: 0px;
+    background-color: #fff;
+    color: rgba(63, 78, 101, 1);
+    border-right: 1px dashed rgba(63, 78, 101, 0.1);
+}
+
+.header-mobile .header-catalog-button img {
+    width: 15px;
+    height: 15px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.header-mobile .header-order-call {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    margin-left: 16px;
+}
+
+.header-mobile .header-order-call-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 10px 10px;
+    border-radius: 1000px;
+}
+
+.header-mobile .header-order-call-button img {
+    width: 8px;
+    height: 8px;
+}
+
+.header-mobile .header-order-call .header-signature {
+    padding-left: 8px;
+}
+
+.header-mobile .header-navigation {
+    border-top: 1px dashed rgba(63, 78, 101, 0.1);
+}
+
+.header-mobile .header-navigation h4 {
+    margin: 0;
+    padding-top: 24px;
+    padding-left: 14px;
+    font-weight: 600;
+    text-align: left;
+    color: rgba(63, 78, 101, 1);
+}
+
+.header-mobile .header-price-button {
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 290px;
+    height: 70px;
+    margin: 22px 15px;
+}
+
+.header-mobile .header-price-button img {
+    width: 12px;
+    height: 13px;
 }
