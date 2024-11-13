@@ -1,13 +1,15 @@
 "use client";
 
-import "./page.css"; // Импорт стилей
-import Header from "./shared/header/header"; // Импорт компонента заголовка
+import Header from "./shared/header/header"; 
 import Footer from "./shared/footer/footer";
 import MiniCard from "./shared/mini-card/mini-card";
 import PromoCarousel from "./shared/promo-carousel/promo-carousel";
 import ProductCategories from "./shared/product-categories/product-categories";
 import BestProducts from "./shared/best-products/best-products";
 import Geolocation from "./shared/geolocation/geolocation"
+import "./page.css"; 
+import "./styles/globals.css";
+
 
 const HomePage = () => {
   const handleButtonClick = () => {
@@ -54,23 +56,23 @@ const HomePage = () => {
           </div>
           <div className="section cards">
             <h3>Акционные товары</h3>
-            <MiniCard className="mini-card" />
+            <MiniCard />
           </div>
           
-          <ProductCategories className="product-categories" />
+          <ProductCategories />
 
           <div className="section carousel">
-            <PromoCarousel className="carousel" />
+            <PromoCarousel />
           </div>
           <div className="section best">
-            <BestProducts className="best" />
+            <BestProducts />
           </div>
           <div className="section map">
-            <Geolocation className="geolocation"/>
+            <Geolocation />
           </div>
         </div>
 
-        <Footer className="footer" />
+        <Footer />
       </div>
     </div>
   );
