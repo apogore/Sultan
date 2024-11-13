@@ -6,13 +6,13 @@
 }
 
 .section {
-  padding: 8px;
-  margin: 8px;
+  padding: 4px;
+  margin: 4px;
   z-index: 1;
 }
 
 .banner {
-  height: 800px;
+  height: 796px;
   width: 100%;
   position: relative;
   overflow: visible;
@@ -44,7 +44,7 @@
 
 .banner_info {
   width: 67%;
-  max-height: 800px;
+  max-height: 796px;
   max-width: 1368px;
   color: var(--white-color);
   white-space: nowrap;
@@ -62,7 +62,7 @@
 
 .banner_info h2 {
   margin-top: 40px;
-  margin-left: 8px;
+  margin-left: 4px;
   font-size: 32px;
   font-weight: 700;
   line-height: 150%;
@@ -75,10 +75,10 @@
 }
 
 .banner_info .btn {
-  width: 304px;
+  width: 300px;
   height: 96px;
-  margin-top: 64px;
-  margin-left: 8px;
+  margin-top: 60px;
+  margin-left: 4px;
   background-color: var(--yellow-color);
   border-radius: 80px;
   border: none;
@@ -102,7 +102,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 544px;
+  width: 540px;
   height: auto;
   margin-top: 92px;
 }
