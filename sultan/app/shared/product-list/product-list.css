@@ -14,3 +14,12 @@
   flex-wrap: wrap;
   gap: 21px;
 }
+.swiper-Mobile-product-list .swiper-pagination-bullet{
+  position: relative;
+  top: 10px;
+}
+.swiper-Mobile-product-list .swiper-pagination-bullet-active
+  { 
+    background-color:#FFC85E; 
+    width: 26px;
+}

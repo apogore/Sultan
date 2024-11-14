@@ -1,10 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import "./page.css"; // Импорт стилей
-
-import Header from "./shared/header/header"; // Импорт компонента заголовка
-import Footer from "./shared/footer/footer";
-import ProductList from "./shared/product-list/product-list";
+import ProductList from "./shared/product-list/product-list.jsx";
 
 import PromoCarousel from "./shared/promo-carousel/promo-carousel";
 import ProductCategories from "./shared/product-categories/product-categories";
@@ -15,9 +12,6 @@ const HomePage = () => {
   };
   const router = useRouter();
 
-  const handleCardClick = (productId) => {
-    router.push(`/shared/product/${productId}`);
-  };
 
   return (
     <div className="container">

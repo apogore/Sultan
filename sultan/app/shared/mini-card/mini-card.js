@@ -1,18 +1,19 @@
 "use client";
 
 import React from "react";
-import Button from "../../ui/button/button"; // Убедитесь, что путь корректен
+import Button from "../../ui/button/button"; 
 import "./mini-card.css";
 
 
-const MiniCard = ({ product }) => {
+const MiniCard = ({ product, onClick }) => {
 
   if (!product) {
     return null;
   }
 
   return (
-    <div className="mini-card" onClick={() => onClick(productId)}>
+<div className="mini-card" onClick={() => onClick(product.id)}>
+
       {product.isPopular && <div className="mini-card__badge">Популярное</div>}
       <img
         src={product.image}
