@@ -9,7 +9,7 @@
 }
 .product-page-desktop {
   display: flex;
-
+  flex-direction: column;
   max-width: 85%;
   @media screen and (max-device-width: 768px) {
     display: none;
@@ -17,13 +17,15 @@
 }
 
 .product-page-mobile {
-  display: block;
 
   @media screen and (min-device-width: 769px) {
     display: none;
   }
   @media screen and (max-device-width: 768px) {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -33,12 +35,13 @@
   max-height: 70%;
   margin: 0 auto;
   padding: 20px;
+  flex-direction: column;
 
   @media screen and (max-width: 768px) {
     display: flex;
-    width: 100%;
-    max-width: 100%;
+    max-width: 100%; /* просто width не работал, убрала и оставила переопределение макс-ширины для мобилки */
     align-items: center;
+    margin: 20px 15px; /* поставила, как в фигме, чтобы он не делал отступы слева и справа по 100px */
     padding: 8px;
   }
 }
@@ -50,8 +53,7 @@
 
 }
 .product-page-mobile .product-image {
-  width: 80%;
-  margin-bottom: 20px;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -79,7 +81,7 @@
   height: 100%;
   object-fit: contain;
   @media screen and (max-width: 768px) {
-    width: 30%;
+    width: 40%;
   }
 }
 
@@ -146,6 +148,12 @@ h1 {
     width: 50%;
     height: 50%;
   }
+}
+
+.dotted-line {
+  border: none;
+  border-top: 1px dashed #1f1d1d; 
+  margin: 20px 0; 
 }
 .quantity-control {
   display: flex;
@@ -218,12 +226,13 @@ h1 {
 }
 
 .action-buttons .custom-button__icon {
-  width: 80%;
+  width: 20px;
+  height: 20px;
   height: auto;
   margin: 0;
   @media screen and (max-width: 768px) {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -231,7 +240,7 @@ h1 {
   background-color: transparent;
   filter: grayscale(50%) brightness(0.4);
   max-width: 45%;
-  width: 25%;
+  width: 45%;
 }
 
 .action-buttons .price-list-button .custom-button__icon {
@@ -240,6 +249,10 @@ h1 {
   margin: 0;
   filter: grayscale(50%) brightness(0.9);
 }
-.product-page-desktop .section-cards {
-
+.product-page-mobile .section-cards {
+max-width: 300px;
+max-height: 700px;
+}
+.quantity-control .button-control{
+  color: black;
 }

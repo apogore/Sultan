@@ -72,209 +72,223 @@ const ProductPage = ({ params }) => {
     <div className="product-page">
       <div className="product-page-desktop">
         <div className="product-informations">
-        <div className="product-image">
-          <img src={image} alt={nameRu} />
-        </div>
-        <div className="product-info">
-          <p><strong>{brand.name}</strong>  {descriptionRu}</p>
+          <div className="product-image">
+            <img src={image} alt={nameRu} />
+          </div>
+          <div className="product-info">
+            <p>
+              <strong>{brand.name}</strong> {descriptionRu}
+            </p>
 
-          <div className="quantity-cart-block">
-            <p className="price">{(price * quantity).toFixed(2)} ₸</p>
-            <div className="quantity-control">
+            <div className="quantity-cart-block">
+              <p className="price">{(price * quantity).toFixed(2)} ₸</p>
+              <div className="quantity-control">
+                <Button
+                  onClick={decrementQuantity}
+                  text="-"
+                  className="button-control"
+                />
+                <span>{quantity}</span>
+                <Button
+                  onClick={incrementQuantity}
+                  text="+"
+                  className="button-control"
+                />
+              </div>
+              <div className="action-buttons">
+                <Button
+                  onClick={addToCart}
+                  text="В корзину"
+                  icon="/cart.svg"
+                  className="button-to-cart"
+                />
+              </div>
+            </div>
+
+            <div className="action-buttons">
               <Button
-                onClick={decrementQuantity}
-                text="-"
-                className="button-control"
+                onClick={() => navigator.share({ url: window.location.href })}
+                icon="/share.svg"
+                className="button-share"
               />
-              <span>{quantity}</span>
+              <p className="delivery-info">
+                При покупке от <strong>10 000 ₸ </strong>бесплатная доставка по
+                Кокчетаву и области
+              </p>
               <Button
-                onClick={incrementQuantity}
-                text="+"
-                className="button-control"
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/price.txt";
+                  link.download = "price-list.txt";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                text="Прайс-лист"
+                icon={"/download.svg"}
+                className="price-list-button"
               />
+            </div>
+
+            <div className="info-block">
+              {renderProductInfo("Производитель", manufacturer)}
+              {renderProductInfo("Бренд", brand.name)}
+              {renderProductInfo("Артикул", article)}
+              {renderProductInfo("Штрихкод", barcode)}
+            </div>
+
+            <div className="info-block collapsible">
+              <h2
+                onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+              >
+                Описание {isDescriptionExpanded ? "▲" : "▼"}
+              </h2>
+              {isDescriptionExpanded && <p>{descriptionRu}</p>}
+            </div>
+            <hr className="dotted-line" />
+            <div className="info-block collapsible">
+              <h2
+                onClick={() =>
+                  setIsCharacteristicsExpanded(!isCharacteristicsExpanded)
+                }
+              >
+                Характеристики {isCharacteristicsExpanded ? "▲" : "▼"}
+              </h2>
+              {isCharacteristicsExpanded && (
+                <>
+                  {renderProductInfo("Назначение", category.join(", "))}
+                  {renderProductInfo("Тип", shortNameRu)}
+                  {renderProductInfo("Производитель", manufacturer)}
+                  {renderProductInfo("Бренд", brand.name)}
+                  {renderProductInfo("Артикул", article)}
+                  {renderProductInfo("Штрихкод", barcode)}
+                  {renderProductInfo(
+                    "Вес",
+                    sizeType === "weight" ? `${size} г` : "Н/Д"
+                  )}
+                  {renderProductInfo(
+                    "Объем",
+                    sizeType === "volume" ? `${size} мл` : "Н/Д"
+                  )}
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="section cards">
+          <ProductList className="product-list-page" />
+        </div>
+        <div className="section cards">
+          <ProductList className="product-list-page" />
+        </div>
+      </div>
+      <div className="product-page-mobile">
+        <div className="product-informations">
+          <div className="product-image">
+            <img src={image} alt={nameRu} />
+          </div>
+          <div className="product-info">
+            <h1>{nameRu}</h1>
+
+            <div className="quantity-cart-block">
+              <p className="price">{(price * quantity).toFixed(2)} ₸</p>
+              <div className="quantity-control">
+                <Button
+                  onClick={decrementQuantity}
+                  text="-"
+                  className="button-control"
+                />
+                <span>{quantity}</span>
+                <Button
+                  onClick={incrementQuantity}
+                  text="+"
+                  className="button-control"
+                />
+              </div>
             </div>
             <div className="action-buttons">
               <Button
                 onClick={addToCart}
                 text="В корзину"
-                icon="/download.svg"
+                icon="/cart.svg"
                 className="button-to-cart"
               />
+              <Button
+                onClick={() => navigator.share({ url: window.location.href })}
+                icon="/share.svg"
+                className="button-share"
+              />
             </div>
-          </div>
-
-          <div className="action-buttons">
-            <Button
-              onClick={() => navigator.share({ url: window.location.href })}
-              icon="/share.svg"
-              className="button-share"
-            />
-            <p className="delivery-info">
+            <div className="information">
               При покупке от <strong>10 000 ₸ </strong>бесплатная доставка по
               Кокчетаву и области
-            </p>
-            <Button
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href = "/price.txt";
-                link.download = "price-list.txt";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
-              text="Прайс-лист"
-              icon={"/download.svg"}
-              className="price-list-button"
-            />
-          </div>
-
-          <div className="info-block">
-            {renderProductInfo("Производитель", manufacturer)}
-            {renderProductInfo("Бренд", brand.name)}
-            {renderProductInfo("Артикул", article)}
-            {renderProductInfo("Штрихкод", barcode)}
-          </div>
-
-          <div className="info-block collapsible">
-            <h2
-              onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-            >
-              Описание {isDescriptionExpanded ? "▲" : "▼"}
-            </h2>
-            {isDescriptionExpanded && <p>{descriptionRu}</p>}
-          </div>
-
-          <div className="info-block collapsible">
-            <h2
-              onClick={() =>
-                setIsCharacteristicsExpanded(!isCharacteristicsExpanded)
-              }
-            >
-              Характеристики {isCharacteristicsExpanded ? "▲" : "▼"}
-            </h2>
-            {isCharacteristicsExpanded && (
-              <>
-                {renderProductInfo("Назначение", category.join(", "))}
-                {renderProductInfo("Тип", shortNameRu)}
-                {renderProductInfo("Производитель", manufacturer)}
-                {renderProductInfo("Бренд", brand.name)}
-                {renderProductInfo("Артикул", article)}
-                {renderProductInfo("Штрихкод", barcode)}
-                {renderProductInfo(
-                  "Вес",
-                  sizeType === "weight" ? `${size} г` : "Н/Д"
-                )}
-                {renderProductInfo(
-                  "Объем",
-                  sizeType === "volume" ? `${size} мл` : "Н/Д"
-                )}
-              </>
-            )}
-          </div>
-        </div>
-        
-        </div>
-        
-      </div>
-      <div className="product-page-mobile">
-        <div className="product-image">
-          <img src={image} alt={nameRu} />
-        </div>
-        <div className="product-info">
-          <h1>{nameRu}</h1>
-
-          <div className="quantity-cart-block">
-            <p className="price">{(price * quantity).toFixed(2)} ₸</p>
-            <div className="quantity-control">
+            </div>
+            <div className="action-buttons">
               <Button
-                onClick={decrementQuantity}
-                text="-"
-                className="button-control"
-              />
-              <span>{quantity}</span>
-              <Button
-                onClick={incrementQuantity}
-                text="+"
-                className="button-control"
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = "/price.txt";
+                  link.download = "price-list.txt";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+                text="Прайс-лист"
+                icon={"/download.svg"}
+                className="price-list-button"
               />
             </div>
-          </div>
-          <div className="action-buttons">
-            <Button
-              onClick={addToCart}
-              text="В корзину"
-              icon="/download.svg"
-              className="button-to-cart"
-            />
-            <Button
-              onClick={() => navigator.share({ url: window.location.href })}
-              icon="/share.svg"
-              className="button-share"
-            />
-          </div>
-          <div className="information">
-            При покупке от <strong>10 000 ₸ </strong>бесплатная доставка по
-            Кокчетаву и области
-          </div>
-          <div className="action-buttons">
-            <Button
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href = "/price.txt";
-                link.download = "price-list.txt";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
-              text="Прайс-лист"
-              icon={"/download.svg"}
-              className="price-list-button"
-            />
-          </div>
 
-          <div className="info-block">
-            {renderProductInfo("Производитель", manufacturer)}
-            {renderProductInfo("Бренд", brand.name)}
-            {renderProductInfo("Артикул", article)}
-            {renderProductInfo("Штрихкод", barcode)}
-          </div>
+            <div className="info-block">
+              {renderProductInfo("Производитель", manufacturer)}
+              {renderProductInfo("Бренд", brand.name)}
+              {renderProductInfo("Артикул", article)}
+              {renderProductInfo("Штрихкод", barcode)}
+            </div>
+            <hr className="dotted-line" />
+            <div className="info-block collapsible">
+              <h2
+                onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+              >
+                Описание {isDescriptionExpanded ? "▲" : "▼"}
+              </h2>
+              {isDescriptionExpanded && <p>{descriptionRu}</p>}
+            </div>
 
-          <div className="info-block collapsible">
-            <h2
-              onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-            >
-              Описание {isDescriptionExpanded ? "▲" : "▼"}
-            </h2>
-            {isDescriptionExpanded && <p>{descriptionRu}</p>}
+            <div className="info-block collapsible">
+              <h2
+                onClick={() =>
+                  setIsCharacteristicsExpanded(!isCharacteristicsExpanded)
+                }
+              >
+                Характеристики {isCharacteristicsExpanded ? "▲" : "▼"}
+              </h2>
+              {isCharacteristicsExpanded && (
+                <>
+                  {renderProductInfo("Назначение", category.join(", "))}
+                  {renderProductInfo("Тип", shortNameRu)}
+                  {renderProductInfo("Производитель", manufacturer)}
+                  {renderProductInfo("Бренд", brand.name)}
+                  {renderProductInfo("Артикул", article)}
+                  {renderProductInfo("Штрихкод", barcode)}
+                  {renderProductInfo(
+                    "Вес",
+                    sizeType === "weight" ? `${size} г` : "Н/Д"
+                  )}
+                  {renderProductInfo(
+                    "Объем",
+                    sizeType === "volume" ? `${size} мл` : "Н/Д"
+                  )}
+                </>
+              )}
+            </div>
           </div>
-
-          <div className="info-block collapsible">
-            <h2
-              onClick={() =>
-                setIsCharacteristicsExpanded(!isCharacteristicsExpanded)
-              }
-            >
-              Характеристики {isCharacteristicsExpanded ? "▲" : "▼"}
-            </h2>
-            {isCharacteristicsExpanded && (
-              <>
-                {renderProductInfo("Назначение", category.join(", "))}
-                {renderProductInfo("Тип", shortNameRu)}
-                {renderProductInfo("Производитель", manufacturer)}
-                {renderProductInfo("Бренд", brand.name)}
-                {renderProductInfo("Артикул", article)}
-                {renderProductInfo("Штрихкод", barcode)}
-                {renderProductInfo(
-                  "Вес",
-                  sizeType === "weight" ? `${size} г` : "Н/Д"
-                )}
-                {renderProductInfo(
-                  "Объем",
-                  sizeType === "volume" ? `${size} мл` : "Н/Д"
-                )}
-              </>
-            )}
-          </div>
+        </div>
+        <div className="section-cards">
+          <ProductList className="product-list" />
+        </div>
+        <div className="section-cards">
+          <ProductList className="product-list" />
         </div>
       </div>
     </div>
