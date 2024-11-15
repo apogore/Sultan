@@ -9,14 +9,15 @@
 }
 .product-page-desktop {
   display: flex;
-  flex-direction: row;
+
   max-width: 85%;
   @media screen and (max-device-width: 768px) {
     display: none;
   }
 }
+
 .product-page-mobile {
-  display: block; /* Включаем мобильный блок */
+  display: block;
 
   @media screen and (min-device-width: 769px) {
     display: none;
@@ -25,10 +26,10 @@
     position: relative;
   }
 }
+
 .product-page {
   display: flex;
-  flex-direction: row;
-  max-width: 50%;
+  max-width: 60%;
   max-height: 70%;
   margin: 0 auto;
   padding: 20px;
@@ -37,9 +38,16 @@
     display: flex;
     width: 100%;
     max-width: 100%;
-    align-items: center; /* Центруем содержимое */
+    align-items: center;
     padding: 8px;
   }
+}
+.product-informations{
+  @media screen and (min-device-width: 769px) {
+    display: flex; /* Убедитесь, что это правило присутствует */
+    flex-direction: row;
+  }
+
 }
 .product-page-mobile .product-image {
   width: 80%;
@@ -49,7 +57,6 @@
 }
 .product-page-mobile .product-image img {
   height: auto;
-  object-fit: contain;
 }
 .product-page-desktop .product-image {
   flex: 0 0 40%;
@@ -101,13 +108,13 @@ h1 {
 
   @media screen and (max-width: 768px) {
     font-size: var(--font-size-medium);
-    margin-right: 10px; /* Добавьте отступ между ценой и контролем количества, если нужно */
+    margin-right: 10px; 
   }
 }
 .quantity-cart-block {
   display: flex;
-  align-items: center; 
-  justify-content: space-between; 
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
 
   @media screen and (max-width: 768px) {
@@ -124,16 +131,17 @@ h1 {
 .action-buttons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px; /* Добавьте отступ снизу, чтобы отделить от кнопки "В корзину" */
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  gap: 30px;
 
   @media screen and (max-width: 768px) {
     flex-direction: row;
     justify-content: center;
-    gap:50px;
+    gap: 50px;
   }
 }
-.button-to-cart{
+.button-to-cart {
   @media screen and (max-width: 768px) {
     width: 50%;
     height: 50%;
@@ -148,7 +156,7 @@ h1 {
     width: 50%;
     gap: 10px;
     justify-content: center;
-    flex-direction: row; /* Убедитесь, что элементы располагаются в строку */
+    flex-direction: row;
   }
 }
 
@@ -156,7 +164,7 @@ h1 {
   overflow: hidden;
   transition: max-height 0.3s ease;
   font-size: var(--font-size-small);
-  font-weight: 300;
+  font-weight: 200;
   @media screen and (max-width: 768px) {
     margin-bottom: 10px;
   }
@@ -165,8 +173,8 @@ h1 {
   background-color: transparent;
   font-size: var(--font-size-large);
   color: transparent;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -183,18 +191,18 @@ h1 {
   }
 }
 .information {
-  max-width: 100%; /* Ограничивает ширину контейнера */
-  word-wrap: break-word; /* Перенос слов при необходимости */
-  padding: 10px; /* Добавьте отступы для комфорта */
-  box-sizing: border-box; /* Учитывает padding в общей ширине */
-  font-size: 16px; /* Можно уменьшить шрифт для мобильной версии */
-  text-align: center; /* Центрует текст в мобильной версии */
+  max-width: 100%;
+  word-wrap: break-word;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-align: center;
 
   @media screen and (max-width: 768px) {
-    max-width: 90%; /* Уменьшает ширину контейнера для мобильных */
+    max-width: 90%;
     font-size: 14px;
     text-align: center;
-    margin: 0 auto; /* Центрирует текст */
+    margin: 0 auto;
   }
 }
 .delivery-info {
@@ -202,7 +210,6 @@ h1 {
   margin: 0;
   font-size: var(--font-size-small) !important;
   @media screen and (max-width: 768px) {
-    
   }
 }
 
@@ -223,6 +230,8 @@ h1 {
 .action-buttons .price-list-button {
   background-color: transparent;
   filter: grayscale(50%) brightness(0.4);
+  max-width: 45%;
+  width: 25%;
 }
 
 .action-buttons .price-list-button .custom-button__icon {
@@ -230,4 +239,7 @@ h1 {
   height: auto;
   margin: 0;
   filter: grayscale(50%) brightness(0.9);
+}
+.product-page-desktop .section-cards {
+
 }

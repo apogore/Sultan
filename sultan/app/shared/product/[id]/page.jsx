@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./page.css";
 import Button from "../../../ui/button/button";
+import ProductList from "../../../shared/product-list/product-list.jsx";
 
 const ProductPage = ({ params }) => {
   const { id } = params;
@@ -70,11 +71,12 @@ const ProductPage = ({ params }) => {
   return (
     <div className="product-page">
       <div className="product-page-desktop">
+        <div className="product-informations">
         <div className="product-image">
           <img src={image} alt={nameRu} />
         </div>
         <div className="product-info">
-          <h1>{nameRu}</h1>
+          <p><strong>{brand.name}</strong>  {descriptionRu}</p>
 
           <div className="quantity-cart-block">
             <p className="price">{(price * quantity).toFixed(2)} ₸</p>
@@ -170,6 +172,9 @@ const ProductPage = ({ params }) => {
             )}
           </div>
         </div>
+        
+        </div>
+        
       </div>
       <div className="product-page-mobile">
         <div className="product-image">
@@ -208,9 +213,10 @@ const ProductPage = ({ params }) => {
             />
           </div>
           <div className="information">
-              При покупке от <strong>10 000 ₸ </strong>бесплатная доставка по Кокчетаву и области
-            </div>
-            <div className="action-buttons">
+            При покупке от <strong>10 000 ₸ </strong>бесплатная доставка по
+            Кокчетаву и области
+          </div>
+          <div className="action-buttons">
             <Button
               onClick={() => {
                 const link = document.createElement("a");
