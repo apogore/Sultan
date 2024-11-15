@@ -447,8 +447,6 @@ form { /* блок поиска внутри div "header-search-form"*/
     margin: 0;
     text-align: left;
     text-wrap: nowrap;
-<<<<<<< Updated upstream
-=======
 }
 
 /* мобильная версия */
@@ -612,5 +610,4 @@ form { /* блок поиска внутри div "header-search-form"*/
 .header-mobile .header-price-button img {
     width: 12px;
     height: 13px;
->>>>>>> Stashed changes
 }
