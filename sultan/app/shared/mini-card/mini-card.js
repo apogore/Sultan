@@ -1,28 +1,18 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Button from "../../ui/button/button"; // Убедитесь, что путь корректен
 import "./mini-card.css";
 
-const MiniCard = ({ className }) => {
-  const [product, setProduct] = useState(null);
 
-  useEffect(() => {
-    // Загружаем данные из JSON
-    fetch("/product.json")
-      .then((response) => response.json())
-      .then((data) => {
-        // Устанавливаем первый продукт из массива
-        setProduct(data[0]);
-      });
-  }, []);
+const MiniCard = ({ product }) => {
 
   if (!product) {
-    return <div>Loading...</div>; // Показываем индикатор загрузки
+    return null;
   }
 
   return (
-    <div className="mini-card">
+    <div className="mini-card" onClick={() => onClick(productId)}>
       {product.isPopular && <div className="mini-card__badge">Популярное</div>}
       <img
         src={product.image}
@@ -36,7 +26,10 @@ const MiniCard = ({ className }) => {
             alt={product.sizeType === "volume" ? "Bottle" : "Box"}
             className="mini-card__icon"
           />
-          {product.size} {product.sizeType === "volume" ? "мл" : "г"}
+          {product.count !== undefined
+            ? product.count + "X" + product.size
+            : product.size}{" "}
+          {product.sizeType === "volume" ? "мл" : "г"}
         </p>
         <p className="mini-card__name">
           <strong>{product.brand.name}</strong> {product.nameRu}
@@ -59,10 +52,10 @@ const MiniCard = ({ className }) => {
         <div className="mini-card__price-button">
           <p className="mini-card__price">{product.price.toFixed(2)} ₸</p>
           <Button
-            onClick={() => console.log("Товар добавлен в корзину")} // Обработчик клика
+            onClick={() => console.log("Товар добавлен в корзину")}
             text="В корзину"
-            icon="/cart.svg" // Ссылка на иконку
-            className="mini-card__button" // Пользовательский класс, если нужно
+            icon="/cart.svg"
+            className="mini-card__button"
           />
         </div>
       </div>

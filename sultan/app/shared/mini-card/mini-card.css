@@ -1,14 +1,14 @@
 .mini-card {
-  border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 32px;
-  max-width: 250px;
+  max-height: 500px;
+  max-width: 238px;
   display: flex;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06);
   position: relative;
-  flex-direction: column; 
-    align-items: center; 
+  flex-direction: column;
+  align-items: center;
 }
 
 .mini-card__badge {
@@ -23,14 +23,16 @@
 }
 
 .mini-card__image {
-  width: 50%;
+  max-height: 194px;
   height: auto;
   border-radius: 8px;
 }
 
 .mini-card__details {
   padding-top: 16px;
-
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
 }
 
 .mini-card__volume {
@@ -49,7 +51,6 @@
 }
 
 .mini-card__name {
-
   font-weight: 500; /* Полужирный с помощью численного значения */
 
   font-size: 16px;
@@ -64,14 +65,10 @@
 }
 
 .mini-card__price {
-  
   width: 100px;
   font-weight: bold;
   color: #333;
-
 }
-
-
 
 .mini-card__button {
   width: 80%;
