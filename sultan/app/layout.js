@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import ".styles/globals.css";
+import "./styles/globals.css";
 import Header from "./shared/header/header";
 import Footer from "./shared/footer/footer";
 const inter = Inter({
