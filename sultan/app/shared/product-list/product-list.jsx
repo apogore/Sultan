@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import MiniCard from "../mini-card/mini-card";
+import MiniCard from "../mini-card/mini-card.jsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import "./product-list.css";
+import "./product-list.scss";
 import { useRouter } from "next/navigation";
 
 const ProductList = () => {
