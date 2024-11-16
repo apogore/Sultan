@@ -1,13 +1,13 @@
 "use client";
 import { useRouter } from "next/navigation";
-import "./page.css"; // Импорт стилей
-
-import Header from "./shared/header/header"; // Импорт компонента заголовка
-import Footer from "./shared/footer/footer";
 import ProductList from "./shared/product-list/product-list";
-
 import PromoCarousel from "./shared/promo-carousel/promo-carousel";
 import ProductCategories from "./shared/product-categories/product-categories";
+import BestProducts from "./shared/best-products/best-products";
+import Geolocation from "./shared/geolocation/geolocation"
+import "./page.css"; 
+import "./styles/globals.css";
+
 
 const HomePage = () => {
   const handleButtonClick = () => {
@@ -65,21 +65,19 @@ const HomePage = () => {
             </div>
           </div>
           <div className="section cards">
-
-            <ProductList className="product-list" />
-
+            <ProductList />
           </div>
-
-          <ProductCategories className="product-categories" />
-
+          <div className="section categories">
+            <ProductCategories />
+          </div>
           <div className="section carousel">
-            <PromoCarousel className="carousel" />
+            <PromoCarousel />
           </div>
           <div className="section best">
-            <h3>Лучшие товары</h3>
+            <BestProducts />
           </div>
           <div className="section map">
-            <h3>Геолокация</h3>
+            <Geolocation />
           </div>
         </div>
       </div>
