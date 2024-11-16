@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import "./page.css";
+import "./page.scss";
 import Button from "../../../ui/button/button";
 import ProductList from "../../../shared/product-list/product-list.jsx";
 
@@ -60,6 +60,7 @@ const ProductPage = ({ params }) => {
     shortNameRu,
     sizeType,
     size,
+    amount,
   } = product;
 
   const renderProductInfo = (label, value) => (
@@ -76,6 +77,14 @@ const ProductPage = ({ params }) => {
             <img src={image} alt={nameRu} />
           </div>
           <div className="product-info">
+            <div
+              className={`available ${
+                amount > 0 ? "in-stock" : "out-of-stock"
+              }`}
+            >
+              {amount > 0 ? "В наличии" : "Нет в наличии"}
+            </div>
+
             <p>
               <strong>{brand.name}</strong> {descriptionRu}
             </p>
