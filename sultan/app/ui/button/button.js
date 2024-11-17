@@ -1,12 +1,12 @@
 import React from 'react';
-import './button.css'; // Импортируйте файл стилей для кнопки
+import './button.scss'; 
 
 const Button = ({ onClick, text, icon, className, style, id }) => {
   return (
     <button 
       className={`custom-button ${className}`} 
       onClick={onClick} 
-      style={style} // Позволяет передать инлайн-стили
+      style={style}
       id={id}
     >
       {text}

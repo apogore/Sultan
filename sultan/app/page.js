@@ -1,15 +1,16 @@
 "use client";
-import "./page.css"; // Импорт стилей
-import Banner from "./shared/banner/banner";
-import ProductList from "./shared/product-list/product-list";
 
+import Banner from "./shared/banner/banner";
+import ProductList from "./shared/product-list/product-list.jsx";
 import PromoCarousel from "./shared/promo-carousel/promo-carousel";
 import ProductCategories from "./shared/product-categories/product-categories";
+import "./page.css";
 
 const HomePage = () => {
-  const handleCardClick = (productId) => {
-    router.push(`/shared/product/${productId}`);
+  const handleButtonClick = () => {
+    window.location.href = window.location.href;
   };
+  const router = useRouter();
 
   return (
     <div className="container">

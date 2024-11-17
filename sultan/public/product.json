@@ -44,13 +44,14 @@
     "price": 48.76,
     "amount": 200,
     "isPopular": true
-  },{
+  },
+  {
     "id": 3,
     "shortNameRu": "ARIEL",
     "shortNameEn": "AOS",
     "nameRu": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     "nameEn": "Dishwashing liquid AOS",
-    "image": "/ariel.webp",
+    "image": "/ariel.png",
     "sizeType": "box",
     "count": 15,
     "size": 28.8,
@@ -74,7 +75,7 @@
     "shortNameEn": "Fairy",
     "nameRu": "Порошок стиральный Автомат 100 пятен COMPACT",
     "nameEn": "Dishwashing liquid Lemon Fairy",
-    "image": "/BiMAX.webp",
+    "image": "/BiMAX.png",
     "sizeType": "box",
     "manufacturer":"Нэфис",
     "size": 1500,
@@ -136,13 +137,14 @@
     "price": 48.76,
     "amount": 200,
     "isPopular": true
-  },{
+  },
+  {
     "id": 3,
     "shortNameRu": "ARIEL",
     "shortNameEn": "AOS",
     "nameRu": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
     "nameEn": "Dishwashing liquid AOS",
-    "image": "/ariel.webp",
+    "image": "/ariel.png",
     "sizeType": "box",
     "count": 15,
     "size": 28.8,
@@ -166,7 +168,7 @@
     "shortNameEn": "Fairy",
     "nameRu": "Порошок стиральный Автомат 100 пятен COMPACT",
     "nameEn": "Dishwashing liquid Lemon Fairy",
-    "image": "/BiMAX.webp",
+    "image": "/BiMAX.png",
     "sizeType": "box",
     "manufacturer":"Нэфис",
     "size": 1500,

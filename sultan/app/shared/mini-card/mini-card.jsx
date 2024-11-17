@@ -1,18 +1,16 @@
 "use client";
 
 import React from "react";
-import Button from "../../ui/button/button"; // Убедитесь, что путь корректен
-import "./mini-card.css";
+import Button from "../../ui/button/button";
+import "./mini-card.scss";
 
-
-const MiniCard = ({ product }) => {
-
+const MiniCard = ({ product, onClick }) => {
   if (!product) {
     return null;
   }
 
   return (
-    <div className="mini-card" onClick={() => onClick(productId)}>
+    <div className="mini-card" onClick={() => onClick(product.id)}>
       {product.isPopular && <div className="mini-card__badge">Популярное</div>}
       <img
         src={product.image}
@@ -48,6 +46,7 @@ const MiniCard = ({ product }) => {
             <strong>{product.brand.name}</strong>
           </p>
         </div>
+
 
         <div className="mini-card__price-button">
           <p className="mini-card__price">{product.price.toFixed(2)} ₸</p>
