@@ -108,14 +108,13 @@ button:hover {
     border-radius: 100px;
     transition: 0.3s ease;
     margin: 0 5px; 
+    
 }
 
-/* Стиль для активной точки */
 .swiper-pagination-bullet-active {
     background-color: #fff; 
     width: 26px;
 }
-/* Стиль для кнопок слайдера */
 .carousel {
     position: relative;
 }
@@ -132,14 +131,14 @@ button:hover {
 }
 
 .swiper-button-next {
-    right: -35px; /* Половина кнопки выходит за границу слайда */
+    right: -35px; 
 }
 .swiper-button-next::after {
     color: #FFC85E;
     font-size: 18px;
 }
 .swiper-button-prev {
-    left: -35px; /* Половина кнопки выходит за границу слайда */
+    left: -35px; 
 }
 
 .swiper-button-prev::after {

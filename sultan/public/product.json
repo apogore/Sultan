@@ -44,7 +44,8 @@
     "price": 48.76,
     "amount": 200,
     "isPopular": true
-  },{
+  },
+  {
     "id": 3,
     "shortNameRu": "ARIEL",
     "shortNameEn": "AOS",
@@ -136,7 +137,8 @@
     "price": 48.76,
     "amount": 200,
     "isPopular": true
-  },{
+  },
+  {
     "id": 3,
     "shortNameRu": "ARIEL",
     "shortNameEn": "AOS",
