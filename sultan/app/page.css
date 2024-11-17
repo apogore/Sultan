@@ -2,6 +2,11 @@
     width: 67%;
     max-width: 1367px;
     margin: 0 auto;
+    @media screen and (max-device-width: 768px) {
+        width: 90%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
 }
 .section { /*Разграничил секции, при их реализации стоит убрать отступы и границы */
     padding: 4px;
@@ -16,8 +21,9 @@
     position: relative;
     overflow: visible;
 }
+
 .banner_image {
-    background-image: url('../public/banner_home.png');
+    background-image: url('../public/banner_home.webp');
     position: absolute;
     top: 0;
     left: -50%;
