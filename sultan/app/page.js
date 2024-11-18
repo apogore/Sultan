@@ -20,6 +20,7 @@ const HomePage = () => {
           <ProductList className="product-list" />
           <ProductCategories className="product-categories" />
           <PromoCarousel className="carousel" />
+          <PromoCarousel />
           <div className="section best">
             <h3>Лучшие товары</h3>
           </div>
