@@ -10,16 +10,16 @@
   }
 
   .swiper-pagination-bullet {
+    margin: 0 5px;
     width: 16px;
     height: 8px;
     background-color: #3f4e65;
     border-radius: 100px;
     transition: 0.3s ease;
-    margin: 0 5px;
 
     &-active {
-      background-color: #fff;
       width: 26px;
+      background-color: #fff;
     }
   }
 
@@ -58,10 +58,10 @@
 }
 
 .slide {
-  display: flex;
-  aspect-ratio: 1366 / 500;
-  max-height: 500px;
   position: relative;
+  display: flex;
+  max-height: 500px;
+  aspect-ratio: 1366 / 500;
   border-radius: 10px;
 
   &#slide1 {
@@ -76,22 +76,22 @@
   }
 
   .image-background {
-    background-image: url(/carousel1.png);
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    background-position: right;
     position: absolute;
     height: 100%;
     width: 100%;
+    background-position: right;
+    background-image: url(/carousel1.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
     border-radius: 10px;
   }
 
   .text-content {
+    margin: 80px auto auto 110px;
     display: flex;
+    width: 60%;
     flex-direction: column;
     color: #fff;
-    width: 60%;
-    margin: 80px auto auto 110px;
     z-index: 1;
 
     p.end-date {
@@ -133,9 +133,9 @@
       margin: 50px 0 50px;
       max-width: 343px;
       max-height: 90px;
+      aspect-ratio: 343 / 90;
       width: 100%;
       height: 100%;
-      aspect-ratio: 343 / 90;
       color: #fff;
       font-size: 18px;
       font-weight: 700;
@@ -236,15 +236,6 @@
 
 @media screen and (max-width: 768px) and (min-width: 375px) {
   .carousel {
-    .swiper-pagination-bullet {
-      width: 20px;
-      height: 10px;
-
-      &-active {
-        width: 36px;
-      }
-    }
-
     .swiper-button-next,
     .swiper-button-prev {
       width: 52px;
@@ -274,8 +265,8 @@
     }
 
     .text-content {
-      width: 70%;
       margin: 32px 40px auto 32px;
+      width: 70%;
 
       p.end-date {
         font-size: 12px;
