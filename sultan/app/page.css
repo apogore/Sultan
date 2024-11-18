@@ -124,13 +124,13 @@
     
 }
 .banner_info .circle {
-    width: 39px; /* Ширина кружка */
-    height: 39px; /* Высота кружка */
+    width: 39px;
+    height: 39px;
     background-color: #FFC85E;
-    border-radius: 50%; /* Округление до круга */
-    display: flex; /* Используйте flex для центрирования содержимого */
-    align-items: center; /* Центрируем по вертикали */
-    justify-content: center; /* Центрируем по горизонтали */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto ;
     margin-right: 10px;
 }

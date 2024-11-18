@@ -20,7 +20,7 @@ const PromoCarousel = () => {
         prevEl: '.swiper-button-prev', 
       }}
       pagination={{ clickable: true }}
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
+      // autoplay={{ delay: 4000, disableOnInteraction: false }}
 
       
     >
