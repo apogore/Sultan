@@ -69,9 +69,7 @@ const HomePage = () => {
 
           <ProductCategories className="product-categories" />
 
-          <div className="section carousel">
-            <PromoCarousel className="carousel" />
-          </div>
+            <PromoCarousel />
           <div className="section best">
             <h3>Лучшие товары</h3>
           </div>
