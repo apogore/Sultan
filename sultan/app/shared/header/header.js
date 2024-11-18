@@ -93,7 +93,7 @@ const Header = () => {
                         </div>
 
                         <div className="header-operator-photo">
-                            <div class="header-operator-shadow-point" />
+                            <div className="header-operator-shadow-point" />
                             <img src="/operator.svg" alt="Заказать звонок" width={74} height={113} />
                         </div>
                     </div>

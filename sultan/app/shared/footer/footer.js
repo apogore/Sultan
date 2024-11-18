@@ -13,9 +13,9 @@ const Footer = () => {
             Компания «Султан» — снабжаем розничные магазины товарами "под ключ"
             в Кокшетау и Акмолинской области
           </p>
-          <div class="subscribe-container">
+          <div className="subscribe-container">
             <p>Подпишись на скидки и акции</p>
-            <div class="subscribe-form">
+            <div className="subscribe-form">
               <input type="email" placeholder="Введите ваш E-mail" />
               <button type="submit">
                 <span>➔</span>
