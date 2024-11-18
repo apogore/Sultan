@@ -116,7 +116,7 @@ const Header = () => {
             </div>
 
             <div className="header-mobile">
-                <div class="header-mobile-1">
+                <div className="header-mobile-1">
 
                     <Button
                         onClick={() => setPopup((popup) => !popup)}

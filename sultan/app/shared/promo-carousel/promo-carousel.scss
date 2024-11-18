@@ -1,5 +1,7 @@
 :root {
-  --swiper-pagination-bottom: 24px;
+  .carousel {
+    --swiper-pagination-bottom: 24px;
+  }
 }
 
 .carousel {
@@ -156,7 +158,9 @@
 /* Медиа-запросы */
 @media screen and (max-width: 768px) {
   :root {
-    --swiper-pagination-bottom: 0px;
+    .carousel {
+      --swiper-pagination-bottom: 0px;
+    }
   }
 
   .carousel {

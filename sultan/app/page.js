@@ -7,11 +7,6 @@ import ProductCategories from "./shared/product-categories/product-categories";
 import "./page.css";
 
 const HomePage = () => {
-  const handleButtonClick = () => {
-    window.location.href = window.location.href;
-  };
-  const router = useRouter();
-
   return (
     <div className="container">
       <div className="content">
@@ -19,7 +14,6 @@ const HomePage = () => {
           <Banner />
           <ProductList className="product-list" />
           <ProductCategories className="product-categories" />
-          <PromoCarousel className="carousel" />
           <PromoCarousel />
           <div className="section best">
             <h3>Лучшие товары</h3>
