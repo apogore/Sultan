@@ -20,12 +20,12 @@ const PromoCarousel = () => {
         prevEl: '.swiper-button-prev', 
       }}
       pagination={{ clickable: true }}
-      // autoplay={{ delay: 4000, disableOnInteraction: false }}
+      autoplay={{ delay: 4000, disableOnInteraction: false }}
 
       
     >
       <SwiperSlide>
-        <div className="slide" id="promo1">
+        <div className="slide" id="slide1">
           <div className="text-content">
             <p className="end-date">*Акция действует <br className="mobile-br" />до 04/09/22</p>
             <h1 className="title">

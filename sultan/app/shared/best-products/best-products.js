@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import "./best-products.css";
+import "./best-products.scss";
 import { logoData } from "./constans";
 
 // Функция для группировки данных по два элемента
@@ -31,11 +31,11 @@ const BestProducts = () => {
         loop={true}
         spaceBetween={10}
         breakpoints={{
-          450: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
+          320: { slidesPerView: 1 },
+          450: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
           1024: { slidesPerView: 3 },
-          1440: { slidesPerView: 4 },
-          1920: { slidesPerView: 5 }
+          1366: { slidesPerView: 4 },
         }}
       >
         <ul>

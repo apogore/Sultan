@@ -1,0 +1,65 @@
+@import '/global.css';
+
+.best-products {
+  h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--yellow-color);
+    margin: 16px 0;
+
+    span {
+      font-weight: 500;
+      color: var(--black-color);
+    }
+  }
+
+  p {
+    font-weight: 300;
+    color: var(--gray-color);
+    margin: 16px 0;
+  }
+
+  .slide {
+    height: 70px;
+    width: 100%;
+    .wrap-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 70px;
+    }
+
+    .img-container {
+      border-radius: 10px;
+      height: 100%;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.03);
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 8px;
+    margin: 0 5px;
+    background-color: var(--gray-color);
+    border-radius: 100px;
+    transition: 0.3s ease;
+
+    &-active {
+      width: 26px;
+      background-color: #ffc85e;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 0px;
+  }
+}
