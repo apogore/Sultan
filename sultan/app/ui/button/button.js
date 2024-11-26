@@ -1,13 +1,12 @@
 import React from 'react';
 import './button.scss'; 
 
-const Button = ({ onClick, text, icon, className, style, id }) => {
+const Button = ({ onClick, text, icon, className, style }) => {
   return (
     <button 
       className={`custom-button ${className}`} 
       onClick={onClick} 
       style={style}
-      id={id}
     >
       {text}
       {icon && 

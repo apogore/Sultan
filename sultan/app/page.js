@@ -6,7 +6,7 @@ import PromoCarousel from "./shared/promo-carousel/promo-carousel";
 import ProductCategories from "./shared/product-categories/product-categories";
 import BestProducts from "./shared/best-products/best-products";
 import Geolocation from "./shared/geolocation/geolocation";
-import "./page.css";
+import "./page.scss";
 
 const HomePage = () => {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { productCategoriesData } from "@/app/shared/product-categories-data.js";
-import "./product-categories.css";
+import "./product-categories.scss";
 
 const ProductCategories = () => {
   const categoryButtonClick = () => {

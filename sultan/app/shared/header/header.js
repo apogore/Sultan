@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { navigationLinks } from "@/app/shared/navigation-links.js";
 import Button from "../../ui/button/button";
-import "./header.css";
+import "./header.scss";
 import "../../ui/button/button.css";
 
 const Header = () => {
@@ -102,8 +102,8 @@ const Header = () => {
                 <img
                   src="/search-button.svg"
                   alt="Поиск"
-                  width={39}
-                  height={39}
+                  width={16}
+                  height={16}
                 />
               </button>
             </form>

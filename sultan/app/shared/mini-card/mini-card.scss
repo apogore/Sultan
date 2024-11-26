@@ -1,23 +1,25 @@
+@import '../../styles/vars.scss';
+
 .mini-card {
     border-radius: 8px;
     padding: 32px;
     max-height: 500px;
     max-width: 238px;
     display: flex;
-    background-color: #fff;
-    box-shadow:  0px 0px 2px 2px rgba(116, 86, 4, 0.116);
+    background-color: $white-color;
+    box-shadow:  0px 0px 2px 2px $card-border-color;
     position: relative;
     flex-direction: column;
     align-items: center;
-    margin:4px;
+    margin: 4px;
     
     
     .mini-card__badge {
       position: absolute;
       top: 8px;
       left: 8px;
-      background-color: #4caf50;
-      color: #fff;
+      background-color: $green-color;
+      color: $white-color;
       padding: 4px 8px;
       font-size: 12px;
       border-radius: 4px;
@@ -38,7 +40,7 @@
   
     .mini-card__volume {
       font-size: 14px;
-      color: #757575;
+      color: $gray-color;
       margin-bottom: 8px;
       display: flex;
       align-items: center;
@@ -60,14 +62,14 @@
     .mini-card__barcode,
     .mini-card__manufacturer {
       font-size: 14px;
-      color: #757575;
+      color: $gray-color;
       margin-bottom: 4px;
     }
   
     .mini-card__price {
       width: 100px;
       font-weight: bold;
-      color: #333;
+      color: $black-color;
     }
   
     .mini-card__button {
@@ -82,12 +84,12 @@
     }
   
     .mini-card__button:hover {
-      background-color: #ffa000;
+      background-color: $button-hover-bg-color;
     }
   
     .mini-card__label {
       font-size: 14px;
-      color: #757575;
+      color: $gray-color;
       margin-bottom: 4px;
     }
   }

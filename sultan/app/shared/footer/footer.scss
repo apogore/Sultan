@@ -1,24 +1,14 @@
-:root {
-  --footer-bg-color: #3b4b61;
-  --footer-text-color: #ffffff;
-  --highlight-color: #fbc44b;
-  --button-bg-color: #ffc85e;
-  --button-hover-bg-color: #f3a50d;
-  --input-placeholder-color: #a9a9a9;
-  --font-size-small: 8px;
-  --font-size-medium: 10px;
-  --font-size-large: 12px;
-}
+@import '../../styles/vars.scss';
 
 .footer {
   width: 100%;
   padding: 70px 0 116px;
-  background-color: var(--footer-bg-color);
-  color: var(--footer-text-color);
-  font-size: var(--font-size-medium);
+  background-color: $footer-bg-color;
+  color: $white-color;
+  font-size: $font-size-xsmall;
   line-height: 1.5;
   font-weight: 200;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $mobile-max) {
     padding: 15px;
   }
 
@@ -38,7 +28,7 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-areas:
       "sec1 sec2 sec3 sec4 sec5";
-  @media screen and (max-device-width: 768px) {
+  @media screen and (max-device-width: $mobile-max) {
     width: 100%;
   }
   @media (max-width: 1200px) {
@@ -48,7 +38,7 @@
       "sec1 sec1 sec2"
       "sec5 sec4 sec3"
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: $mobile-mid) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
@@ -104,25 +94,25 @@
   .footer-section:nth-child(5) {
     order: 2;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $mobile-max) {
     .download-price-list {
       display: none;
     }
   }
   p {
-    font-size: var(--font-size-medium);
+    font-size: $font-size-xsmall;
     line-height: 1.3;
     max-width: 250px;
   }
   h3 {
-    font-size: var(--font-size-small);
+    font-size: $font-size-xsmall;
     font-weight: 500;
     margin-bottom: 10px;
   }
 }
 .footer-list {
   list-style-type: none;
-  font-size: var(--font-size-small);
+  font-size: $font-size-xsmall;
   padding: 0;
   li {
     margin-bottom: 13%;
@@ -145,7 +135,7 @@
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: var(--highlight-color);
+  background-color: $highlight-color;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -153,7 +143,7 @@
 
 .footer-list a:hover,
 .footer-link:hover {
-  color: var(--highlight-color);
+  color: $highlight-color;
 }
 
 .footer-list a:hover::before,
@@ -195,20 +185,20 @@
 
 .subscribe-container {
   text-align: left;
-  background-color: var(--footer-bg-color);
+  background-color: $footer-bg-color;
 
   max-width: 300px;
-  font-size: var(--font-size-small);
+  font-size: $font-size-xsmall;
 
   p {
-    color: var(--footer-text-color);
-    font-size: var(--font-size-small);
+    color: $white-color;
+    font-size: $font-size-xsmall;
     margin-bottom: 8px;
   }
 }
 
 .price-list-button {
-  font-size: var(--font-size-small) !important;
+  font-size: $font-size-xsmall !important;
   height: 20%;
 
   img {
@@ -220,7 +210,7 @@
 .subscribe-form {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: $white-color;
   border-radius: 50px;
   padding: 5px 10px;
 
@@ -228,19 +218,19 @@
     border: none;
     outline: none;
     padding: 8px;
-    font-size: var(--font-size-small);
+    font-size: $font-size-xsmall;
     flex-grow: 1;
     border-radius: 50px;
-    color: var(--input-placeholder-color);
+    color: $input-placeholder-color;
     max-width: 180px;
   }
 
   input::placeholder {
-    color: var(--input-placeholder-color);
+    color: $input-placeholder-color;
   }
 
   button {
-    background-color: var(--highlight-color);
+    background-color: $highlight-color;
     border: none;
     border-radius: 50%;
     width: 30px;
@@ -251,18 +241,18 @@
 }
 
 .availability {
-  font-size: var(--font-size-small) !important;
+  font-size: $font-size-xsmall !important;
 
   line-height: 1;
   margin-top: 0;
 }
 
 .work-hours {
-  font-size: var(--font-size-small);
+  font-size: $font-size-xsmall;
 }
 
 .call-order {
-  font-size: var(--font-size-small);
+  font-size: $font-size-xsmall;
   margin-bottom: 15px;
   text-decoration: underline;
 }

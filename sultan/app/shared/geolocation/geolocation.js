@@ -1,5 +1,5 @@
 import React from "react";
-import "./geolocation.css";
+import "./geolocation.scss";
 
 const Geolocation = () => {
   return (

@@ -1,3 +1,5 @@
+@import '../../styles/vars.scss';
+
 :root {
   .carousel {
     --swiper-pagination-bottom: 24px;
@@ -15,13 +17,13 @@
     margin: 0 5px;
     width: 16px;
     height: 8px;
-    background-color: #3f4e65;
+    background-color: $gray-color;
     border-radius: 100px;
     transition: 0.3s ease;
 
     &-active {
       width: 26px;
-      background-color: #fff;
+      background-color: $white-color;
     }
   }
 
@@ -31,14 +33,14 @@
     top: 50%;
     width: 68px;
     height: 68px;
-    background-color: white;
+    background-color: $white-color;
     border-radius: 100%;
     cursor: pointer;
     z-index: 10;
 
     &::after {
       font-size: 18px;
-      color: #ffc85e;
+      color: $yellow-color;
     }
   }
 
@@ -46,7 +48,7 @@
     right: -36px;
 
     &::after {
-      color: #ffc85e;
+      color: $yellow-color;
     }
   }
 
@@ -54,7 +56,7 @@
     left: -36px;
 
     &::after {
-      color: #ffc85e;
+      color: $yellow-color;
     }
   }
 }
@@ -93,7 +95,7 @@
     display: flex;
     width: 60%;
     flex-direction: column;
-    color: #fff;
+    color: $white-color;
     z-index: 1;
 
     p.end-date {
@@ -138,18 +140,18 @@
       aspect-ratio: 343 / 90;
       width: 100%;
       height: 100%;
-      color: #fff;
+      color: $white-color;
       font-size: 18px;
       font-weight: 700;
       letter-spacing: 1px;
-      background-color: #ffc85e;
+      background-color: $yellow-color;
       border: none;
       border-radius: 80px;
       cursor: pointer;
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #ffa500;
+        background-color: $button-active-bg-color;
       }
     }
   }
@@ -169,7 +171,7 @@
     }
 
     .swiper-pagination-bullet-active {
-      background-color: #ffc85e;
+      background-color: $yellow-color;
     }
 
     .swiper-button-next,
@@ -234,7 +236,7 @@
 
   .swiper-button-next::after,
   .swiper-button-prev::after {
-    color: #ffc85e;
+    color: $yellow-color;
   }
 }
 

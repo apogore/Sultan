@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import "./footer.css";
+import "./footer.scss";
 import Button from "../../ui/button/button";
 const Footer = () => {
   return (

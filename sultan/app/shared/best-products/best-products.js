@@ -20,9 +20,9 @@ const BestProducts = () => {
 
   return (
     <div className="best-products">
-      <h1>
+      <h2>
         ЛУЧШИЕ <span>ТОВАРЫ</span>
-      </h1>
+      </h2>
       <p>От ведущих мировых брендов</p>
 
       <Swiper

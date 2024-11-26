@@ -1,21 +1,23 @@
-@import '/global.css';
+@import '../../styles/vars.scss';
 
 .best-products {
-  h1 {
+  margin: 100px 0;
+  
+  h2 {
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--yellow-color);
+    color: $yellow-color;
     margin: 16px 0;
 
     span {
       font-weight: 500;
-      color: var(--black-color);
+      color: $black-color;
     }
   }
 
   p {
     font-weight: 300;
-    color: var(--gray-color);
+    color: $gray-color;
     margin: 16px 0;
   }
 
@@ -49,7 +51,7 @@
     width: 16px;
     height: 8px;
     margin: 0 5px;
-    background-color: var(--gray-color);
+    background-color: $gray-color;
     border-radius: 100px;
     transition: 0.3s ease;
 
