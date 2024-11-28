@@ -21,14 +21,14 @@ const Banner = () => {
           косметика <br />и хозтовары
         </h1>
         <h2 className="desktop">
-          <span>оптом</span> по Кекчетаву и области
+          <span>оптом</span> по Кокчетаву и области
         </h2>
         <div className="mobile mblur">
         <h1 className="mobile">
           Бытовая химия, косметика <br />
           и хозтовары
         </h1>
-        <h2 className="mobile">оптом по Кекчетаву и области</h2>
+        <h2 className="mobile">оптом по Кокчетаву и области</h2>
         </div>
         <button className="btn" onClick={handleButtonClick}>
           В КАТАЛОГ

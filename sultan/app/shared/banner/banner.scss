@@ -60,16 +60,18 @@
       line-height: 110%;
     }
 
-    h2 {
+    h2.desktop {
       margin-top: 40px;
       margin-left: 5px;
       font-size: 30px;
       font-weight: 700;
       line-height: 150%;
       text-transform: uppercase;
+      color: $white-color;
 
       span {
         font-weight: 800;
+        color: $white-color;
       }
     }
 

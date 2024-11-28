@@ -1,15 +1,7 @@
 @import '../../styles/vars.scss';
 
 .product-list {
-    h2 {
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-  
-    h2 span {
-      color: $highlight-color;
-      font-weight: 800;
-    }
+  margin-top: 100px;
   
     .wrapper {
       display: flex;
@@ -37,8 +29,8 @@
   
   .wrapper_product {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    align-items: stretch;
+    justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 5px;

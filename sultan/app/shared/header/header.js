@@ -1,9 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import Link from 'next/link';
 import { navigationLinks } from "@/app/shared/navigation-links.js";
 import Button from "../../ui/button/button";
+import Search from "../../ui/search/search";
 import "./header.scss";
-import "../../ui/button/button.css";
+import "../../ui/button/button.scss";
+import "../../ui/search/search.scss";
 
 const Header = () => {
   const catalogButtonClick = () => {
@@ -21,15 +24,6 @@ const Header = () => {
 
   const [popup, setPopup] = useState(false);
 
-  function MakeNavigationList() {
-    const navigationList = navigationLinks.map((navigationLink) => (
-      <li className="header-navigation-link" key={navigationLink.ref}>
-        <a href={navigationLink.ref}>{navigationLink.name}</a>
-      </li>
-    ));
-    return navigationList;
-  }
-
   return (
     <header className="header">
       <div className="header-desktop">
@@ -46,7 +40,7 @@ const Header = () => {
             <div className="header-mail">
               <img src="/mail-icon.svg" alt="geo" width={17} height={14} />
               <p>
-                <a href="mailto:opt.sultan@mail.ru">opt.sultan@mail.ru</a>
+                <Link href="mailto:opt.sultan@mail.ru">opt.sultan@mail.ru</Link>
               </p>
               <p className="header-signature">На связи в любое время</p>
             </div>
@@ -55,7 +49,13 @@ const Header = () => {
           <section></section>
 
           <nav className="header-navigation">
-            <ul>{MakeNavigationList()}</ul>
+            <ul>
+              {navigationLinks.map((navigationLink) => (
+                <li className="header-navigation-link" key={navigationLink.href}>
+                  <Link href={navigationLink.href}>{navigationLink.name}</Link>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
 
@@ -63,7 +63,7 @@ const Header = () => {
 
         <div className="header-section-2">
           <div className="header-logo-sultan">
-            <a href="/" className="logo-sultan-link">
+            <Link href="/" className="logo-sultan-link">
               <img
                 src="/logo-sultan.svg"
                 alt="Султан"
@@ -71,7 +71,7 @@ const Header = () => {
                 height={66}
                 className="logo-sultan"
               />
-            </a>
+            </Link>
           </div>
 
           <div className="header-catalog">
@@ -90,24 +90,14 @@ const Header = () => {
             </button>
           </div>
 
-          <div className="header-search-form">
-            <form>
-              <input
-                type="text"
-                id="searchInput"
-                placeholder="Поиск..."
-                className="header-search-form-input"
-              />
-              <button type="submit" className="header-search-form-button">
-                <img
-                  src="/search-button.svg"
-                  alt="Поиск"
-                  width={16}
-                  height={16}
-                />
-              </button>
-            </form>
-          </div>
+          <Search
+            className="header-search-form"
+            inputType="text"
+            id="searchInput"
+            placeholder="Поиск..."
+            onClick={() => (window.location.href = window.location.href)}
+            icon="/search-button.svg"
+          />
 
           <div className="header-operator">
             <div className="header-operator-info">
@@ -116,9 +106,9 @@ const Header = () => {
                 время работы: 9:00-20:00
               </p>
               <p className="header-signature">
-                <a href="tel:77774900091" className="order-call-link">
+                <Link href="tel:77774900091" className="order-call-link">
                   <b>Заказать звонок</b>
-                </a>
+                </Link>
               </p>
             </div>
 
@@ -152,12 +142,12 @@ const Header = () => {
 
           <div className="header-cart">
             <img src="/cart-icon.svg" alt="Корзина" width={51} height={39} />
-            <a href="/cart">
+            <Link href="/cart">
               <p className="header-signature">Корзина</p>
               <p>
                 <b>12 478 ₸</b>
               </p>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -171,7 +161,7 @@ const Header = () => {
           />
 
           <div className="header-logo-sultan">
-            <a href="/" className="logo-sultan-link">
+            <Link href="/" className="logo-sultan-link">
               <img
                 src="/logo-sultan.svg"
                 alt="Султан"
@@ -179,7 +169,7 @@ const Header = () => {
                 height={41}
                 className="logo-sultan"
               />
-            </a>
+            </Link>
           </div>
 
           <Button
@@ -198,81 +188,77 @@ const Header = () => {
             text="Каталог"
             icon="/catalog_icon_mobile.svg"
           />
-
-          <div className="header-search-form">
-            <form>
-              <input
-                type="text"
-                id="searchInput"
-                placeholder="Поиск"
-                className="header-search-form-input"
-              />
-              <button type="submit" className="header-search-form-button">
-                <img
-                  src="/search_icon_mobile.svg"
-                  alt="Поиск"
-                  width={12}
-                  height={12}
-                />
-              </button>
-            </form>
-          </div>
+          <Search
+            className="header-search-form"
+            inputType="text"
+            id="searchInput"
+            placeholder="Поиск..."
+            onClick={() => (window.location.href = window.location.href)}
+            icon="/search_icon_mobile.svg"
+          />
         </div>
+      
 
-        <hr />
+      <hr />
 
-        {popup && (
-          <div className="popup-menu-content">
-            <div className="header-address">
-              <img src="/geo-icon.svg" alt="geo" width={16} height={18} />
-              <p>
-                <b>г. Кокчетав, ул. Ж. Ташенова 129Б</b>
-              </p>
-              <p className="header-signature">(Рынок Восточный)</p>
-            </div>
-
-            <div className="header-mail">
-              <img src="/mail-icon.svg" alt="geo" width={17} height={14} />
-              <p>
-                <a href="mailto:opt.sultan@mail.ru">opt.sultan@mail.ru</a>
-              </p>
-              <p className="header-signature">На связи в любое время</p>
-            </div>
-
-            <div className="header-sales-dept">
-              <img src="/phone_icon.svg" alt="geo" width={15} height={15} />
-              <p>Отдел продаж</p>
-              <p className="header-signature">+7 (777) 490-00-91</p>
-              <p className="header-signature-2">время работы: 9:00-20:00</p>
-            </div>
-
-            <div className="header-order-call">
-              <Button
-                onClick={() => (window.location.href = window.location.href)}
-                className="header-order-call-button"
-                icon="/phone_icon_filled.svg"
-              />
-              <p className="header-signature">
-                <a href="tel:77774900091" className="order-call-link">
-                  Заказать звонок
-                </a>
-              </p>
-            </div>
-
-            <nav className="header-navigation">
-              <h4>Меню сайта:</h4>
-              <ul>{MakeNavigationList()}</ul>
-            </nav>
-
-            <Button
-              onClick={priceFileDownload}
-              className="header-price-button"
-              text="Прайс-лист"
-              icon="/download-icon.svg"
-            />
+      {popup && (
+        <div className="popup-menu-content">
+          <div className="header-address">
+            <img src="/geo-icon.svg" alt="geo" width={16} height={18} />
+            <p>
+              <b>г. Кокчетав, ул. Ж. Ташенова 129Б</b>
+            </p>
+            <p className="header-signature">(Рынок Восточный)</p>
           </div>
-        )}
-      </div>
+
+          <div className="header-mail">
+            <img src="/mail-icon.svg" alt="geo" width={17} height={14} />
+            <p>
+              <Link href="mailto:opt.sultan@mail.ru">opt.sultan@mail.ru</Link>
+            </p>
+            <p className="header-signature">На связи в любое время</p>
+          </div>
+
+          <div className="header-sales-dept">
+            <img src="/phone_icon.svg" alt="geo" width={15} height={15} />
+            <p>Отдел продаж</p>
+            <p className="header-signature">+7 (777) 490-00-91</p>
+            <p className="header-signature-2">время работы: 9:00-20:00</p>
+          </div>
+
+          <div className="header-order-call">
+            <Button
+              onClick={() => (window.location.href = window.location.href)}
+              className="header-order-call-button"
+              icon="/phone_icon_filled.svg"
+            />
+            <p className="header-signature">
+              <Link href="tel:77774900091" className="order-call-link">
+                Заказать звонок
+              </Link>
+            </p>
+          </div>
+
+          <nav className="header-navigation">
+            <h4>Меню сайта:</h4>
+            <ul>
+              {navigationLinks.map((navigationLink) => (
+                <li className="header-navigation-link" key={navigationLink.href}>
+                  <Link href={navigationLink.href}>{navigationLink.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <Button
+            onClick={priceFileDownload}
+            className="header-price-button"
+            text="Прайс-лист"
+            icon="/download-icon.svg"
+          />
+        </div>
+      )}
+    </div>
     </header>
   );
 };

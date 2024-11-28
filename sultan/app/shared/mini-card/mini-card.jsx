@@ -35,15 +35,15 @@ const MiniCard = ({ product, onClick }) => {
         <div className="mini-card__manufacturer-brand-info">
           <p>
             <span className="mini-card__label">Штрихкод:</span>{" "}
-            <strong>{product.barcode}</strong>
+            {product.barcode}
           </p>
           <p>
             <span className="mini-card__label">Производитель:</span>{" "}
-            <strong>{product.manufacturer}</strong>
+            {product.manufacturer}
           </p>
           <p>
             <span className="mini-card__label">Бренд:</span>{" "}
-            <strong>{product.brand.name}</strong>
+            {product.brand.name}
           </p>
         </div>
 
