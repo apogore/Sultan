@@ -19,7 +19,7 @@ const ProductPage = ({ params }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/product.json");
+        const response = await fetch("/mini-card/product.json");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
         const productData = data.find((item) => item.id === parseInt(id));
@@ -91,7 +91,7 @@ const ProductPage = ({ params }) => {
                 <Button
                   onClick={addToCart}
                   text="В корзину"
-                  icon="/cart.svg"
+                  icon="/icons/cart.svg"
                   className="button-to-cart"
                 />
             </div>
@@ -99,7 +99,7 @@ const ProductPage = ({ params }) => {
             <div className="action-buttons">
               <Button
                 onClick={() => navigator.share({ url: window.location.href })}
-                icon="/share.svg"
+                icon="/icons/share.svg"
                 className="button-share"
               />
               <p className="delivery-info">
@@ -116,7 +116,7 @@ const ProductPage = ({ params }) => {
                   document.body.removeChild(link);
                 }}
                 text="Прайс-лист"
-                icon={"/download.svg"}
+                icon={"/icons/download.svg"}
                 className="price-list-button"
               />
             </div>
@@ -135,7 +135,7 @@ const ProductPage = ({ params }) => {
                 onClick={() => setIsDescriptionExpanded((isDescriptionExpanded) => !isDescriptionExpanded)}
                 className="expanding-info-button"
                 text="Описание"
-                icon={isDescriptionExpanded ? "/polygon_up.svg" : "/polygon_down.svg"}
+                icon={isDescriptionExpanded ? "/icons/polygon_up.svg" : "/icons/polygon_down.svg"}
               />
 
               {isDescriptionExpanded && <p>{product.descriptionRu}</p>}
@@ -148,7 +148,7 @@ const ProductPage = ({ params }) => {
                 onClick={() => setIsCharacteristicsExpanded((isCharacteristicsExpanded) => !isCharacteristicsExpanded)}
                 className="expanding-info-button"
                 text="Характеристики"
-                icon={isCharacteristicsExpanded ? "/polygon_up.svg" : "/polygon_down.svg"}
+                icon={isCharacteristicsExpanded ? "/icons/polygon_up.svg" : "/icons/polygon_down.svg"}
               />
 
               {isCharacteristicsExpanded && (

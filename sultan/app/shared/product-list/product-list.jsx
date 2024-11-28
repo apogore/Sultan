@@ -20,7 +20,7 @@ const ProductList = () => {
   };
 
   useEffect(() => {
-    fetch("/product.json")
+    fetch("/mini-card/product.json")
       .then((response) => response.json())
       .then((data) => setProducts(data));
 
