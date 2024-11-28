@@ -1,42 +1,42 @@
 export const logoData = [
     {
-        src: '/airwick.png',
+        src: '/best-products/airwick.png',
         alt: 'airwick',
     },
     {
-        src: '/fresh.png',
+        src: '/best-products/fresh.png',
         alt: 'fresh',
     },
     {
-        src: '/sibiar.png',
+        src: '/best-products/sibiar.png',
         alt: 'sibiar',
     },
     {
-        src: '/cotton.png',
+        src: '/best-products/cotton.png',
         alt: 'cotton',
     },
     {
-        src: '/camay.png',
+        src: '/best-products/camay.png',
         alt: 'camay',
     },
     {
-        src: '/johnsoni.png',
+        src: '/best-products/johnsoni.png',
         alt: 'johnsoni',
     },
     {
-        src: '/colgate.png',
+        src: '/best-products/colgate.png',
         alt: 'colgate',
     },
     {
-        src: '/nivea.png',
+        src: '/best-products/nivea.png',
         alt: 'nivea',
     },
     {
-        src: '/nc.png',
+        src: '/best-products/nc.png',
         alt: 'nc',
     },
     {
-        src: '/nefis.png',
+        src: '/best-products/nefis.png',
         alt: 'nefis',
     }
 ]

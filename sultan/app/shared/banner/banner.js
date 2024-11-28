@@ -9,7 +9,7 @@ const Banner = () => {
     <div className="banner">
       <div className="banner_image">
         <img
-          src="/banner_home.webp"
+          src="/banner/banner_home.webp"
           alt="Banner background"
           className="banner_img"
         />

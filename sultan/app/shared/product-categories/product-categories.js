@@ -27,7 +27,7 @@ const ProductCategories = () => {
               <div className="product-categories-button-background">
                 <img
                   className={productCategory.imageClass}
-                  src={productCategory.image}
+                  src={`product-categories/${productCategory.image}`}
                   alt={productCategory.name}
                 />
               </div>

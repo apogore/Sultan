@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="wrapper">
         <div className="footer-section company-info">
-          <img src="/sultan.svg" alt="Visa" width={150} height={70} />
+          <img src="/icons/sultan.svg" alt="Visa" width={150} height={70} />
           <p>
             Компания «Султан» — снабжаем розничные магазины товарами "под ключ"
             в Кокшетау и Акмолинской области
@@ -73,7 +73,7 @@ const Footer = () => {
               document.body.removeChild(link);
             }}
             text="Прайс-лист"
-            icon={"/download.svg"}
+            icon={"/icons/download.svg"}
             className="price-list-button"
           />
           </div>
@@ -87,7 +87,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <img
-                src="/Whatsapp_icon.svg"
+                src="/icons/Whatsapp_icon.svg"
                 alt="WhatsApp"
                 className="footer-icon"
               />
@@ -100,7 +100,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <img
-                src="/Telegram_icon.svg"
+                src="/icons/Telegram_icon.svg"
                 alt="Telegram"
                 className="footer-icon"
               />
@@ -126,9 +126,9 @@ const Footer = () => {
             <p className="availability">На связи в любое время</p>
           </div>
           <div className="footer-payment">
-            <img src="/Visa.svg" alt="Visa" className="footer-icon" />
+            <img src="/icons/Visa.svg" alt="Visa" className="footer-icon" />
             <img
-              src="/Mastercard.svg"
+              src="/icons/Mastercard.svg"
               alt="MasterCard"
               className="footer-icon"
             />
