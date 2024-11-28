@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import "./page.scss";
 import Button from "../../../ui/button/button";
 import ProductList from "../../../shared/product-list/product-list.jsx";
-
+import handleDownload from "../../function/price-list";
+import ProductInfo from "../../function/product-info";
 const ProductPage = ({ params }) => {
   const { id } = params;
   const [product, setProduct] = useState(null);
@@ -47,22 +48,6 @@ const ProductPage = ({ params }) => {
   if (error) return <div>Error: {error}</div>;
   if (!product) return <div>No product found.</div>;
 
-  const {
-    image,
-    nameRu,
-    price,
-    manufacturer,
-    brand,
-    article,
-    barcode,
-    descriptionRu,
-    category,
-    shortNameRu,
-    sizeType,
-    size,
-    amount,
-  } = product;
-
   const renderProductInfo = (label, value) => (
     <p>
       <strong>{label}:</strong> {value}
@@ -74,23 +59,23 @@ const ProductPage = ({ params }) => {
       <div className="product-page-desktop">
         <div className="product-informations">
           <div className="product-image">
-            <img src={image} alt={nameRu} />
+            <img src={product.image} alt={product.nameRu} />
           </div>
           <div className="product-info">
             <div
               className={`available ${
-                amount > 0 ? "in-stock" : "out-of-stock"
+                product.amount > 0 ? "in-stock" : "out-of-stock"
               }`}
             >
-              {amount > 0 ? "В наличии" : "Нет в наличии"}
+              {product.amount > 0 ? "В наличии" : "Нет в наличии"}
             </div>
 
             <p>
-              <strong>{brand.name}</strong> {descriptionRu}
+              <strong>{product.brand.name}</strong> {product.descriptionRu}
             </p>
 
             <div className="quantity-cart-block">
-              <p className="price">{(price * quantity).toFixed(2)} ₸</p>
+              <p className="price">{(product.price * quantity).toFixed(2)} ₸</p>
               <div className="quantity-control">
                 <Button
                   onClick={decrementQuantity}
@@ -140,10 +125,12 @@ const ProductPage = ({ params }) => {
             </div>
 
             <div className="info-block">
-              {renderProductInfo("Производитель", manufacturer)}
-              {renderProductInfo("Бренд", brand.name)}
-              {renderProductInfo("Артикул", article)}
-              {renderProductInfo("Штрихкод", barcode)}
+              <ul>
+                {renderProductInfo("Производитель", product.manufacturer)}
+                {renderProductInfo("Бренд", product.brand.name)}
+                {renderProductInfo("Артикул", product.article)}
+                {renderProductInfo("Штрихкод", product.barcode)}
+              </ul>
             </div>
 
             <div className="info-block collapsible">
@@ -152,7 +139,7 @@ const ProductPage = ({ params }) => {
               >
                 Описание {isDescriptionExpanded ? "▲" : "▼"}
               </h2>
-              {isDescriptionExpanded && <p>{descriptionRu}</p>}
+              {isDescriptionExpanded && <p>{product.descriptionRu}</p>}
             </div>
             <hr className="dotted-line" />
             <div className="info-block collapsible">
@@ -165,20 +152,29 @@ const ProductPage = ({ params }) => {
               </h2>
               {isCharacteristicsExpanded && (
                 <>
-                  {renderProductInfo("Назначение", category.join(", "))}
-                  {renderProductInfo("Тип", shortNameRu)}
-                  {renderProductInfo("Производитель", manufacturer)}
-                  {renderProductInfo("Бренд", brand.name)}
-                  {renderProductInfo("Артикул", article)}
-                  {renderProductInfo("Штрихкод", barcode)}
-                  {renderProductInfo(
-                    "Вес",
-                    sizeType === "weight" ? `${size} г` : "Н/Д"
-                  )}
-                  {renderProductInfo(
-                    "Объем",
-                    sizeType === "volume" ? `${size} мл` : "Н/Д"
-                  )}
+                  <ul>
+                    {renderProductInfo(
+                      "Назначение",
+                      product.category.join(", ")
+                    )}
+                    {renderProductInfo("Тип", product.shortNameRu)}
+                    {renderProductInfo("Производитель", product.manufacturer)}
+                    {renderProductInfo("Бренд", product.brand.name)}
+                    {renderProductInfo("Артикул", product.article)}
+                    {renderProductInfo("Штрихкод", product.barcode)}
+                    {renderProductInfo(
+                      "Вес",
+                      product.sizeType === "weight"
+                        ? `${product.size} г`
+                        : "Н/Д"
+                    )}
+                    {renderProductInfo(
+                      "Объем",
+                      product.sizeType === "volume"
+                        ? `${product.size} мл`
+                        : "Н/Д"
+                    )}
+                  </ul>
                 </>
               )}
             </div>
@@ -194,13 +190,13 @@ const ProductPage = ({ params }) => {
       <div className="product-page-mobile">
         <div className="product-informations">
           <div className="product-image">
-            <img src={image} alt={nameRu} />
+            <img src={product.image} alt={product.nameRu} />
           </div>
           <div className="product-info">
-            <h1>{nameRu}</h1>
+            <h1>{product.nameRu}</h1>
 
             <div className="quantity-cart-block">
-              <p className="price">{(price * quantity).toFixed(2)} ₸</p>
+              <p className="price">{(product.price * quantity).toFixed(2)} ₸</p>
               <div className="quantity-control">
                 <Button
                   onClick={decrementQuantity}
@@ -233,26 +229,16 @@ const ProductPage = ({ params }) => {
               Кокчетаву и области
             </div>
             <div className="action-buttons">
-              <Button
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = "/price.txt";
-                  link.download = "price-list.txt";
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
-                text="Прайс-лист"
-                icon={"/download.svg"}
-                className="price-list-button"
-              />
+              <handleDownload> </handleDownload>
             </div>
 
             <div className="info-block">
-              {renderProductInfo("Производитель", manufacturer)}
-              {renderProductInfo("Бренд", brand.name)}
-              {renderProductInfo("Артикул", article)}
-              {renderProductInfo("Штрихкод", barcode)}
+              <ul>
+                {renderProductInfo("Производитель", product.manufacturer)}
+                {renderProductInfo("Бренд", product.brand.name)}
+                {renderProductInfo("Артикул", product.rticle)}
+                {renderProductInfo("Штрихкод", product.barcode)}
+              </ul>
             </div>
             <hr className="dotted-line" />
             <div className="info-block collapsible">
@@ -261,7 +247,7 @@ const ProductPage = ({ params }) => {
               >
                 Описание {isDescriptionExpanded ? "▲" : "▼"}
               </h2>
-              {isDescriptionExpanded && <p>{descriptionRu}</p>}
+              {isDescriptionExpanded && <p>{product.descriptionRu}</p>}
             </div>
 
             <div className="info-block collapsible">
@@ -274,20 +260,29 @@ const ProductPage = ({ params }) => {
               </h2>
               {isCharacteristicsExpanded && (
                 <>
-                  {renderProductInfo("Назначение", category.join(", "))}
-                  {renderProductInfo("Тип", shortNameRu)}
-                  {renderProductInfo("Производитель", manufacturer)}
-                  {renderProductInfo("Бренд", brand.name)}
-                  {renderProductInfo("Артикул", article)}
-                  {renderProductInfo("Штрихкод", barcode)}
-                  {renderProductInfo(
-                    "Вес",
-                    sizeType === "weight" ? `${size} г` : "Н/Д"
-                  )}
-                  {renderProductInfo(
-                    "Объем",
-                    sizeType === "volume" ? `${size} мл` : "Н/Д"
-                  )}
+                  <ul>
+                    {renderProductInfo(
+                      "Назначение",
+                      product.category.join(", ")
+                    )}
+                    {renderProductInfo("Тип", product.shortNameRu)}
+                    {renderProductInfo("Производитель", product.manufacturer)}
+                    {renderProductInfo("Бренд", product.brand.name)}
+                    {renderProductInfo("Артикул", product.article)}
+                    {renderProductInfo("Штрихкод", product.barcode)}
+                    {renderProductInfo(
+                      "Вес",
+                      product.sizeType === "weight"
+                        ? `${product.size} г`
+                        : "Н/Д"
+                    )}
+                    {renderProductInfo(
+                      "Объем",
+                      product.sizeType === "volume"
+                        ? `${product.size} мл`
+                        : "Н/Д"
+                    )}
+                  </ul>
                 </>
               )}
             </div>
