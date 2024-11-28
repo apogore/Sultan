@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./page.scss";
 import Button from "../../../ui/button/button";
+import "../../../ui/button/button.scss";
 import ProductList from "../../../shared/product-list/product-list.jsx";
 import handleDownload from "../../function/price-list";
 import ProductInfo from "../../function/product-info";
@@ -56,21 +57,19 @@ const ProductPage = ({ params }) => {
 
   return (
     <div className="product-page">
-      <div className="product-page-desktop">
         <div className="product-informations">
           <div className="product-image">
             <img src={product.image} alt={product.nameRu} />
           </div>
           <div className="product-info">
             <div
-              className={`available ${
-                product.amount > 0 ? "in-stock" : "out-of-stock"
-              }`}
+              className={`available ${product.amount > 0 ? "in-stock" : "out-of-stock"
+                }`}
             >
               {product.amount > 0 ? "В наличии" : "Нет в наличии"}
             </div>
 
-            <p>
+            <p className="product-name">
               <strong>{product.brand.name}</strong> {product.descriptionRu}
             </p>
 
@@ -89,14 +88,12 @@ const ProductPage = ({ params }) => {
                   className="button-control"
                 />
               </div>
-              <div className="action-buttons">
                 <Button
                   onClick={addToCart}
                   text="В корзину"
                   icon="/cart.svg"
                   className="button-to-cart"
                 />
-              </div>
             </div>
 
             <div className="action-buttons">
@@ -133,23 +130,27 @@ const ProductPage = ({ params }) => {
               </ul>
             </div>
 
-            <div className="info-block collapsible">
-              <h2
-                onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-              >
-                Описание {isDescriptionExpanded ? "▲" : "▼"}
-              </h2>
+            <div className="info-block collapsible expanding-description">
+              <Button
+                onClick={() => setIsDescriptionExpanded((isDescriptionExpanded) => !isDescriptionExpanded)}
+                className="expanding-info-button"
+                text="Описание"
+                icon={isDescriptionExpanded ? "/polygon_up.svg" : "/polygon_down.svg"}
+              />
+
               {isDescriptionExpanded && <p>{product.descriptionRu}</p>}
             </div>
+
             <hr className="dotted-line" />
+
             <div className="info-block collapsible">
-              <h2
-                onClick={() =>
-                  setIsCharacteristicsExpanded(!isCharacteristicsExpanded)
-                }
-              >
-                Характеристики {isCharacteristicsExpanded ? "▲" : "▼"}
-              </h2>
+              <Button
+                onClick={() => setIsCharacteristicsExpanded((isCharacteristicsExpanded) => !isCharacteristicsExpanded)}
+                className="expanding-info-button"
+                text="Характеристики"
+                icon={isCharacteristicsExpanded ? "/polygon_up.svg" : "/polygon_down.svg"}
+              />
+
               {isCharacteristicsExpanded && (
                 <>
                   <ul>
@@ -187,115 +188,6 @@ const ProductPage = ({ params }) => {
           <ProductList className="product-list-page" />
         </div>
       </div>
-      <div className="product-page-mobile">
-        <div className="product-informations">
-          <div className="product-image">
-            <img src={product.image} alt={product.nameRu} />
-          </div>
-          <div className="product-info">
-            <h1>{product.nameRu}</h1>
-
-            <div className="quantity-cart-block">
-              <p className="price">{(product.price * quantity).toFixed(2)} ₸</p>
-              <div className="quantity-control">
-                <Button
-                  onClick={decrementQuantity}
-                  text="-"
-                  className="button-control"
-                />
-                <span>{quantity}</span>
-                <Button
-                  onClick={incrementQuantity}
-                  text="+"
-                  className="button-control"
-                />
-              </div>
-            </div>
-            <div className="action-buttons">
-              <Button
-                onClick={addToCart}
-                text="В корзину"
-                icon="/cart.svg"
-                className="button-to-cart"
-              />
-              <Button
-                onClick={() => navigator.share({ url: window.location.href })}
-                icon="/share.svg"
-                className="button-share"
-              />
-            </div>
-            <div className="information">
-              При покупке от <strong>10 000 ₸ </strong>бесплатная доставка по
-              Кокчетаву и области
-            </div>
-            <div className="action-buttons">
-              <handleDownload> </handleDownload>
-            </div>
-
-            <div className="info-block">
-              <ul>
-                {renderProductInfo("Производитель", product.manufacturer)}
-                {renderProductInfo("Бренд", product.brand.name)}
-                {renderProductInfo("Артикул", product.rticle)}
-                {renderProductInfo("Штрихкод", product.barcode)}
-              </ul>
-            </div>
-            <hr className="dotted-line" />
-            <div className="info-block collapsible">
-              <h2
-                onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
-              >
-                Описание {isDescriptionExpanded ? "▲" : "▼"}
-              </h2>
-              {isDescriptionExpanded && <p>{product.descriptionRu}</p>}
-            </div>
-
-            <div className="info-block collapsible">
-              <h2
-                onClick={() =>
-                  setIsCharacteristicsExpanded(!isCharacteristicsExpanded)
-                }
-              >
-                Характеристики {isCharacteristicsExpanded ? "▲" : "▼"}
-              </h2>
-              {isCharacteristicsExpanded && (
-                <>
-                  <ul>
-                    {renderProductInfo(
-                      "Назначение",
-                      product.category.join(", ")
-                    )}
-                    {renderProductInfo("Тип", product.shortNameRu)}
-                    {renderProductInfo("Производитель", product.manufacturer)}
-                    {renderProductInfo("Бренд", product.brand.name)}
-                    {renderProductInfo("Артикул", product.article)}
-                    {renderProductInfo("Штрихкод", product.barcode)}
-                    {renderProductInfo(
-                      "Вес",
-                      product.sizeType === "weight"
-                        ? `${product.size} г`
-                        : "Н/Д"
-                    )}
-                    {renderProductInfo(
-                      "Объем",
-                      product.sizeType === "volume"
-                        ? `${product.size} мл`
-                        : "Н/Д"
-                    )}
-                  </ul>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="section-cards">
-          <ProductList className="product-list" />
-        </div>
-        <div className="section-cards">
-          <ProductList className="product-list" />
-        </div>
-      </div>
-    </div>
   );
 };
 

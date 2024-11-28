@@ -149,6 +149,8 @@ const Header = () => {
               </p>
             </Link>
           </div>
+
+          <hr/>
         </div>
       </div>
 
