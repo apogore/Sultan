@@ -27,7 +27,7 @@ const ProductInfo = ({
       <p>
         <strong>{product.brand.name}</strong> {product.descriptionRu}
       </p>
-
+    <div className= " product-info__characteristics">
       <div className="quantity-cart-block">
         <p className="price">{(product.price * quantity).toFixed(2)} ₸</p>
         <div className="quantity-control">
@@ -59,7 +59,7 @@ const ProductInfo = ({
           className="price-list-button"
         />
       </div>
-
+      </div>
       <div className="info-block">
         {renderProductInfo("Производитель", product.manufacturer)}
         {renderProductInfo("Бренд", product.brand.name)}
