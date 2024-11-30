@@ -1,17 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import "./page.scss";
-import Button from "../../../ui/button/button";
-import "../../../ui/button/button.scss";
 import ProductList from "../../../shared/product-list/product-list.jsx";
 import handleDownload from "../../function/price-list";
 import ProductInfo from "../../function/product-info";
+import Button from "../../../ui/button/button";
+import "./page.scss";
+import "../../../ui/button/button.scss";
+
 const ProductPage = ({ params }) => {
   const { id } = params;
   const [product, setProduct] = useState(null);
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(true);
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [isCharacteristicsExpanded, setIsCharacteristicsExpanded] =
-    useState(true);
+    useState(false);
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -63,9 +64,8 @@ const ProductPage = ({ params }) => {
         </div>
         <div className="product-info">
           <div
-            className={`available ${
-              product.amount > 0 ? "in-stock" : "out-of-stock"
-            }`}
+            className={`available ${product.amount > 0 ? "in-stock" : "out-of-stock"
+              }`}
           >
             {product.amount > 0 ? "В наличии" : "Нет в наличии"}
           </div>
@@ -77,17 +77,20 @@ const ProductPage = ({ params }) => {
             <div className="quantity-cart-block">
               <p className="price">{(product.price * quantity).toFixed(2)} ₸</p>
 
-              <Button
-                onClick={decrementQuantity}
-                text="-"
-                className="button-control"
-              />
-              <span>{quantity}</span>
-              <Button
-                onClick={incrementQuantity}
-                text="+"
-                className="button-control"
-              />
+              <div className="quantity-buttons">
+                <Button
+                  onClick={decrementQuantity}
+                  text="-"
+                  className="button-control"
+                />
+                <span>{quantity}</span>
+                <Button
+                  onClick={incrementQuantity}
+                  text="+"
+                  className="button-control"
+                />
+              </div>
+              
             </div>
             <Button
               onClick={addToCart}

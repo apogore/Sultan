@@ -14,22 +14,37 @@
   }
 
 }
-.footer-section:nth-child(1) { grid-area: sec1; }
-.footer-section:nth-child(2) { grid-area: sec2; }
-.footer-section:nth-child(3) { grid-area: sec3; }
-.footer-section:nth-child(4) { grid-area: sec4; }
-.footer-section:nth-child(5) { grid-area: sec5; }
+
+.footer-section:nth-child(1) {
+  grid-area: sec1;
+}
+
+.footer-section:nth-child(2) {
+  grid-area: sec2;
+}
+
+.footer-section:nth-child(3) {
+  grid-area: sec3;
+}
+
+.footer-section:nth-child(4) {
+  grid-area: sec4;
+}
+
+.footer-section:nth-child(5) {
+  grid-area: sec5;
+}
 
 .wrapper {
   margin: 0 auto;
   width: 67%;
   max-width: 1367px;
   display: grid;
-  grid-gap:16px;
+  grid-gap: 16px;
   align-items: start;
   grid-template-columns: repeat(5, 1fr);
   grid-template-areas:
-      "sec1 sec2 sec3 sec4 sec5";
+    "sec1 sec2 sec3 sec4 sec5";
 
   @media screen and (max-device-width: $mobile-max) {
     width: 100%;
@@ -54,7 +69,7 @@
 }
 
 .number {
-  font-weight: 600 !important;
+  font-weight: 600;
 }
 
 .footer-section {
@@ -76,26 +91,27 @@
     max-width: 170px;
     min-width: 145px;
   }
-  
+
   &.price-list {
     max-width: 214px;
     min-width: 124px;
-  } 
+  }
 
   &.conacts {
     width: 152px;
+
     .massagers-mobile {
       display: none;
     }
   }
 
-  .footer-section:nth-child(1), 
+  .footer-section:nth-child(1),
   .footer-section:nth-child(2) {
     order: 1;
   }
 
-  .footer-section:nth-child(3), 
-  .footer-section:nth-child(4), 
+  .footer-section:nth-child(3),
+  .footer-section:nth-child(4),
   .footer-section:nth-child(5) {
     order: 2;
   }
@@ -123,7 +139,7 @@
   list-style-type: none;
   font-size: $font-size-xsmall;
   padding: 0;
-  
+
   li {
     margin-bottom: 13%;
   }
@@ -218,41 +234,78 @@
 }
 
 .subscribe-form {
-  display: flex;
-  align-items: center;
+  margin-left: 0;
   background-color: $white-color;
-  border-radius: 50px;
-  padding: 5px 10px;
+  border: none;
+  outline: none;
+  font-size: $font-size-small;
+  max-width: 240px;
+  height: 60px;
 
-  input {
-    border: none;
-    outline: none;
+  @media screen and (max-device-width: $mobile-max) {
+    max-width: 300px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .subscribe-form-input {
+    margin: 0;
     padding: 8px;
-    font-size: $font-size-xsmall;
-    flex-grow: 1;
-    border-radius: 50px;
-    color: $input-placeholder-color;
-    max-width: 180px;
+    font-size: $font-size-small;
+    max-width: 80%;
+    height: 60px;
+
+    @media screen and (max-device-width: $mobile-max) {
+      width: 80%;
+      transition: none;
+    }
+
+    &:focus {
+      @media screen and (max-device-width: $mobile-max) {
+        padding-left: 8px;
+      }
+    }
+
+
+    &::placeholder {
+      color: $gray-color;
+      opacity: 60%;
+    }
   }
 
-  input::placeholder {
-    color: $input-placeholder-color;
-  }
-
-  button {
-    background-color: $highlight-color;
-    border: none;
-    border-radius: 50%;
+  .subscribe-form-button {
     width: 30px;
     height: 30px;
-    display: flex;
-    align-items: center;
+
+    @media screen and (max-device-width: $mobile-max) {
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;
+      background-color: $button-bg-color;
+      transition: none;
+
+      &:active {
+        background-color: $button-active-bg-color;
+      }
+    }
+  }
+
+  .subscribe-form-input:focus+.subscribe-form-button {
+    @media screen and ((min-device-width: $mobile-s) and (max-device-width: $mobile-mid)) {
+      position: relative;
+      right: 12px;
+      transform: none;
+    }
+
+    @media screen and (max-device-width: $mobile-max) {
+      position: relative;
+      right: 12px;
+      transform: none;
+    }
   }
 }
 
 .availability {
-  font-size: $font-size-xsmall !important;
-
   line-height: 1;
   margin-top: 0;
 }

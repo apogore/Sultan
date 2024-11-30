@@ -1,8 +1,12 @@
 "use client";
-
 import React from "react";
-import "./footer.scss";
+import Link from 'next/link';
+import { navigationLinks } from "@/app/shared/navigation-links.js";
+import { productCategoriesData } from "@/app/shared/product-categories-data.js";
 import Button from "../../ui/button/button";
+import Search from "../../ui/search/search";
+import "./footer.scss";
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -15,97 +19,83 @@ const Footer = () => {
           </p>
           <div className="subscribe-container">
             <p>Подпишись на скидки и акции</p>
-            <div className="subscribe-form">
-              <input type="email" placeholder="Введите ваш E-mail" />
-              <button type="submit">
-                <span>➔</span>
-              </button>
-            </div>
+            <Search
+              className="subscribe-form"
+              inputType="email"
+              id="subscribeInput"
+              placeholder="Введите ваш E-mail"
+              onClick={() => (window.location.href = window.location.href)}
+              icon="/icons/subscribe_icon.svg"
+            />
           </div>
+
         </div>
         <div className="footer-section menu">
           <h2>Меню сайта:</h2>
           <ul className="footer-list">
-            <li>
-              <a href="/about">О компании</a>
-            </li>
-            <li>
-              <a href="/delivery">Доставка и оплата</a>
-            </li>
-            <li>
-              <a href="/return">Возврат</a>
-            </li>
-            <li>
-              <a href="/contacts">Контакты</a>
-            </li>
+            {navigationLinks.map((navigationLink) => (
+              <li key={navigationLink.href}>
+                <Link href={navigationLink.href}>{navigationLink.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="footer-section categories">
           <h2>Категории:</h2>
           <ul className="footer-list">
-            <li>
-              <a href="/chemistry">Бытовая химия</a>
-            </li>
-            <li>
-              <a href="/cosmetics">Косметика и гигиена</a>
-            </li>
-            <li>
-              <a href="/home">Товары для дома</a>
-            </li>
-            <li>
-              <a href="/children">Товары для детей и мам</a>
-            </li>
-            <li>
-              <a href="/tableware">Посуды</a>
-            </li>
+            {productCategoriesData.map((productCategory) => (
+              <li key={productCategory.id}>
+                <Link href={`/${productCategory.id}`}>{productCategory.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="footer-section price-list">
           <div className="download-price-list">
-          <h3>Скачать прайс-лист:</h3>
-          <Button
-            onClick={() => {
-              const link = document.createElement("a");
-              link.href = "/price.txt";
-              link.download = "price-list.txt";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-            }}
-            text="Прайс-лист"
-            icon={"/icons/download.svg"}
-            className="price-list-button"
-          />
+            <h3>Скачать прайс-лист:</h3>
+            <Button
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/price.txt";
+                link.download = "price-list.txt";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              text="Прайс-лист"
+              icon={"/icons/download.svg"}
+              className="price-list-button"
+            />
           </div>
           <div className="messangers">
-          <p>Связь в мессенджерах:</p>
-          <div className="button-container">
-            <a
-              href="https://t.me/kot_Shreda"
-              className="footer-messenger"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/icons/Whatsapp_icon.svg"
-                alt="WhatsApp"
-                className="footer-icon"
-              />
-            </a>
+            <p>Связь в мессенджерах:</p>
+            <div className="button-container">
+              <a
+                href="https://t.me/kot_Shreda"
+                className="footer-messenger"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/icons/Whatsapp_icon.svg"
+                  alt="WhatsApp"
+                  className="footer-icon"
+                />
+              </a>
 
-            <a
-              href="https://t.me/kot_Shreda"
-              className="footer-messenger"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/icons/Telegram_icon.svg"
-                alt="Telegram"
-                className="footer-icon"
-              />
-            </a>
-          </div>
+              <a
+                href="https://t.me/kot_Shreda"
+                className="footer-messenger"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/icons/Telegram_icon.svg"
+                  alt="Telegram"
+                  className="footer-icon"
+                />
+              </a>
+            </div>
           </div>
         </div>
         <div className="footer-section contacts">
