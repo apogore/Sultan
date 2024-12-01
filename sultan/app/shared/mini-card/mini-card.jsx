@@ -20,7 +20,7 @@ const MiniCard = ({ product, onClick }) => {
       <div className="mini-card__details">
         <p className="mini-card__volume">
           <img
-            src={product.sizeType === "volume" ? "/bottle.svg" : "/box.svg"}
+            src={product.sizeType === "volume" ? "/icons/bottle.svg" : "/icons/box.svg"}
             alt={product.sizeType === "volume" ? "Bottle" : "Box"}
             className="mini-card__icon"
           />
@@ -35,15 +35,15 @@ const MiniCard = ({ product, onClick }) => {
         <div className="mini-card__manufacturer-brand-info">
           <p>
             <span className="mini-card__label">Штрихкод:</span>{" "}
-            <strong>{product.barcode}</strong>
+            {product.barcode}
           </p>
           <p>
             <span className="mini-card__label">Производитель:</span>{" "}
-            <strong>{product.manufacturer}</strong>
+            {product.manufacturer}
           </p>
           <p>
             <span className="mini-card__label">Бренд:</span>{" "}
-            <strong>{product.brand.name}</strong>
+            {product.brand.name}
           </p>
         </div>
 
@@ -53,7 +53,7 @@ const MiniCard = ({ product, onClick }) => {
           <Button
             onClick={() => console.log("Товар добавлен в корзину")}
             text="В корзину"
-            icon="/cart.svg"
+            icon="/icons/cart.svg"
             className="mini-card__button"
           />
         </div>

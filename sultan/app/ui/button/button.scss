@@ -1,6 +1,8 @@
+@import '../../styles/vars.scss';
+
 .custom-button {
-    background-color: #ffc85e;
-    color: #fff;
+    background-color: $button-bg-color;
+    color: $white-color;
     border: none;
     border-radius: 60px;
     padding: 10px 16px;
@@ -12,17 +14,17 @@
     align-items: center;
     justify-content: space-between;
     transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 2px 5px $box-shadow-color; 
   
     &:hover {
-      background-color: #ffa000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+      background-color: $button-hover-bg-color;
+      box-shadow: 0 4px 10px $box-shadow-color; 
     }
   
     &:active {
-      background-color: #ffa500;
+      background-color: $button-active-bg-color;
       transform: scale(0.99);
-      box-shadow: 0 2px 3px rgba(94, 62, 3, 0.2); 
+      box-shadow: 0 2px 3px $box-shadow-button-color; 
     }
   
     &__icon {

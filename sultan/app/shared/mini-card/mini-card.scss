@@ -36,6 +36,11 @@
       display: flex;
       flex-wrap: wrap;
       height: 100%;
+
+      .mini-card__manufacturer-brand-info p {
+        margin: 4px auto;
+        font-size: $font-size-medium;
+      }
     }
   
     .mini-card__volume {

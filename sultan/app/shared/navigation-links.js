@@ -1,16 +1,17 @@
 export const navigationLinks = [{
-    ref: '/about',
+    href: '/about',
     name: 'О компании',
   },
   {
-    ref: '/delivery',
+    href: '/delivery',
     name: 'Доставка и оплата',
   },
   {
-    ref: '/return',
+    href: '/return',
     name: 'Возврат',
   },
   {
-    ref: '/contacts',
+    href: '/contacts',
     name: 'Контакты',
   }]
+  

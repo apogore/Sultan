@@ -8,27 +8,6 @@ const ProductCategories = () => {
     window.location.href = window.location.href;
   };
 
-  function MakeProductCategoriesList() {
-    const productCategoriesList = productCategoriesData.map(productCategory =>
-      <li key={productCategory.id}>
-        <button
-          onClick={categoryButtonClick}
-          className="product-categories-button"
-          id={productCategory.id}>
-          <div className="product-categories-button-background">
-            <img
-              className={productCategory.image_class}
-              src={productCategory.image}
-              alt={productCategory.name}
-            />
-          </div>
-          <p>{productCategory.name}</p>
-        </button>
-      </li>
-    );
-    return productCategoriesList;
-  }
-
   return (
     <div className="product-categories">
       <h2>
@@ -38,7 +17,24 @@ const ProductCategories = () => {
       <p>10 000+ ходовых позиций по специальным ценам</p>
 
       <ul className="product-categories-list">
-        {MakeProductCategoriesList()}
+        {productCategoriesData.map(productCategory =>
+          <li key={productCategory.id}>
+            <button
+              onClick={categoryButtonClick}
+              className="product-categories-button"
+              id={productCategory.id}
+              >
+              <div className="product-categories-button-background">
+                <img
+                  className={productCategory.imageClass}
+                  src={`product-categories/${productCategory.image}`}
+                  alt={productCategory.name}
+                />
+              </div>
+              <p>{productCategory.name}</p>
+            </button>
+          </li>
+        )}
       </ul>
     </div>
   );

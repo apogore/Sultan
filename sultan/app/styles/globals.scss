@@ -1,0 +1,29 @@
+@import './vars.scss';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+
+  h2 {
+    font-weight: 800;
+    text-transform: uppercase;
+    color: $yellow-color;
+    margin: 16px 0;
+
+    @media screen and (max-device-width: $mobile-max) {
+      font-size: $font-size-xlarge;
+    }
+
+    span {
+      font-weight: 500;
+      color: $black-color;
+
+      @media screen and (max-device-width: $mobile-max) {
+        font-size: $font-size-xlarge;
+      }
+    }
+  }
+}

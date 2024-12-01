@@ -20,7 +20,7 @@ const ProductList = () => {
   };
 
   useEffect(() => {
-    fetch("/product.json")
+    fetch("/mini-card/product.json")
       .then((response) => response.json())
       .then((data) => setProducts(data));
 
@@ -41,7 +41,7 @@ const ProductList = () => {
   return (
     <div className="product-list">
       <h2>
-        <span>Акционные</span> товары
+      Акционные <span>товары</span>
       </h2>
       <div className="wrapper_product">
         {isMobile ? (
