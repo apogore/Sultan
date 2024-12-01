@@ -1,23 +1,12 @@
 @import './styles/vars.scss';
 
 .container {
-  width: 67%;
-  max-width: 1368px;
+  width: 100%;
+  max-width: 1366px;
   margin: 0 auto;
-  @media screen and (max-device-width: $mobile-max) {
-    width: 90%;
-    padding-left: 15px;
-    padding-right: 15px;
+
+  .content {
+    padding: 0 16px;
   }
 }
 
-.section {
-  padding: 4px;
-  margin: 4px;
-  z-index: 1;
-  @media screen and (max-device-width: $mobile-max) {
-    margin-top: 0;
-    padding: 0px;
-    margin: 0px;
-  }
-}
