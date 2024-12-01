@@ -1,5 +1,6 @@
 import React from "react";
 import "./banner.scss";
+import Button from "../../ui/button/button";
 
 const Banner = () => {
   const handleButtonClick = () => {
@@ -17,16 +18,32 @@ const Banner = () => {
       </div>
       <div className="banner_info">
         <h1 className="first-title">
-          Бытовая химия,
-          косметика 
+          Бытовая химия, косметика
           <br /> и хозтовары
         </h1>
         <h2 className="second-title">
           <span>оптом</span> по Кокчетаву и области
         </h2>
-        <button className="button" onClick={handleButtonClick}>
-          В КАТАЛОГ
-        </button>
+        <Button
+          onClick={handleButtonClick}
+          text="В КАТАЛОГ"
+          className="button"
+          style={{
+            width: "300px",
+            height: "95px",
+            marginTop: "60px",
+            marginLeft: "5px",
+            justifyContent: "center",
+            backgroundColor: "$button-bg-color",
+            borderRadius: "80px",
+            border: "none",
+            color: "$white-color",
+            fontSize: "18px",
+            fontWeight: "700",
+            letterSpacing: "4px",
+            transition: "background-color 0.3s ease",
+          }}
+        />
         <div className="list for-desktop-pluses">
           <div className="advant adv_p1">
             <div className="circle">
