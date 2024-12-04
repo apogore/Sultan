@@ -7,10 +7,10 @@
   color: $white-color;
   font-size: $font-size-xsmall;
   line-height: 1.5;
-  font-weight: 200;
+  font-weight: $font-weight-light;
 
   @media screen and (max-width: $mobile-max) {
-    padding: 15px;
+    padding: 16px;
   }
 
   .footer-section:nth-child(1) {
@@ -72,7 +72,7 @@
       .title-section {
         color: $white-color;
         font-size: $font-size-xlarge;
-        font-weight: 600;
+        font-weight: $font-weight-semibold;
         line-height: 150%;
         text-transform: none;
       }
@@ -216,7 +216,7 @@
 
       &.categories {
         max-width: 170px;
-        min-width: 145px;
+        min-width: 146px;
       }
 
       &.price-list {
@@ -280,7 +280,7 @@
         }
 
         .number {
-          font-weight: 600;
+          font-weight: $font-weight-semibold;
         }
 
         .availability {
@@ -301,7 +301,7 @@
           .footer-email {
             margin-bottom: 5px;
             font-size: $font-size-medium;
-            font-weight: 600;
+            font-weight: $font-weight-semibold;
           }
         }
 

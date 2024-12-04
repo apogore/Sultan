@@ -9,7 +9,7 @@
 
   .category-signature {
 
-    font-weight: 300;
+    font-weight: $font-weight-regular;
     color: $gray-color;
   
     @media screen and (max-device-width: $mobile-max) {
@@ -47,7 +47,7 @@
 
       .product-categories-button {
         width: 100%;
-        height: 291px;
+        height: 292px;
         flex-grow: 1;
         padding: 0;
         border: none;
@@ -74,7 +74,7 @@
       
         &:active {
           .product-categories-button-background {
-            box-shadow: 0px 14px 39px -3px $light-gray;
+            box-shadow: 0px 14px 40px -4px $light-gray;
             background: $button-active-bg-color;
           }
       
@@ -121,8 +121,8 @@
   position: relative;
   bottom: -64px;
   left: -16px;
-  width: 225px;
-  height: 213px;
+  width: 224px;
+  height: 212px;
 
   @media screen and (max-device-width: $mobile-max) {
     bottom: -32px;
@@ -136,7 +136,7 @@
   position: relative;
   bottom: -76px;
   left: -24px;
-  width: 243px;
+  width: 244px;
   height: 208px;
 
   @media screen and (max-device-width: $mobile-max) {
@@ -152,7 +152,7 @@
   bottom: -76px;
   left: -24px;
   width: 250px;
-  height: 189px;
+  height: 190px;
 
   @media screen and (max-device-width: $mobile-max) {
     bottom: -24px;
@@ -167,7 +167,7 @@
   bottom: -76px;
   left: -16px;
   width: 250px;
-  height: 193px;
+  height: 194px;
 
   @media screen and (max-device-width: $mobile-max) {
     bottom: -16px;
@@ -182,7 +182,7 @@
   bottom: -88px;
   left: -16px;
   width: 250px;
-  height: 215px;
+  height: 216px;
 
   @media screen and (max-device-width: $mobile-max) {
     bottom: -16px;

@@ -53,7 +53,7 @@ header {
 
     @media screen and (max-device-width: $mobile-max) {
         font-size: $font-size-medium;
-        font-weight: 600;
+        font-weight: $font-weight-semibold;
         padding-top: 20px;
         border: none;
     }
@@ -90,7 +90,7 @@ header {
     @media screen and (max-device-width: $mobile-max) {
         padding-left: 0px;
         padding-top: 14px;
-        font-weight: 600;
+        font-weight: $font-weight-semibold;
     }
 }
 
@@ -99,7 +99,7 @@ header {
         padding-left: 0px;
         padding-top: 14px;
         font-size: $font-size-medium;
-        font-weight: 600;
+        font-weight: $font-weight-semibold;
     }
 }
 
@@ -124,7 +124,7 @@ header {
 
 .header-mail a {
     position: relative;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
     color: $black-color;
     text-decoration: solid;
     transition: color 0.3s ease;
@@ -164,7 +164,7 @@ p.header-signature {
         padding-top: 5px;
         padding-left: 40px;
         font-size: $font-size-small;
-        font-weight: 300;
+        font-weight: $font-weight-light;
         color: $gray-color;
     }
 }
@@ -242,7 +242,7 @@ p.header-signature {
     transition: color 0.3s ease;
     @media screen and (max-device-width: $mobile-max){
         font-size: $font-size-medium;
-        font-weight: 400;
+        font-weight: $font-weight-regular;
     }
 }
 
@@ -288,7 +288,7 @@ p.header-signature {
 .header-catalog-button {
     min-width: 110px;
     max-width: 192px;
-    height: 59px;
+    height: 60px;
     margin-left: 28px;
     justify-content: center;
 
@@ -364,7 +364,7 @@ p.header-signature {
 .header-price-button {
     min-width: 130px;
     max-width: 192px;
-    height: 59px;
+    height: 60px;
     margin-left: 50px;
     justify-content: center;
 
@@ -439,7 +439,7 @@ p.header-signature {
 .popup-menu-content {
     @media screen and (max-device-width: $mobile-max) {
         position: absolute;
-        top: 77px;
+        top: 78px;
         left: 0;
         z-index: 9999;
         width: 100%;
@@ -463,7 +463,7 @@ p.header-signature {
     align-items: center;
     width: 32px;
     height: 32px;
-    margin-right: 15px;
+    margin-right: 16px;
     border-radius: 1000px;
     background-color: $white-color;
 }
@@ -480,12 +480,12 @@ p.header-signature {
     width: 32px;
     height: 32px;
     padding: 10px 10px;
-    margin-left: 15px;
+    margin-left: 16px;
     border-radius: 1000px;
 }
 
 .header-mobile .dropdown-menu-button img {
-    width: 9px;
+    width: 10px;
     height: 8px;
 }
 
@@ -515,7 +515,7 @@ p.header-signature {
     padding: 0px;
     margin: 0px;
     letter-spacing: normal;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
     border-radius: 0px;
     background-color: $white-color;
     color: $gray-color;
@@ -523,8 +523,8 @@ p.header-signature {
 }
 
 .header-mobile .header-catalog-button img {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     padding-left: 6px;
     padding-right: 6px;
 }
@@ -566,7 +566,7 @@ p.header-signature {
     margin: 0;
     padding-top: 24px;
     padding-left: 14px;
-    font-weight: 600;
+    font-weight: $font-weight-semibold;
     text-align: left;
     color: $gray-color;
 }
@@ -578,10 +578,10 @@ p.header-signature {
     justify-content: center;
     width: 290px;
     height: 70px;
-    margin: 22px 15px;
+    margin: 22px 16px;
 }
 
 .header-mobile .header-price-button img {
     width: 12px;
-    height: 13px;
+    height: 12px;
 }

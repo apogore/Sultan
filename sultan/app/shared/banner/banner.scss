@@ -70,21 +70,21 @@
 
     .first-title {
       font-size: 70px;
-      font-weight: 500;
+      font-weight: $font-weight-semibold;
       line-height: 110%;
     }
 
     .second-title {
       margin-top: 40px;
       margin-left: 4px;
-      font-size: 30px;
-      font-weight: 700;
+      font-size: $font-size-xxlarge;
+      font-weight: $font-weight-bold;
       line-height: 150%;
       text-transform: uppercase;
       color: $white-color;
 
       span {
-        font-weight: 800;
+        font-weight: $font-weight-bold;
         color: $white-color;
       }
     }
@@ -96,7 +96,7 @@
       margin-left: 4px;
       justify-content: center;
       border-radius: 80px;
-      font-size: 18px;
+      font-size: $font-size-large;
       letter-spacing: 4px;
     }
 
@@ -130,7 +130,7 @@
       .first-title {
         text-align: center;
         font-size: 28px;
-        font-weight: 500;
+        font-weight: $font-weight-semibold;
         line-height: 110%;
       }
 
@@ -139,12 +139,12 @@
         margin-top: 0;
         margin-left: 0;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: $font-weight-regular;
         line-height: 150%;
         text-transform: uppercase;
 
         span {
-          font-weight: 400;
+          font-weight: $font-weight-regular;
           font-size: 16px;
         }
       }
@@ -158,7 +158,7 @@
       .first-title {
         text-align: center;
         font-size: 18px;
-        font-weight: 500;
+        font-weight: $font-weight-semibold;
         line-height: 110%;
       }
 
@@ -167,12 +167,12 @@
         margin-top: 0;
         margin-left: 0;
         font-size: 10px;
-        font-weight: 400;
+        font-weight: $font-weight-regular;
         line-height: 150%;
         text-transform: uppercase;
 
         span {
-          font-weight: 400;
+          font-weight: $font-weight-regular;
           font-size: 10px;
         }
       }
@@ -214,7 +214,7 @@
           display: inline-block;
           color: $white-color;
           font-size: $font-size-xlarge;
-          font-weight: 700;
+          font-weight: $font-weight-bold;
           cursor: default;
           user-select: none;
         }
@@ -222,7 +222,7 @@
 
       .advant-text {
         font-size: 14px;
-        font-weight: 400;
+        font-weight: $font-weight-regular;
         line-height: 150%;
 
         @media screen and (max-width: $mobile-mid) {
