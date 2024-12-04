@@ -15,7 +15,7 @@
 
   .swiper-pagination-bullet {
     margin: 0 5px;
-    width: 16px;
+    width: $font-size-large;
     height: 8px;
     background-color: $gray-color;
     border-radius: 100px;
@@ -100,8 +100,8 @@
 
     .end-date {
       margin: 0;
-      font-size: 14px;
-      font-weight: 300;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-regular;
       line-height: 150%;
       letter-spacing: 4.2px;
       text-transform: uppercase;
@@ -115,12 +115,12 @@
       margin: 10px 0 0;
       max-width: 580px;
       font-size: 70px;
-      font-weight: 500;
+      font-weight: $font-weight-semibold;
       line-height: 110%;
       text-wrap: nowrap;
 
-      .highlight {
-        font-weight: 800;
+      span {
+        font-weight: $font-weight-bold;
       }
     }
 
@@ -128,7 +128,7 @@
       margin: 35px 0 0;
       max-width: 500px;
       font-size: $font-size-xlarge;
-      font-weight: 400;
+      font-weight: $font-weight-regular;
       line-height: 150%;
       text-wrap: wrap;
     }
@@ -140,6 +140,12 @@
       aspect-ratio: 343 / 90;
       width: 100%;
       height: 100%;
+      color: $white-color;
+      font-size: 18px;
+      font-weight: $font-weight-bold;
+      letter-spacing: 1px;
+      background-color: $yellow-color;
+      border: none;
       border-radius: 80px;
       font-size: 18px;
       justify-content: center;
@@ -200,8 +206,8 @@
         }
       }
 
-      .title {
-        margin-top: 5px;
+      h1.title {
+        margin-top: 4px;
         font-size: $font-size-xlarge;
       }
 
