@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../ui/button/button";
+import Button from "@ui/button/button";
 import "./banner.scss";
 
 const Banner = () => {

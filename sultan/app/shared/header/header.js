@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import Link from 'next/link';
 import { navigationLinks } from "@/app/shared/navigation-links.js";
-import getPriceList from "../function/price-list";
-import Button from "../../ui/button/button";
-import Search from "../../ui/search/search";
+import getPriceList from "@functions/price-list";
+import Button from "@ui/button/button";
+import Search from "@ui/search/search";
 import "./header.scss";
 
 const Header = () => {

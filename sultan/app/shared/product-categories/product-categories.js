@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { productCategoriesData } from "@/app/shared/product-categories-data.js";
+import { productCategoriesData } from "@shared/product-categories-data.js";
 import "./product-categories.scss";
 
 const ProductCategories = () => {

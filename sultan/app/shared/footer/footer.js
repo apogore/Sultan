@@ -4,8 +4,8 @@ import Link from 'next/link';
 import getPriceList from "../function/price-list";
 import { navigationLinks } from "@/app/shared/navigation-links.js";
 import { productCategoriesData } from "@/app/shared/product-categories-data.js";
-import Button from "../../ui/button/button";
-import Search from "../../ui/search/search";
+import Button from "@ui/button/button";
+import Search from "@ui/search/search";
 import "./footer.scss";
 
 const Footer = () => {
