@@ -15,8 +15,7 @@ const Footer = () => {
         <div className="footer-section company-info">
           <img src="/icons/sultan.svg" alt="Visa" width={150} height={70} />
           <p>
-            Компания «Султан» — снабжаем розничные магазины товарами "под ключ"
-            в Кокшетау и Акмолинской области
+            Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в Кокшетау и Акмолинской области
           </p>
           <div className="subscribe-container">
             <p>Подпишись на скидки и акции</p>
@@ -32,7 +31,7 @@ const Footer = () => {
 
         </div>
         <div className="footer-section menu">
-          <h2>Меню сайта:</h2>
+          <h2 className="title-section">Меню сайта:</h2>
           <ul className="footer-list">
             {navigationLinks.map((navigationLink) => (
               <li key={navigationLink.href}>
@@ -42,7 +41,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-section categories">
-          <h2>Категории:</h2>
+          <h2 className="title-section">Категории:</h2>
           <ul className="footer-list">
             {productCategoriesData.map((productCategory) => (
               <li key={productCategory.id}>
@@ -53,7 +52,7 @@ const Footer = () => {
         </div>
         <div className="footer-section price-list">
           <div className="download-price-list">
-            <h3>Скачать прайс-лист:</h3>
+            <h2 className="title-section">Скачать прайс-лист:</h2>
             <Button
               onClick={getPriceList}
               text="Прайс-лист"
@@ -66,7 +65,7 @@ const Footer = () => {
             <div className="button-container">
               <Link
                 href="https://t.me/kot_Shreda"
-                className="footer-messenger"
+                className="link-messenger"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -79,7 +78,7 @@ const Footer = () => {
 
               <Link
                 href="https://t.me/kot_Shreda"
-                className="footer-messenger"
+                className="link-messenger"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -93,7 +92,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-section contacts">
-          <h2>Контакты:</h2>
+          <h2 className="title-section">Контакты:</h2>
 
           <p className="number">+7 (777) 490-00-91</p>
           <p className="availability">время работы: 9:00-20:00</p>
