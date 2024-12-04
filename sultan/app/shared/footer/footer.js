@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from 'next/link';
-import getPriceList from "../function/price-list";
+import getPriceList from "@functions/price-list";
 import { navigationLinks } from "@shared/navigation-links.js";
 import { productCategoriesData } from "@shared/product-categories-data.js";
 import Button from "@ui/button/button";
