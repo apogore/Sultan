@@ -1,4 +1,4 @@
-@import '../../styles/vars.scss';
+@import '../../styles/vars';
 
 header {
     text-align: center;
@@ -285,43 +285,16 @@ p.header-signature {
     justify-content: center;
 }
 
-.header-catalog {
-    padding-left: 38px;
+.header-catalog-button {
     min-width: 110px;
     max-width: 192px;
     height: 59px;
-}
-
-.header-catalog button {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    margin-left: 28px;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    border: none;
-    background-color: $button-bg-color;
-    border-radius: 79px;
-    cursor: pointer;
-}
 
-.header-catalog button:hover {
-    background-color: $button-hover-bg-color;
-}
-
-.header-catalog button:active {
-    background-color: $button-active-bg-color;
-}
-
-.header-catalog-button p {
-    font-weight: bold;
-    color: $white-color;
-}
-
-.header-catalog-button img {
-    padding-left: 10px;
+    img {
+        padding-left: 10px;
+    }
 }
 
 .header-operator {
@@ -388,43 +361,18 @@ p.header-signature {
     }
 }
 
-.header-price {
+.header-price-button {
     min-width: 130px;
     max-width: 192px;
     height: 59px;
-    padding-left: 50px;
-}
-
-.header-price button {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    margin-left: 50px;
     justify-content: center;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    background-color: $button-bg-color;
-    border-radius: 79px;
-    cursor: pointer;
-}
 
-.header-price button:hover {
-    background-color: $button-hover-bg-color;
-}
-
-.header-price button:active {
-    background-color: $button-active-bg-color;
-}
-
-.header-price-button p {
-    font-weight: bold;
-    color: $white-color;
-}
-
-.header-price-button img {
-    padding-left: 10px;
+    img {
+        width: 14px;
+        height: 14px;
+        padding-left: 10px;
+    }
 }
 
 .header-cart {

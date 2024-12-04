@@ -2,24 +2,14 @@
 import React, { useState } from "react";
 import Link from 'next/link';
 import { navigationLinks } from "@/app/shared/navigation-links.js";
+import getPriceList from "../function/price-list";
 import Button from "../../ui/button/button";
 import Search from "../../ui/search/search";
 import "./header.scss";
-import "../../ui/button/button.scss";
-import "../../ui/search/search.scss";
 
 const Header = () => {
   const catalogButtonClick = () => {
     window.location.href = window.location.href;
-  };
-
-  const priceFileDownload = () => {
-    const a = document.createElement("a");
-    a.href = "/price.txt";
-    a.download = "/price.txt".split("/").pop();
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
   };
 
   const [popup, setPopup] = useState(false);
@@ -74,22 +64,12 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="header-catalog">
-            <button
-              type="submit"
+            <Button
               className="header-catalog-button"
               onClick={catalogButtonClick}
-            >
-              <p>Каталог</p>
-              <img
-                src="/icons/catalog-icon.svg"
-                alt="Каталог"
-                width={15}
-                height={15}
+              text="Каталог"
+              icon="/icons/catalog-icon.svg"
               />
-            </button>
-          </div>
-
 
           <Search
             className="header-search-form"
@@ -116,34 +96,24 @@ const Header = () => {
             <div className="header-operator-photo">
               <div className="header-operator-shadow-point" />
               <img
-                src="/icons/operator.svg"
+                src="/header/operator.png"
                 alt="Заказать звонок"
                 width={74}
-                height={113}
+                height={100}
               />
             </div>
           </div>
 
-          <div className="header-price">
-            <button
-              type="button"
+            <Button
               className="header-price-button"
-              id="price-list"
-              onClick={priceFileDownload}
-            >
-              <p>Прайс-лист</p>
-              <img
-                src="/icons/download-icon.svg"
-                alt="Прайс-лист"
-                width={12}
-                height={13}
-              />
-            </button>
-          </div>
+              onClick={getPriceList}
+              text="Прайс-лист"
+              icon="/icons/download-icon.svg"
+            />
 
           <div className="header-cart">
 
-            <img src="/icons/cart-icon.svg" alt="Корзина" width={51} height={39} />
+            <img src="/icons/cart-icon.svg" alt="Корзина" width={50} height={38} />
             <Link href="/cart">
               <p className="header-signature">Корзина</p>
               <p>
@@ -256,7 +226,7 @@ const Header = () => {
           </nav>
 
           <Button
-            onClick={priceFileDownload}
+            onClick={getPriceList}
             className="header-price-button"
             text="Прайс-лист"
             icon="/icons/download-icon.svg"

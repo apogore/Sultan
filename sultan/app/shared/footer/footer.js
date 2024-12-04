@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from 'next/link';
+import getPriceList from "../function/price-list";
 import { navigationLinks } from "@/app/shared/navigation-links.js";
 import { productCategoriesData } from "@/app/shared/product-categories-data.js";
 import Button from "../../ui/button/button";
@@ -54,23 +55,16 @@ const Footer = () => {
           <div className="download-price-list">
             <h3>Скачать прайс-лист:</h3>
             <Button
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href = "/price.txt";
-                link.download = "price-list.txt";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
+              onClick={getPriceList}
               text="Прайс-лист"
               icon={"/icons/download.svg"}
               className="price-list-button"
             />
           </div>
-          <div className="messangers">
+          <div className="messengers">
             <p>Связь в мессенджерах:</p>
             <div className="button-container">
-              <a
+              <Link
                 href="https://t.me/kot_Shreda"
                 className="footer-messenger"
                 target="_blank"
@@ -81,9 +75,9 @@ const Footer = () => {
                   alt="WhatsApp"
                   className="footer-icon"
                 />
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="https://t.me/kot_Shreda"
                 className="footer-messenger"
                 target="_blank"
@@ -94,7 +88,7 @@ const Footer = () => {
                   alt="Telegram"
                   className="footer-icon"
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -103,16 +97,16 @@ const Footer = () => {
 
           <p className="number">+7 (777) 490-00-91</p>
           <p className="availability">время работы: 9:00-20:00</p>
-          <a href="tel:+77774900091" className="footer-link call-order">
+          <Link href="tel:+77774900091" className="footer-link call-order">
             Заказать звонок
-          </a>
+          </Link>
           <div className="contact-info">
-            <a
+            <Link
               href="mailto:opt.sultan@mail.ru"
               className="footer-link footer-email"
             >
               opt.sultan@mail.ru
-            </a>
+            </Link>
             <p className="availability">На связи в любое время</p>
           </div>
           <div className="footer-payment">

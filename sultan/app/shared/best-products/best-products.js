@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import "./best-products.scss";
 import { logoData } from "./constans";
+import "./best-products.scss";
 
 // Функция для группировки данных по два элемента
 const groupDataByTwo = (data) => {

@@ -14,7 +14,7 @@ const ProductCategories = () => {
         Категории <span>товаров</span>
       </h2>
 
-      <p>10 000+ ходовых позиций по специальным ценам</p>
+      <p className="category-signature">10 000+ ходовых позиций по специальным ценам</p>
 
       <ul className="product-categories-list">
         {productCategoriesData.map(productCategory =>
