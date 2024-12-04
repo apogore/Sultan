@@ -95,24 +95,9 @@
       margin-top: 60px;
       margin-left: 4px;
       justify-content: center;
-      background-color: $button-bg-color;
       border-radius: 80px;
-      border: none;
-      color: $white-color;
       font-size: 18px;
-      font-weight: 700;
       letter-spacing: 4px;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: $button-hover-bg-color;
-        cursor: pointer;
-      }
-
-      &:active {
-        background-color: $button-hover-bg-color;
-        transform: scale(0.99);
-      }
     }
 
     @media screen and (max-width: $mobile-max) {
