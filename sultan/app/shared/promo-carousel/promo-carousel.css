@@ -11,7 +11,7 @@
         linear-gradient(0deg, rgba(183, 191, 202, 1) 0%, rgba(189, 199, 208, 1) 66%, rgba(189, 199, 209, 1) 100%); 
     background-repeat: no-repeat;
     background-size: cover;
-} 
+}
 
 .carousel .slide .image-background {
     background-image: url(/promo-carousel/carousel1.png);
@@ -146,4 +146,3 @@ button:hover {
     font-size: 18px;
     color: #FFC85E;
 }
-
