@@ -490,6 +490,18 @@ p.header-signature {
     height: 22px;
 }
 
+.header-mobile .header-search-form {
+    .header-search-form-button {
+        @media screen and (max-device-width: $mobile-max) {
+            box-shadow: none;
+            
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
 .header-mobile .dropdown-menu-button {
     display: flex;
     justify-content: center;
