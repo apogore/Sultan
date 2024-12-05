@@ -8,7 +8,6 @@
   }
 
   .category-signature {
-
     font-weight: $font-weight-regular;
     color: $gray-color;
   
@@ -41,8 +40,8 @@
       margin-top: 30px;
     
       @media screen and (max-device-width: $mobile-max) {
-        margin-top: auto;
         width: 140px;
+        margin-top: auto;
       }
 
       .product-categories-button {

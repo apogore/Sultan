@@ -14,9 +14,9 @@
     position: absolute;
     top: 0;
     left: -50%;
+    z-index: -1;
     width: 200%;
     height: 100%;
-    z-index: -1;
     overflow: hidden;
 
     @media screen and (min-width: $tablet-s) {
@@ -25,6 +25,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 1;
         width: 100%;
         height: 100%;
         backdrop-filter: blur(13px);
@@ -33,7 +34,6 @@
             $blur-gradient-light-gray 0%,
             $blur-gradient-dark-gray 100%);
         opacity: 1;
-        z-index: 1;
       }
     }
 
@@ -41,10 +41,10 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: -2;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -2;
     }
 
     @media screen and (max-width: $mobile-max) {
@@ -64,12 +64,12 @@
     position: relative;
     z-index: 1;
     width: 730px;
-    color: $white-color;
     margin-left: 8px;
     padding-top: 98px;
+    color: $white-color;
 
     .first-title {
-      font-size: 70px;
+      font-size: $font-size-70;
       font-weight: $font-weight-semibold;
       line-height: 110%;
     }
@@ -90,41 +90,41 @@
     }
 
     .button {
+      justify-content: center;
       width: 300px;
-      height: 95px;
+      height: 94px;
       margin-top: 60px;
       margin-left: 4px;
-      justify-content: center;
       border-radius: 80px;
       font-size: $font-size-large;
       letter-spacing: 4px;
     }
 
     @media screen and (max-width: $mobile-max) {
-      padding-top: 3vw;
-      margin-left: 0;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 31 / 21;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      width: 100%;
+      height: auto;
+      padding-top: 3vw;
+      margin-left: 0;
+      aspect-ratio: 31 / 21;
 
       &::before {
         content: "";
+        position: absolute;
+        z-index: -1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        position: absolute;
+        width: 100%;
         text-align: center;
         background: linear-gradient(90deg,
             $blur-gradient-light-gray 0%,
             $blur-gradient-dark-gray 100%);
         aspect-ratio: 29 / 10;
-        width: 100%;
         backdrop-filter: blur(4px);
-        z-index: -1;
       }
 
       .first-title {
@@ -135,10 +135,10 @@
       }
 
       .second-title {
-        text-align: center;
         margin-top: 0;
         margin-left: 0;
-        font-size: 16px;
+        text-align: center;
+        font-size: $font-size-large;
         font-weight: $font-weight-regular;
         line-height: 150%;
         text-transform: uppercase;
@@ -157,23 +157,23 @@
     @media screen and (max-width: $mobile-mid) {
       .first-title {
         text-align: center;
-        font-size: 18px;
+        font-size: $font-size-xlarge;
         font-weight: $font-weight-semibold;
         line-height: 110%;
       }
 
       .second-title {
-        text-align: center;
         margin-top: 0;
         margin-left: 0;
-        font-size: 10px;
+        text-align: center;
+        font-size: $font-size-xsmall;
         font-weight: $font-weight-regular;
         line-height: 150%;
         text-transform: uppercase;
 
         span {
           font-weight: $font-weight-regular;
-          font-size: 10px;
+          font-size: $font-size-xsmall;
         }
       }
     }
@@ -200,36 +200,36 @@
       width: 250px;
 
       .circle {
-        width: 40px;
-        height: 40px;
-        background-color: $button-bg-color;
-        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 40px;
+        height: 40px;
         margin: auto 10px;
+        background-color: $button-bg-color;
+        border-radius: 50%;
 
         &::before {
           content: "+";
           display: inline-block;
-          color: $white-color;
           font-size: $font-size-xlarge;
           font-weight: $font-weight-bold;
+          color: $white-color;
           cursor: default;
           user-select: none;
         }
       }
 
       .advant-text {
-        font-size: 14px;
+        font-size: $font-size-medium;
         font-weight: $font-weight-regular;
         line-height: 150%;
 
         @media screen and (max-width: $mobile-mid) {
           margin: auto 0px;
-          font-size: 10px;
-          color: $gray-color;
+          font-size: $font-size-xsmall;
           letter-spacing: 0;
+          color: $gray-color;
         }
       }
     }
@@ -254,12 +254,12 @@
         margin-top: 10px;
 
         .circle {
-          width: 20px;
-          height: 20px;
-          margin: auto 4px;
           display: flex;
           align-items: center;
           justify-content: center;
+          width: 20px;
+          height: 20px;
+          margin: auto 4px;
           background-color: $button-bg-color;
           border-radius: 50%;
 
