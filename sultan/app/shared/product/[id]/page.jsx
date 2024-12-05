@@ -2,11 +2,9 @@
 import React, { useEffect, useState } from "react";
 import ProductList from "@shared/product-list/product-list.jsx";
 import getPriceList from "@functions/price-list";
-import ProductInfo from "@functions/product-info";
 import Button from "@ui/button/button";
 import Accordion from "@ui/accordion/accordion";
 import "./page.scss";
-import "@ui/button/button.scss";
 
 const ProductPage = ({ params }) => {
   const { id } = params;
