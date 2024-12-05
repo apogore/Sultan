@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@ui/button/button";
 import "./banner.scss";
+import Button from "../../ui/button/button";
 
 const Banner = () => {
   const handleButtonClick = () => {
@@ -18,8 +19,7 @@ const Banner = () => {
       </div>
       <div className="banner_info">
         <h1 className="first-title">
-          Бытовая химия,
-          косметика 
+          Бытовая химия, косметика
           <br /> и хозтовары
         </h1>
         <h2 className="second-title">
