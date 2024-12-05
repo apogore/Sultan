@@ -1,0 +1,314 @@
+@import "../../styles/vars";
+
+.footer {
+  width: 100%;
+  padding: 70px 0 116px;
+  font-size: $font-size-xsmall;
+  line-height: 1.5;
+  font-weight: $font-weight-light;
+  background-color: $footer-bg-color;
+  color: $white-color;
+
+  @media screen and (max-width: $mobile-max) {
+    padding: 16px;
+  }
+
+  .footer-section:nth-child(1) {
+    grid-area: sec1;
+  }
+
+  .footer-section:nth-child(2) {
+    grid-area: sec2;
+  }
+
+  .footer-section:nth-child(3) {
+    grid-area: sec3;
+  }
+
+  .footer-section:nth-child(4) {
+    grid-area: sec4;
+  }
+
+  .footer-section:nth-child(5) {
+    grid-area: sec5;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-gap: 16px;
+    align-items: start;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "sec1 sec2 sec3 sec4 sec5";
+    width: 67%;
+    max-width: 1368px;
+    margin: 0 auto;
+
+    @media screen and (max-device-width: $mobile-max) {
+      width: 100%;
+    }
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas:
+        "sec1 sec1 sec2"
+        "sec5 sec4 sec3";
+    }
+
+    @media screen and (max-width: $mobile-mid) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "sec1 sec1"
+        "sec2 sec3"
+        "sec5 sec4";
+    }
+
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      min-width: 146px;
+
+      .title-section {
+        font-size: $font-size-xlarge;
+        font-weight: $font-weight-semibold;
+        line-height: 150%;
+        color: $white-color;
+        text-transform: none;
+      }
+
+      .footer-list {
+        padding: 0;
+        font-size: $font-size-xsmall;
+        list-style-type: none;
+
+        li {
+          margin-bottom: 14%;
+        }
+      }
+
+      .footer-list a,
+      .footer-link {
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s ease;
+      }
+
+      .footer-list a::before,
+      .footer-link::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $highlight-color;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .footer-list a:hover,
+      .footer-link:hover {
+        color: $highlight-color;
+      }
+
+      .footer-list a:hover::before,
+      .footer-link:hover::before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+
+      &.company-info {
+        max-width: 320px;
+        min-width: 290px;
+
+        .subscribe-container {
+          max-width: 300px;
+          text-align: left;
+          font-size: $font-size-xsmall;
+          background-color: $footer-bg-color;
+
+          p {
+            margin-bottom: 8px;
+            font-size: $font-size-xsmall;
+            color: $white-color;
+          }
+
+          .subscribe-form {
+            max-width: 240px;
+            height: 60px;
+            margin-left: 0;
+            font-size: $font-size-small;
+            background-color: $white-color;
+            border: none;
+            outline: none;
+
+            @media screen and (max-device-width: $mobile-max) {
+              flex-direction: row;
+              justify-content: space-between;
+              max-width: 300px;
+            }
+
+            .subscribe-form-input {
+              max-width: 80%;
+              height: 60px;
+              margin: 0;
+              padding: 8px;
+              font-size: $font-size-small;
+
+              @media screen and (max-device-width: $mobile-max) {
+                width: 80%;
+                transition: none;
+              }
+
+              &:focus {
+                @media screen and (max-device-width: $mobile-max) {
+                  padding-left: 8px;
+                }
+              }
+
+              &::placeholder {
+                color: $gray-color;
+                opacity: 60%;
+              }
+            }
+
+            .subscribe-form-button {
+              width: 30px;
+              height: 30px;
+
+              @media screen and (max-device-width: $mobile-max) {
+                position: relative;
+                right: 12px;
+                width: 40px;
+                height: 40px;
+                background-color: $button-bg-color;
+                transition: none;
+
+                &:active {
+                  background-color: $button-active-bg-color;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.menu {
+        max-width: 130px;
+        min-width: 126px;
+      }
+
+      &.categories {
+        max-width: 170px;
+        min-width: 146px;
+      }
+
+      &.price-list {
+        max-width: 214px;
+        min-width: 124px;
+
+        .download-price-list {
+          .price-list-button {
+            height: 20%;
+            font-size: $font-size-xsmall;
+
+            img {
+              width: 10%;
+              height: auto;
+            }
+          }
+        }
+
+        @media screen and (max-width: $mobile-max) {
+          .download-price-list {
+            display: none;
+          }
+        }
+
+        .messengers {
+          @media screen and (max-width: $mobile-max) {
+            margin-top: 60px;
+          }
+          .button-container {
+            width: 100%;
+            display: flex;
+            gap: 14px;
+
+            .link-messenger {
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              transition: transform 0.2s;
+            }
+
+            .link-messenger:hover {
+              transform: scale(1.1);
+            }
+
+            .footer-icon {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+
+      &.contacts {
+        width: 152px;
+
+        .massagers-mobile {
+          display: none;
+        }
+
+        .number {
+          font-weight: $font-weight-semibold;
+        }
+
+        .availability {
+          margin-top: 0;
+          line-height: 1;
+        }
+
+        .call-order {
+          margin-bottom: 15px;
+          font-size: $font-size-xsmall;
+          text-decoration: underline;
+        }
+
+        .contact-info {
+          display: flex;
+          flex-direction: column;
+
+          .footer-email {
+            margin-bottom: 5px;
+            font-size: $font-size-medium;
+            font-weight: $font-weight-semibold;
+          }
+        }
+
+        .footer-payment img {
+          width: auto;
+          height: 80%;
+          margin-right: 10px;
+        }
+      }
+
+      .footer-section:nth-child(1),
+      .footer-section:nth-child(2) {
+        order: 1;
+      }
+
+      .footer-section:nth-child(3),
+      .footer-section:nth-child(4),
+      .footer-section:nth-child(5) {
+        order: 2;
+      }
+    }
+  }
+}

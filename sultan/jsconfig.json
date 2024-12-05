@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@ui/*": ["./app/ui/*"],
+      "@functions/*": ["./app/shared/function/*"],
+      "@shared/*": ["./app/shared/*"]
     }
   }
 }

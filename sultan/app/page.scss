@@ -1,0 +1,11 @@
+@import './styles/vars.scss';
+
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+
+  .content {
+    padding: 0 16px;
+  }
+}
