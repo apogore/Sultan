@@ -297,6 +297,21 @@ p.header-signature {
     }
 }
 
+.header-search-form {
+    .search-input:focus+.search-button {
+        transform: none;
+        margin: 0 0;
+
+        @media screen and ((min-device-width: $mobile-s) and (max-device-width: $mobile-mid)) {
+            transform: translateX(-10%);
+        }
+
+        @media screen and (max-device-width: $mobile-max) {
+            transform: translateX(-20%);
+        }
+    }
+}
+
 .header-operator {
     display: flex;
     flex-direction: row;
@@ -425,6 +440,8 @@ p.header-signature {
     text-align: left;
     text-wrap: nowrap;
 }
+
+
 
 /* мобильная версия */
 .header-mobile {

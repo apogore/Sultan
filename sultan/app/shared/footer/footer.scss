@@ -182,27 +182,14 @@
               @media screen and (max-device-width: $mobile-max) {
                 width: 40px;
                 height: 40px;
-                margin-right: 12px;
+                position: relative;
+                right: 12px;
                 background-color: $button-bg-color;
                 transition: none;
 
                 &:active {
                   background-color: $button-active-bg-color;
                 }
-              }
-            }
-
-            .subscribe-form-input:focus + .subscribe-form-button {
-              @media screen and ((min-device-width: $mobile-s) and (max-device-width: $mobile-mid)) {
-                position: relative;
-                right: 12px;
-                transform: none;
-              }
-
-              @media screen and (max-device-width: $mobile-max) {
-                position: relative;
-                right: 12px;
-                transform: none;
               }
             }
           }
