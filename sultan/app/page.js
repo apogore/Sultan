@@ -1,11 +1,11 @@
 "use client";
 
-import Banner from "./shared/banner/banner";
-import ProductList from "./shared/product-list/product-list.jsx";
-import PromoCarousel from "./shared/promo-carousel/promo-carousel";
-import ProductCategories from "./shared/product-categories/product-categories";
-import BestProducts from "./shared/best-products/best-products";
-import Geolocation from "./shared/geolocation/geolocation";
+import Banner from "@shared/banner/banner";
+import ProductList from "@shared/product-list/product-list.jsx";
+import PromoCarousel from "@shared/promo-carousel/promo-carousel";
+import ProductCategories from "@shared/product-categories/product-categories";
+import BestProducts from "@shared/best-products/best-products";
+import Geolocation from "@shared/geolocation/geolocation";
 import "./page.scss";
 
 const HomePage = () => {

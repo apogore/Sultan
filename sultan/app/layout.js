@@ -1,7 +1,8 @@
 import { Inter } from "next/font/google";
 import "./styles/globals.scss";
-import Header from "./shared/header/header";
-import Footer from "./shared/footer/footer";
+import Header from "@shared/header/header";
+import Footer from "@shared/footer/footer";
+
 const inter = Inter({
   subsets: ["latin"],
   weights: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

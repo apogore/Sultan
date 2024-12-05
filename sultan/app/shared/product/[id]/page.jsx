@@ -1,18 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import ProductList from "../../../shared/product-list/product-list.jsx";
-import handleDownload from "../../function/price-list";
-import ProductInfo from "../../function/product-info";
-import Button from "../../../ui/button/button";
+import ProductList from "@shared/product-list/product-list.jsx";
+import getPriceList from "@functions/price-list";
+import Button from "@ui/button/button";
+import Accordion from "@ui/accordion/accordion";
 import "./page.scss";
-import "../../../ui/button/button.scss";
 
 const ProductPage = ({ params }) => {
   const { id } = params;
   const [product, setProduct] = useState(null);
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
-  const [isCharacteristicsExpanded, setIsCharacteristicsExpanded] =
-    useState(false);
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -90,7 +86,7 @@ const ProductPage = ({ params }) => {
                   className="button-control"
                 />
               </div>
-              
+
             </div>
             <Button
               onClick={addToCart}
@@ -109,86 +105,60 @@ const ProductPage = ({ params }) => {
               Кокчетаву и области
             </p>
             <Button
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href = "/price.txt";
-                link.download = "price-list.txt";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
+              onClick={getPriceList}
               text="Прайс-лист"
               icon={"/icons/download.svg"}
               className="price-list-button"
             />
           </div>
-          <div className="info-block">
-            <ul>
-              {renderProductInfo("Производитель", product.manufacturer)}
-              {renderProductInfo("Бренд", product.brand.name)}
-              {renderProductInfo("Артикул", product.article)}
-              {renderProductInfo("Штрихкод", product.barcode)}
-            </ul>
-          </div>
 
-          <div className="info-block collapsible expanding-description">
-            <Button
-              onClick={() =>
-                setIsDescriptionExpanded(
-                  (isDescriptionExpanded) => !isDescriptionExpanded
-                )
-              }
-              className="expanding-info-button"
-              text="Описание"
-              icon={
-                isDescriptionExpanded
-                  ? "/icons/polygon_up.svg"
-                  : "/icons/polygon_down.svg"
-              }
-            />
+          <Accordion
+            className="info-block"
+            isAlwaysExpanded={true}
+            accordionBody={
+              <ul>
+                {renderProductInfo("Производитель", product.manufacturer)}
+                {renderProductInfo("Бренд", product.brand.name)}
+                {renderProductInfo("Артикул", product.article)}
+                {renderProductInfo("Штрихкод", product.barcode)}
+              </ul>}
+          />
 
-            {isDescriptionExpanded && <p>{product.descriptionRu}</p>}
-          </div>
+          <Accordion
+            className="collapsible expanding-description"
+            isAlwaysExpanded={false}
+            text="Описание"
+            accordionBody={
+              <p>{product.descriptionRu}</p>
+            }
+          />
 
           <hr className="dotted-line" />
 
-          <div className="info-block collapsible">
-            <Button
-              onClick={() =>
-                setIsCharacteristicsExpanded(
-                  (isCharacteristicsExpanded) => !isCharacteristicsExpanded
-                )
-              }
-              className="expanding-info-button"
-              text="Характеристики"
-              icon={
-                isCharacteristicsExpanded
-                  ? "/icons/polygon_up.svg"
-                  : "/icons/polygon_down.svg"
-              }
-            />
+          <Accordion
+            className="collapsible expanding-characteristics"
+            isAlwaysExpanded={false}
+            text="Характеристики"
+            accordionBody={
+              <ul>
+                {renderProductInfo("Назначение", product.category.join(", "))}
+                {renderProductInfo("Тип", product.shortNameRu)}
+                {renderProductInfo("Производитель", product.manufacturer)}
+                {renderProductInfo("Бренд", product.brand.name)}
+                {renderProductInfo("Артикул", product.article)}
+                {renderProductInfo("Штрихкод", product.barcode)}
+                {renderProductInfo(
+                  "Вес",
+                  product.sizeType === "weight" ? `${product.size} г` : "Н/Д"
+                )}
+                {renderProductInfo(
+                  "Объем",
+                  product.sizeType === "volume" ? `${product.size} мл` : "Н/Д"
+                )}
+              </ul>
+            }
+          />
 
-            {isCharacteristicsExpanded && (
-              <>
-                <ul>
-                  {renderProductInfo("Назначение", product.category.join(", "))}
-                  {renderProductInfo("Тип", product.shortNameRu)}
-                  {renderProductInfo("Производитель", product.manufacturer)}
-                  {renderProductInfo("Бренд", product.brand.name)}
-                  {renderProductInfo("Артикул", product.article)}
-                  {renderProductInfo("Штрихкод", product.barcode)}
-                  {renderProductInfo(
-                    "Вес",
-                    product.sizeType === "weight" ? `${product.size} г` : "Н/Д"
-                  )}
-                  {renderProductInfo(
-                    "Объем",
-                    product.sizeType === "volume" ? `${product.size} мл` : "Н/Д"
-                  )}
-                </ul>
-              </>
-            )}
-          </div>
         </div>
       </div>
       <div className="section cards">

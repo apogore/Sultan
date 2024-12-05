@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../button/button';
 import './search.scss';
 
 const Search = ({ className, onClick, inputType, id, placeholder, icon }) => {
@@ -10,15 +11,11 @@ const Search = ({ className, onClick, inputType, id, placeholder, icon }) => {
                 id={id}
                 placeholder={placeholder}
             />
-            <button
+            <Button
                 className={`search-button ${className}-button`}
                 onClick={onClick}
-            >
-                <img
-                    src={icon}
-                    alt={'image'}
-                />
-            </button>
+                icon={icon}
+            />
         </div>
     );
 };

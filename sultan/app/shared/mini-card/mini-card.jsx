@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Button from "../../ui/button/button";
+import Button from "@ui/button/button";
 import "./mini-card.scss";
 
 const MiniCard = ({ product, onClick }) => {

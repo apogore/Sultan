@@ -1,16 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import MiniCard from "../mini-card/mini-card.jsx";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useRouter } from "next/navigation";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import MiniCard from "../mini-card/mini-card.jsx";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "./product-list.scss";
-import { useRouter } from "next/navigation";
 
 const ProductList = () => {
+  const MOBILE_MAX_WIDTH = 768;
   const [products, setProducts] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
@@ -25,7 +26,7 @@ const ProductList = () => {
       .then((data) => setProducts(data));
 
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= MOBILE_MAX_WIDTH);
     };
 
     handleResize();

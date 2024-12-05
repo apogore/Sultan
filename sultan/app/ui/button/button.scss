@@ -1,36 +1,35 @@
-@import '../../styles/vars.scss';
+@import '../../styles/vars';
 
 .custom-button {
-    background-color: $button-bg-color;
-    color: $white-color;
-    border: none;
-    border-radius: 60px;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px $box-shadow-color; 
-  
-    &:hover {
-      background-color: $button-hover-bg-color;
-      box-shadow: 0 4px 10px $box-shadow-color; 
-    }
-  
-    &:active {
-      background-color: $button-active-bg-color;
-      transform: scale(0.99);
-      box-shadow: 0 2px 3px $box-shadow-button-color; 
-    }
-  
-    &__icon {
-      margin-left: 0px; 
-      width: 20%; 
-      height: 80%; 
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-radius: 60px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: $white-color;
+  background-color: $button-bg-color;
+  border: none;
+  box-shadow: 0 2px 5px $box-shadow-color;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-bg-color;
+    box-shadow: 0 4px 10px $box-shadow-color;
   }
-  
+
+  &:active {
+    background-color: $button-active-bg-color;
+    box-shadow: 0 2px 3px $box-shadow-button-color;
+    transform: scale(0.99);
+  }
+
+  &__icon {
+    width: 20%;
+    height: 80%;
+    margin-left: 0px;
+  }
+}

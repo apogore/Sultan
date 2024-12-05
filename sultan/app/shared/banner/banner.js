@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@ui/button/button";
 import "./banner.scss";
 import Button from "../../ui/button/button";
 
@@ -25,41 +26,22 @@ const Banner = () => {
           <span>оптом</span> по Кокчетаву и области
         </h2>
         <Button
+          className="button"
           onClick={handleButtonClick}
           text="В КАТАЛОГ"
-          className="button"
-          style={{
-            width: "300px",
-            height: "95px",
-            marginTop: "60px",
-            marginLeft: "5px",
-            justifyContent: "center",
-            backgroundColor: "$button-bg-color",
-            borderRadius: "80px",
-            border: "none",
-            color: "$white-color",
-            fontSize: "18px",
-            fontWeight: "700",
-            letterSpacing: "4px",
-            transition: "background-color 0.3s ease",
-          }}
         />
         <div className="list for-desktop-pluses">
-          <div className="advant adv_p1">
-            <div className="circle">
-              <b>+</b>
-            </div>
-            <span>
+          <div className="advant">
+            <span className="circle"/>
+            <span className="advant-text">
               Только самые
               <br />
               выгодные предложения
             </span>
           </div>
-          <div className="advant adv_p1">
-            <div className="circle">
-              <b>+</b>
-            </div>
-            <span>
+          <div className="advant">
+            <span className="circle"/>
+            <span className="advant-text">
               Бесплатная доставка
               <br />
               <b>по Кокчетаву от 10 тыс ₸</b>
@@ -68,17 +50,13 @@ const Banner = () => {
         </div>
       </div>
       <div className="list for-mobile-pluses">
-        <div className="advant adv_p1">
-          <div className="circle">
-            <b>+</b>
-          </div>
-          <span>Только самые выгодные предложения</span>
+        <div className="advant">
+          <span className="circle"/>
+          <span className="advant-text">Только самые выгодные предложения</span>
         </div>
-        <div className="advant adv_p1">
-          <div className="circle">
-            <b>+</b>
-          </div>
-          <span>
+        <div className="advant">
+          <span className="circle"/>
+          <span className="advant-text">
             Бесплатная доставка <b>по Кокчетаву от 10 тыс ₸</b>
           </span>
         </div>
