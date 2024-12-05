@@ -22,20 +22,20 @@
     }
   
     .swiper-pagination-bullet-active {
-      background-color: $button-active-bg-color;
       width: 16px;
+      background-color: $button-active-bg-color;
     }
   }
   
   .wrapper_product {
-    padding-inline: 5px;
-    margin: 0 auto;
     display: flex;
+    flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
     flex-wrap: wrap;
-    flex-direction: row;
     gap: 5px;
+    margin: 0 auto;
+    padding-inline: 5px;
     
   
     @media screen and (max-device-width: $mobile-max) {

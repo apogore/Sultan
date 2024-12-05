@@ -4,11 +4,11 @@
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 15px;
+    border-radius: 10px;
     font-size: $font-size-medium;
     font-weight: 200;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     background-color: $white-color;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     overflow: hidden;
 
@@ -24,12 +24,12 @@
     }
 
     .expanding-info-button {
-        width: 100%;
         justify-content: flex-start;
-        color: $black-color;
+        width: 100%;
         font-size: $font-size-large;
         letter-spacing: normal;
         font-weight: 500;
+        color: $black-color;
         background-color: $white-color;
         box-shadow: none;
 
