@@ -1,0 +1,29 @@
+@import '../../styles/vars';
+
+.catalog-page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+
+    h1 {
+        font-size: $font-size-40;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+        color: $black-color;
+    } 
+
+    .fast-filters {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        * {
+            margin: 0 20px;
+        }
+    }
+
+}
