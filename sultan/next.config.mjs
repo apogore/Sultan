@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   output: "export",
-  trailingSlash: true,
+  basePath: "/Sultan",
 };
 
 export default nextConfig;
