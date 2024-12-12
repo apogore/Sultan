@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@ui/button/button";
 import "./banner.scss";
-import Button from "../../ui/button/button";
+
 
 const Banner = () => {
   const handleButtonClick = () => {
