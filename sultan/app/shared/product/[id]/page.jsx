@@ -1,4 +1,4 @@
-import { generateStaticParams } from "./generateStaticParams";
+import { generateStaticParams } from "./genParams";
 import ProductPage from "./ProductPage";
 import fs from 'fs';
 import path from 'path';
