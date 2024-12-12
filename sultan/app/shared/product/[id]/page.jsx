@@ -5,6 +5,7 @@ import getPriceList from "@functions/price-list";
 import Button from "@ui/button/button";
 import Accordion from "@ui/accordion/accordion";
 import "./page.scss";
+import Breadcrumbs from "../../brea/breadcrums";
 
 const ProductPage = ({ params }) => {
   const { id } = params;
@@ -54,7 +55,9 @@ const ProductPage = ({ params }) => {
 
   return (
     <div className="product-page">
+       <Breadcrumbs />
       <div className="product-informations">
+       
         <div className="product-image">
           <img src={product.image} alt={product.nameRu} />
         </div>

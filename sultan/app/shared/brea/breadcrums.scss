@@ -1,0 +1,92 @@
+@import "./../../styles/vars";
+
+.breadcrumbs {
+    font-size: $font-size-medium;
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:10px;
+    .breadcrumb-item {
+      display: inline;
+      color: $gray-color;
+  
+      a {
+        color: $black-color;
+        text-decoration: none;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+  
+        &:hover {
+          color: $yellow-color;
+          text-decoration: underline;
+        }
+  
+        &:active {
+          color: $orange-color;
+        }
+      }
+  
+      span {
+        color: $black-color;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  
+    .breadcrumb-separator {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 8px;
+      
+        img {
+          height: 16px; 
+          width: auto; 
+          
+        }
+      }
+
+    @media screen and (max-width: $mobile-max) {
+      font-size: $font-size-small;
+  
+      .breadcrumb-item {
+        a {
+          font-size: $font-size-small;
+        }
+  
+        span {
+          font-size: $font-size-small;
+        }
+      }
+  
+      .breadcrumb-separator {
+        margin: 0 3px;
+        img {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  
+    @media screen and (min-width: $desktop) {
+      font-size: $font-size-large;
+  
+      .breadcrumb-item {
+        a {
+          font-size: $font-size-large;
+        }
+  
+        span {
+          font-size: $font-size-large;
+        }
+      }
+  
+      .breadcrumb-separator {
+        margin: 0 8px;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+  

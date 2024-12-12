@@ -173,10 +173,13 @@
 
       .delivery-info {
         grid-area: 2 / 2 / 2 / 4;
+        font-size: $font-size-medium;
         justify-self: center;
-        height: 52px;
+        height: 48px;
         border-radius: 10px;
+        
         box-shadow: 0 2px 5px $box-shadow-color;
+        padding-top: 10px;
 
         @media screen and (max-device-width: $mobile-max) {
           grid-column-start: 1;
@@ -285,7 +288,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 12px;
 
     .button-control {
       max-height: 26px;
