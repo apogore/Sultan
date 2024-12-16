@@ -13,7 +13,7 @@ const Header = () => {
   const router = useRouter();
 
   const catalogButtonClick = () => {
-    router.push(`/shared/catalog`);
+    router.push(`/catalog`);
   };
 
   const [popup, setPopup] = useState(false);

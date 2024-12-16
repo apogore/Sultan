@@ -4,13 +4,15 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useParams } from 'react-router-dom';
 import Button from "@ui/button/button";
-import "./page.scss";
 
-const Catalog = () => {
+const FastFilters = () => {
 
   const [categories, setCategories] = useState([]);
   const router = useRouter();
 
+  const fastFilterButtonClick = (categorySlug) => {
+    router.prefetch(`/${categorySlug}`);
+  };
 
   useEffect(() => {
     fetch("/catalog/categories.json")
@@ -27,11 +29,12 @@ const Catalog = () => {
 
   if (!currentCategory) {
     return (
-    <div className="catalog-page">
+    <div className="catalog-header">
       <h1>Каталог</h1>
       <div className="fast-filters">
         {categories.map(category => (
           <Button key={category.categorySlug}
+            onClick={fastFilterButtonClick(category.categorySlug)}
             text={category.name} />
         ))}
       </div>
@@ -40,7 +43,7 @@ const Catalog = () => {
   }
 
   return (
-    <div className="catalog-page">
+    <div className="catalog-header">
       <h1>{currentCategory.name}</h1>
       <div className="fast-filters">
         {currentCategory.subcategories.map(subcategory => (
@@ -52,4 +55,4 @@ const Catalog = () => {
   );
 };
 
-export default Catalog;
+export default FastFilters;
