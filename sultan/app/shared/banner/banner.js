@@ -1,10 +1,13 @@
 import React from "react";
+import { useRouter } from "next/navigation";
 import Button from "@ui/button/button";
 import "./banner.scss";
 
 const Banner = () => {
+  const router = useRouter();
+
   const handleButtonClick = () => {
-    window.location.href = window.location.href;
+    router.push(`/catalog`);
   };
 
   return (

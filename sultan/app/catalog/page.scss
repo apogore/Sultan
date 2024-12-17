@@ -1,6 +1,6 @@
 @import '../styles/vars';
 
-.catalog-page {
+.catalog {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -8,22 +8,14 @@
     margin: 0 auto;
     padding: 20px;
 
-    h1 {
-        font-size: $font-size-40;
-        font-weight: $font-weight-semibold;
-        text-transform: uppercase;
-        color: $black-color;
-    } 
-
-    .fast-filters {
+    &__content {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
+        gap: 108px;
+        margin: 48px 0;
 
-        * {
-            margin: 0 20px;
+        &__filters {
+            width: 238px;
         }
     }
-
 }

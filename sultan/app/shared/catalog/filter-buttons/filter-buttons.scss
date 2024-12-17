@@ -1,0 +1,25 @@
+@import '../../../styles/vars';
+
+.filter-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+
+    &__show-products {
+        width: 168px;
+        height: 58px;
+        justify-content: center;
+    }
+
+    &__reset-filters {
+        width: 58px;
+        height: 58px;
+        justify-content: center;
+
+        img {
+            width: 18px;
+            height: 20px;
+        }
+    }
+}

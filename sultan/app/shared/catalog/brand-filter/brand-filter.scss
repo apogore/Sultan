@@ -1,0 +1,44 @@
+@import '../../../styles/vars';
+
+.brand-filter {
+
+    &__title {
+        font-weight: $font-weight-500;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__search-form {
+        margin: 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+
+        &:hover {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        &__button {
+            padding: 10px 0;
+
+            &:hover {
+                color: $yellow-color;
+            }
+
+            &.active {
+                order: 3;
+            }
+        }
+    }
+}

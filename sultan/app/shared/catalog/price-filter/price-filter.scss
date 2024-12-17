@@ -1,0 +1,51 @@
+@import '../../../styles/vars';
+
+.price-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+
+    &__title {
+        font-size: $font-size-medium;
+        font-weight: $font-weight-300;
+        color: $gray-color;
+        margin: 8px 0;
+
+        span {
+            font-weight: $font-weight-500;
+            color: $black-color;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        input {width: 100px;
+            height: 16px;
+            padding: 4px 0;
+            border-radius: 1000px;
+            text-align: center;
+            font-size: $font-size-small;
+            font-weight: $font-weight-300;
+            background-color: $light-control-button-color;
+            border: none;
+            outline: none;
+            transition: all 0.3s ease;
+
+            &:focus {
+                border: none;
+                box-shadow: $box-shadow;
+            }
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}
