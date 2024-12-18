@@ -30,7 +30,7 @@
     "nameEn": "Dishwashing liquid Lemon Fairy",
     "image": "/mini-card/sorti.png",
     "sizeType": "volume",
-    "manufacturer":"Нэфис",
+    "manufacturer":"Boyscout",
     "size": 450,
     "category": ["hygiene", "hands"],
     "barcode": 4604049097549,
@@ -56,7 +56,7 @@
     "count": 15,
     "size": 28.8,
     "category": ["hygiene", "hands"],
-    "manufacturer":"Нэфис",
+    "manufacturer":"Paclan",
     "barcode": 4604049097548,
     "brand": {
       "name": "ARIEL",
@@ -77,7 +77,7 @@
     "nameEn": "Dishwashing liquid Lemon Fairy",
     "image": "/mini-card/BiMAX.png",
     "sizeType": "box",
-    "manufacturer":"Нэфис",
+    "manufacturer":"Булгари Грин",
     "size": 1500,
     "category": ["hygiene", "hands"],
     "barcode": 4604049097549,
@@ -102,7 +102,7 @@
     "sizeType": "volume",
     "size": 450,
     "category": ["hygiene", "hands"],
-    "manufacturer":"Нэфис",
+    "manufacturer":"Булгари Грин",
     "barcode": 4604049097548,
     "brand": {
       "name": "AOS",
@@ -175,8 +175,8 @@
     "category": ["hygiene", "hands"],
     "barcode": 4604049097549,
     "brand": {
-      "name": "BIMAX",
-      "number": 104
+      "name": "BIMAXX",
+      "number": 105
     },
     "article": 10201,
     "descriptionRu": "Порошок стиральный Автомат 100 пятен COMPACT",

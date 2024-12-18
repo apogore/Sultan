@@ -7,15 +7,32 @@ import "./brand-filter.scss";
 const BrandFilter = ({ resetFilter }) => {
   const [brands, setBrands] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredBrands, setFilteredBrands] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/catalog/brands.json");
+      const response = await fetch("/mini-card/product.json");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const fetchedData = await response.json();
-      setBrands(fetchedData);
+      
+      const brandCount = fetchedData.reduce((brand, product) => {
+        const { name, numder } = product.brand;
+        const key = `${name}-${numder}`;
+
+        if (!brand[key]) {
+          brand[key] = { name, numder, count: 0 };
+        }
+
+        brand[key].count += 1;
+        return brand;
+      }, {});
+
+      const uniqueBrandsArray = Object.values(brandCount);
+      setBrands(uniqueBrandsArray);
+      setFilteredBrands(uniqueBrandsArray);
     };
     fetchData();
   }, []);
@@ -38,6 +55,21 @@ const BrandFilter = ({ resetFilter }) => {
     localStorage.setItem("selectedBrands", JSON.stringify(updatedBrands));
   };
 
+  const handleSearchClick = (event) => {
+
+    setSearchQuery(event.target.value);
+
+    if (!searchQuery || searchQuery === '') {
+      setFilteredBrands(brands);
+    }
+    else {
+      const filtered = brands.filter(brand =>
+        brand.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredBrands(filtered);
+    }
+  };
+
 
   return (
     <div className="brand-filter">
@@ -48,33 +80,35 @@ const BrandFilter = ({ resetFilter }) => {
         inputType="text"
         id="brand-filter__search-input"
         placeholder="Поиск..."
-        onClick={() => (window.location.href = window.location.href)}
+        value={searchQuery}
+        onClick={handleSearchClick}
+        onChange={handleSearchClick}
         icon="/icons/search-button.svg"
       />
 
       <Accordion
         className="brand-filter__list"
         text="Показать все"
-        isAlwaysExpanded={brands.length < 5
+        isAlwaysExpanded={filteredBrands.length < 5
           ? (true)
           : (false)}
-        accordionShort={brands.slice(0, 4).map(brand => (
+        accordionShort={filteredBrands.slice(0, 4).map(brand => (
           <Checkbox
             className="brand-filter__item"
             key={brand.number}
             onChecked={selectedBrands.includes(brand)}
             onChange={() => handleBrandChange(brand)}
-            text={brand.name}/>
+            text={`${brand.name} (${brand.count})`}/>
           ))}
-        accordionBody={brands.length < 5
+        accordionBody={filteredBrands.length < 5
           ? ("")
-          : (brands.slice(4, brands.length).map(brand => (
+          : (filteredBrands.slice(4).map(brand => (
             <Checkbox
             className="brand-filter__item"
             key={brand.number}
             onChecked={selectedBrands.includes(brand)}
             onChange={() => handleBrandChange(brand)}
-            text={brand.name}/>
+            text={`${brand.name} (${brand.count})`}/>
           )))
         }
       />

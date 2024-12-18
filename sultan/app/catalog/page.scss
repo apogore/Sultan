@@ -4,9 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 70%;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 64%;
+    margin: 20px auto;
+
+    @media screen and (max-device-width: $mobile-max) {
+        max-width: 100%;
+        margin: 24px;
+    }
 
     &__content {
         display: flex;
@@ -14,8 +18,18 @@
         gap: 108px;
         margin: 48px 0;
 
+        @media screen and (max-device-width: $mobile-max) {
+            flex-direction: column;
+            width: 100%;
+            gap: 24px;
+        }
+
         &__filters {
             width: 238px;
+
+            @media screen and (max-device-width: $mobile-max) {
+                width: 100%;
+            }
         }
     }
 }

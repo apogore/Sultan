@@ -5,11 +5,48 @@
     flex-direction: column;
     gap: 12px;
 
-    &__title {
-        margin: 0;
-        font-size: $font-size-large;
-        font-weight: $font-weight-500;
-        text-transform: uppercase;
-        color: $black-color;
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &__title {
+            margin: 0;
+            font-size: $font-size-large;
+            font-weight: $font-weight-500;
+            text-transform: uppercase;
+            color: $black-color;
+        }
+
+        &__button {
+            display: none;
+
+            @media screen and (max-device-width: $mobile-max) {
+            display: inherit;
+            width: 32px;
+            height: 32px;
+            justify-content: center;
+            background-color: $light-control-button-color;
+
+            img {
+                width: 8px;
+                height: 8px;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            &.active img {
+                transform: rotateX(180deg);
+            }
+            }
+        }
+    }
+
+    hr {
+        width: 100%;
+        margin: 0px;
+        border-top: 1px dotted $gray-color;
+        border-bottom-width: 0;
+        opacity: 30%;
     }
 }
