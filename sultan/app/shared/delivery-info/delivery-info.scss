@@ -1,0 +1,19 @@
+@import "../../styles/vars";
+
+.delivery-info {
+  grid-area: 2 / 2 / 2 / 4;
+  justify-self: center;
+  height: 52px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px $box-shadow-color;
+
+  @media screen and (max-device-width: $mobile-max) {
+    grid-column-start: 1;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    justify-self: start;
+    width: 98%;
+    height: 50px;
+    font-size: $font-size-small;
+  }
+}

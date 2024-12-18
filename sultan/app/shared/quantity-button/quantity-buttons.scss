@@ -1,0 +1,31 @@
+
+@import '../../styles/vars';
+
+.quantity-buttons {
+  display: flex;
+  align-items: center;
+
+  .quantity-input {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 8px;
+    border: 1px solid $gray-color;
+    border-radius: 8px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .button-control {
+    width: 30px;
+    height: 30px;
+    font-size: $font-size-xlarge;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
