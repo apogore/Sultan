@@ -24,6 +24,11 @@
         align-items: center;
         justify-content: space-between;
 
+        @media screen and (max-device-width: $mobile-max) {
+            justify-content: flex-start;
+            gap: 12px;
+        }
+
         input {width: 100px;
             height: 16px;
             padding: 4px 0;
