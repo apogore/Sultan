@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./styles/globals.scss";
 import Header from "@shared/header/header";
 import Footer from "@shared/footer/footer";
+import { NotificationProvider } from "./shared/Notification/Notification-context";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +21,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Header />
+        <NotificationProvider> 
         <main className="min-h-screen">{children}</main>
+        </NotificationProvider>
         <Footer />
       </body>
     </html>

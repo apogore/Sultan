@@ -1,0 +1,102 @@
+@import "../../styles/vars";
+.notifications-container {
+  position: fixed;
+  z-index: 1000;
+
+  @media (max-width: $mobile-max) {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  @media (min-width: $tablet-s) {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.notification {
+  color: $white-color;
+  
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 300px;
+  margin-bottom: 10px;
+  position: relative;
+  animation: slideInDesktop 0.3s ease-out, fadeOut 0.3s ease-in 4.7s forwards;
+
+  @media (max-width: $mobile-max) {
+    width: 100%;
+    animation: slideInMobile 0.3s ease-out, fadeOut 0.3s ease-in 4.7s forwards;
+  }
+
+  &__image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-semibold;
+  }
+
+  &__link {
+    margin-top: 5px;
+    font-size: $font-size-small;
+    color: $blue-color;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__close {
+    background: transparent;
+    border: none;
+    color: $white-color;
+    font-size: $font-size-large;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+}
+
+@keyframes slideInDesktop {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInMobile {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,73 @@
+@import '../../styles/vars';
+
+.cart {
+  padding: 16px;
+  background-color: $light-gray;
+
+  &__empty {
+    text-align: center;
+    font-size: $font-size-large;
+    color: $gray-color;
+  }
+
+  .cart-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding: 16px;
+    border: 1px solid $card-border-color;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px $box-shadow-color;
+
+    &__image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 16px;
+    }
+
+    &__info {
+      flex: 1;
+
+      &__name {
+        font-size: $font-size-xlarge;
+        font-weight: $font-weight-bold;
+        color: $black-color;
+        margin-bottom: 8px;
+      }
+
+      &__description {
+        font-size: $font-size-medium;
+        color: $gray-color;
+        margin-bottom: 8px;
+      }
+
+      &__quantity {
+        font-size: $font-size-medium;
+        font-weight: $font-weight-semibold;
+        color: $green-color;
+      }
+    }
+  }
+}
+
+// Адаптивность
+@media (max-width: $mobile-max) {
+  .cart-item {
+    flex-direction: column;
+    align-items: center;
+
+    &__image {
+      margin-bottom: 16px;
+    }
+
+    &__info {
+      &__name,
+      &__description,
+      &__quantity {
+        text-align: center;
+      }
+    }
+  }
+}

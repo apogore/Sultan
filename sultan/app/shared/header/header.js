@@ -11,7 +11,9 @@ const Header = () => {
   const catalogButtonClick = () => {
     window.location.href = window.location.href;
   };
-
+  const handleCartClick = () => {
+    navigate('/cart'); // Переход на страницу корзины
+  };
   const [popup, setPopup] = useState(false);
 
   return (
@@ -76,7 +78,7 @@ const Header = () => {
             inputType="text"
             id="searchInput"
             placeholder="Поиск..."
-            onClick={() => (window.location.href = window.location.href)}
+            onClick={() => (catalogButtonClick)}
             icon="/icons/search-button.svg"
           />
 
@@ -147,7 +149,7 @@ const Header = () => {
           </div>
 
           <Button
-            onClick={() => (window.location.href = window.location.href)}
+            onClick={() => (catalogButtonClick)}
             className="header-cart-button"
             icon="/icons/cart-icon.svg"
           />
@@ -168,7 +170,7 @@ const Header = () => {
             inputType="text"
             id="searchInput"
             placeholder="Поиск..."
-            onClick={() => (window.location.href = window.location.href)}
+            onClick={() => (catalogButtonClick)}
             icon="/icons/search_icon_mobile.svg"
           />
         </div>
@@ -203,7 +205,7 @@ const Header = () => {
 
           <div className="header-order-call">
             <Button
-              onClick={() => (window.location.href = window.location.href)}
+              onClick={() => (catalogButtonClick)}
               className="header-order-call-button"
               icon="/icons/phone_icon_filled.svg"
             />
