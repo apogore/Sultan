@@ -1,18 +1,6 @@
 @import '../../../styles/vars';
 
-.catalog-header {
-    
-    h1 {
-        font-size: $font-size-40;
-        font-weight: $font-weight-semibold;
-        text-transform: uppercase;
-        color: $black-color;
 
-        @media screen and (max-device-width: $mobile-max) {
-            font-size: $font-size-xlarge;
-            font-weight: $font-weight-500
-        };
-    } 
 
     .catalog-fast-filters {
         display: flex;
@@ -51,4 +39,3 @@
             }
         }
     }
-}

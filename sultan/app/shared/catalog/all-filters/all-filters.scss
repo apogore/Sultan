@@ -19,14 +19,15 @@
             color: $black-color;
         }
 
-        &__button {
+        &__button.custom-button  {
             display: none;
+            justify-content: center;
 
             @media screen and (max-device-width: $mobile-max) {
-            display: inherit;
+            display: flex;
+            justify-content: center;
             width: 32px;
             height: 32px;
-            justify-content: center;
             background-color: $light-control-button-color;
 
             img {
@@ -48,5 +49,11 @@
         border-top: 1px dotted $gray-color;
         border-bottom-width: 0;
         opacity: 30%;
+    }
+
+    &__content {
+        @media screen and (max-device-width: $mobile-max) {
+            position: relative;
+        }
     }
 }

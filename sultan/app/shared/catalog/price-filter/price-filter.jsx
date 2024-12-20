@@ -22,9 +22,16 @@ const PriceFilter = ({ resetFilter }) => {
         fetchData();
     }, []);
 
+    localStorage.setItem('selectedMaxPrice', maxPrice.toString());
+    localStorage.setItem('selectedMinPrice', minPrice.toString());
+
     useEffect(() => {
         setMaxPrice(maxProductPrice);
         setMinPrice(0);
+        
+        localStorage.setItem('selectedMaxPrice', maxPrice.toString());
+        localStorage.setItem('selectedMinPrice', minPrice.toString());
+        
     }, [resetFilter]);
 
     const handleMinPrice = () => {
@@ -39,7 +46,7 @@ const PriceFilter = ({ resetFilter }) => {
         }
 
         setMinPrice(newMinPrice);
-        localStorage.setItem('minPrice', newMinPrice.toString());
+        localStorage.setItem('selectedMinPrice', newMinPrice.toString());
     };
 
     const handleMaxPrice = () => {
@@ -47,7 +54,6 @@ const PriceFilter = ({ resetFilter }) => {
 
         if (!newMaxPrice) {
             newMaxPrice = maxProductPrice;
-            console.log("Валидация: " + newMaxPrice);
         }
 
         if (newMaxPrice < 0) {
@@ -63,7 +69,7 @@ const PriceFilter = ({ resetFilter }) => {
         }
 
         setMaxPrice(newMaxPrice);
-        localStorage.setItem('maxPrice', newMaxPrice.toString());
+        localStorage.setItem('selectedMaxPrice', newMaxPrice.toString());
     };
 
     return (

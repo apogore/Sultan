@@ -40,6 +40,7 @@ const ManufacturerFilter = ({ resetFilter }) => {
     };
     fetchData();
   }, []);
+  
 
   useEffect(() => {
     setSelectedManufacturers([]);

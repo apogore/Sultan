@@ -3,14 +3,14 @@ import BrandFilter from "../brand-filter/brand-filter";
 import ManufacturerFilter from "../manufacturer-filter/manufacturer-filter";
 import PriceFilter from "../price-filter/price-filter";
 import FilterButtons from "../filter-buttons/filter-buttons";
-import "./all-filters.scss";
 import Button from "@/app/ui/button/button";
+import "./all-filters.scss";
 
 const Filters = ({ toggleUpdate }) => {
   const MOBILE_MAX_WIDTH = 768;
-  const [resetFilter, setResetFilter] = useState(true);
+  const [resetFilter, setResetFilter] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= MOBILE_MAX_WIDTH);
+  const [isMobile, setIsMobile] = useState(false);
 
   const resetFilters = () => {
     setResetFilter((resetFilter) => !resetFilter);
@@ -21,15 +21,16 @@ const Filters = ({ toggleUpdate }) => {
   };
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-    if (window.innerWidth > 768) {
-      setIsOpen(true); // Всегда открываем на больших экранах
+    setIsMobile(window.innerWidth <= MOBILE_MAX_WIDTH);
+    if (window.innerWidth > MOBILE_MAX_WIDTH) {
+      setIsOpen(true);
     } else {
-      setIsOpen(false); // Скрываем на мобильных экранах
+      setIsOpen(false);
     }
   };
 
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -51,10 +52,10 @@ const Filters = ({ toggleUpdate }) => {
       </div>
       {isOpen && (
         <div className="filters__content">
-          <PriceFilter resetFilter={resetFilters} />
-          <ManufacturerFilter resetFilter={resetFilters} />
+          <PriceFilter resetFilter={resetFilter} />
+          <ManufacturerFilter resetFilter={resetFilter} />
           <hr />
-          <BrandFilter resetFilter={resetFilters} />
+          <BrandFilter resetFilter={resetFilter} />
           <FilterButtons toggleUpdate={toggleUpdate} resetFilter={resetFilters} />
         </div>)}
     </section>
