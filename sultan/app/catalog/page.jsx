@@ -8,6 +8,7 @@ import Filters from "@/app/shared/catalog/all-filters/all-filters";
 import FilteredProducts from "@/app/shared/catalog/products/products";
 import SortDropdown from "@/app/shared/catalog/sort/sort";
 import ViewSwitcher from "@/app/shared/catalog/view-switcher/view-switcher";
+import Brands from "@/app/shared/catalog/brands/brands";
 import Button from "@/app/ui/button/button";
 import "./page.scss";
 
@@ -95,6 +96,7 @@ const Catalog = () => {
           <div className="catalog__content__filters">
            <Filters toggleUpdate={toggleUpdate} />
            <Categories toggleUpdate={toggleUpdate} setNewTitle={updateTitle} update={update} needsFull={true} />
+           <Brands />
           </div>
 
           <div className="catalog__content__products">

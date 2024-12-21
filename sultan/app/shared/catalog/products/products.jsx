@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import MiniCard from "@/app/shared/mini-card/mini-card";
+import Pagination from "../pagination/pagination";
 import "./products.scss";
 
 const FilteredProducts = ({ update, sortOrder, productView }) => {
@@ -10,11 +7,6 @@ const FilteredProducts = ({ update, sortOrder, productView }) => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [isMobile, setIsMobile] = useState(false);
-    const router = useRouter();
-
-    const handleCardClick = (productId) => {
-        router.push(`/shared/product/${productId}`);
-    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -102,18 +94,18 @@ const FilteredProducts = ({ update, sortOrder, productView }) => {
 
         const sortedArray = sortedProducts();
         setFilteredProducts(sortedArray);
-    }, [sortOrder])
+    }, [sortOrder]);
 
     return (
         <div className="catalog-products">
-            {filteredProducts.map((product) => (
-                <MiniCard
-                    className={`${productView ? "card" : "row"}`}
-                    key={product.id}
-                    product={product}
-                    onClick={handleCardClick}
-                />
-            ))}
+            <Pagination filteredProducts={filteredProducts} productView={productView} />
+            <div className="catalog-products__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nullam interdum ut justo, vestibulum sagittis iaculis iaculis.
+                Quis mattis vulputate feugiat massa vestibulum duis.
+                Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis.
+                Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.
+            </div>
         </div>
     );
 

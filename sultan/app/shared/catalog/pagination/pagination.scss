@@ -1,0 +1,52 @@
+@import '../../../styles/vars';
+
+.pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__empty {
+        justify-self: center;
+    }
+
+    &__slide {
+        display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 16px;
+    width: 100%;
+
+        @media screen and (max-device-width: $mobile-max) {
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        gap: 8px;
+
+        &__button {
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            font-size: $font-size-medium;
+            font-weight: $font-weight-500;
+            color: $black-color;
+            background-color: transparent;
+            box-shadow: none;
+
+            &:hover {
+                background-color: $light-control-button-color;
+            }
+
+            &.active {
+                background-color: $light-control-button-color;
+            }
+        }
+    }
+}
