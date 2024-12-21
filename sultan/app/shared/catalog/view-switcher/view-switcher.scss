@@ -1,54 +1,54 @@
 @import '../../../styles/vars';
 
 .toggle-switch {
-    position: relative; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100px;
-    height: 44px;
-    background-color: $switcher-background-color;
-    border-radius: 1000px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .circle {
-    position: absolute;
-    top: 50%;
-    left: 4px;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 36px;
-    background-color: $white-color;
-    border-radius: 1000px;
-    transition: left 0.3s;
-  }
-  
-  .toggle-switch.toggled .circle {
-    left: calc(100% - 52px);
-  }
-  
-  .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .left-icon {
-    z-index: 1000;
-    width: 14px;
-    height: 12px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    margin-left: 22px;
-  }
-  
-  .right-icon {
-    z-index: 1000;
-    width: 16px;
-    height: 16px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    margin-right: 20px;
-  }
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  height: 44px;
+  background-color: $switcher-background-color;
+  border-radius: 1000px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 36px;
+  background-color: $white-color;
+  border-radius: 1000px;
+  transition: left 0.3s;
+}
+
+.toggle-switch.toggled .circle {
+  left: calc(100% - 52px);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-icon {
+  z-index: 1000;
+  width: 14px;
+  height: 12px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 22px;
+}
+
+.right-icon {
+  z-index: 1000;
+  width: 16px;
+  height: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-right: 20px;
+}

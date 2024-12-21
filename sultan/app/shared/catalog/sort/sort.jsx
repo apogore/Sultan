@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./sort.scss";
 
 const SortDropdown = ({ sortOrder, setNewSort }) => {

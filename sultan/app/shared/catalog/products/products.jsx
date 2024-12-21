@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Pagination from "../pagination/pagination";
+import Pagination from "@/app/shared/catalog/pagination/pagination";
 import "./products.scss";
 
 const FilteredProducts = ({ update, sortOrder, productView }) => {

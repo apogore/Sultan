@@ -4,7 +4,6 @@ const Brands = () => {
 
     return (
         <div className="brands">
-            <hr />
             <p className="brands__title">Бренды</p>
             <div className="brands__images">
                 <div className="brands__images__image"><img src="/best-products/airwick.png" /></div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from "next/navigation";
 import MiniCard from "@/app/shared/mini-card/mini-card";
 import Button from "@/app/ui/button/button";

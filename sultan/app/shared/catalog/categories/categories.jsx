@@ -22,6 +22,17 @@ const Categories = ({ toggleUpdate, setNewTitle, update, needsFull }) => {
         localStorage.setItem('selectedCategory', JSON.stringify([]));
     }, []);
 
+    useEffect(() => {
+        let newCategories = JSON.parse(localStorage.getItem('selectedCategory'));
+
+        if (newCategories !== null && newCategories != '') {
+            setActiveCategory(newCategories);
+            setSubcategories(newCategories.subcategories);
+        };
+        console.log(activeCategory);
+        console.log(subcategories);
+    }, [update]);
+
     const handleClick = (category) => {
         setActiveCategory(category);
         setSubcategories(category.subcategories);
@@ -31,63 +42,81 @@ const Categories = ({ toggleUpdate, setNewTitle, update, needsFull }) => {
     };
 
     if (!activeCategory && !needsFull) return (
-            <div className="catalog-fast-filters">
-                {categories.map(category => (
-                    <Button
-                        className={"fast-filter-button"}
-                        key={category.categorySlug}
-                        onClick={() => handleClick(category)}
-                        text={category.name}
-                    />
-                ))}
-            </div>
+        <div className="fast-filters">
+            {categories.map(category => (
+                <Button
+                    className={"fast-filters__button"}
+                    key={category.categorySlug}
+                    onClick={() => handleClick(category)}
+                    text={category.name}
+                />
+            ))}
+        </div>
     );
 
     if (subcategories && !needsFull) return (
-            <div className="catalog-fast-filters">
-                {subcategories.map(subcategory => (
-                    <Button
-                        className={"fast-filter-button"}
-                        key={subcategory.name}
-                        onClick={() => handleClick(subcategory)}
-                        text={subcategory.name}
-                    />
-                ))}
-            </div>
+        <div className="fast-filters">
+            {subcategories.map(subcategory => (
+                <Button
+                    className={"fast-filters__button"}
+                    key={subcategory.categorySlug}
+                    onClick={() => handleClick(subcategory)}
+                    text={subcategory.name}
+                />
+            ))}
+        </div>
     );
 
     if (!activeCategory && needsFull) return (
-        <ul className="fast-filters-list">
+        <div className="full-fast-filters">
             {categories.map(category => (
-                <li key={category.categorySlug} onClick={() => handleClick(category)}>
-                    {category.name}
+                <div key={category.categorySlug} className="full-fast-filters__list">
+                    <Button
+                        className={"full-fast-filters__list__button"}
+                        onClick={() => handleClick(category)}
+                        text={category.name}
+                    />
                     {category.subcategories && category.subcategories.length > 0
-                        ? (<ul>
+                        ? (<div className="full-fast-filters__list__inner">
                             {category.subcategories.map(subcategory => (
-                            <li key={subcategory.categorySlug} onClick={() => handleClick(subcategory)}>{subcategory.name}</li>
-                        ))}
-                        </ul>)
+                                    <Button
+                                        className={"full-fast-filters__list__inner__button"}
+                                        key={subcategory.categorySlug}
+                                        onClick={() => handleClick(subcategory)}
+                                        text={subcategory.name}
+                                    />
+                            ))}
+                        </div>)
                         : ("")}
-                </li>
+                </div>
             ))}
-        </ul>
+        </div>
     );
 
     if (subcategories && needsFull) return (
-        <ul className="fast-filters-list">
+        <div className="full-fast-filters">
             {subcategories.map(category => (
-                <li key={category.categorySlug} onClick={() => handleClick(category)}>
-                    {category.name}
+                <div key={category.categorySlug} className="full-fast-filters__list">
+                    <Button
+                        className={"full-fast-filters__list__button"}
+                        onClick={() => handleClick(category)}
+                        text={category.name}
+                    />
                     {category.subcategories && category.subcategories.length > 0
-                        ? (<ul>
+                        ? (<div className="full-fast-filters__list__inner">
                             {category.subcategories.map(subcategory => (
-                            <li key={subcategory.categorySlug} onClick={() => handleClick(subcategory)}>{subcategory.name}</li>
-                        ))}
-                        </ul>)
+                                    <Button
+                                        className={"full-fast-filters__list__inner__button"}
+                                        key={subcategory.categorySlug}
+                                        onClick={() => handleClick(subcategory)}
+                                        text={subcategory.name}
+                                    />
+                            ))}
+                        </div>)
                         : ("")}
-                </li>
+                </div>
             ))}
-        </ul>
+        </div>
     );
 };
 

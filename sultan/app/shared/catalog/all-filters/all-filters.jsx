@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Button from "@/app/ui/button/button";
-import BrandFilter from "../brand-filter/brand-filter";
-import ManufacturerFilter from "../manufacturer-filter/manufacturer-filter";
-import PriceFilter from "../price-filter/price-filter";
-import FilterButtons from "../filter-buttons/filter-buttons";
+import BrandFilter from "@/app/shared/catalog/brand-filter/brand-filter";
+import ManufacturerFilter from "@/app/shared/catalog/manufacturer-filter/manufacturer-filter";
+import PriceFilter from "@/app/shared/catalog/price-filter/price-filter";
+import FilterButtons from "@/app/shared/catalog/filter-buttons/filter-buttons";
 import "./all-filters.scss";
 
 const Filters = ({ toggleUpdate }) => {
