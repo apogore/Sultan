@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from "@ui/button/button";
 import "./categories.scss";
 
-const Categories = ({ toggleUpdate, setNewTitle }) => {
+const Categories = ({ toggleUpdate, setNewTitle, update, needsFull }) => {
     const [categories, setCategories] = useState([]);
     const [activeCategory, setActiveCategory] = useState(null);
     const [subcategories, setSubcategories] = useState([]);
@@ -30,7 +30,7 @@ const Categories = ({ toggleUpdate, setNewTitle }) => {
         toggleUpdate();
     };
 
-    if (!activeCategory) return (
+    if (!activeCategory && !needsFull) return (
             <div className="catalog-fast-filters">
                 {categories.map(category => (
                     <Button
@@ -43,7 +43,7 @@ const Categories = ({ toggleUpdate, setNewTitle }) => {
             </div>
     );
 
-    if (subcategories) return (
+    if (subcategories && !needsFull) return (
             <div className="catalog-fast-filters">
                 {subcategories.map(subcategory => (
                     <Button
@@ -54,7 +54,41 @@ const Categories = ({ toggleUpdate, setNewTitle }) => {
                     />
                 ))}
             </div>
-    )
+    );
+
+    if (!activeCategory && needsFull) return (
+        <ul className="fast-filters-list">
+            {categories.map(category => (
+                <li key={category.categorySlug} onClick={() => handleClick(category)}>
+                    {category.name}
+                    {category.subcategories && category.subcategories.length > 0
+                        ? (<ul>
+                            {category.subcategories.map(subcategory => (
+                            <li key={subcategory.categorySlug} onClick={() => handleClick(subcategory)}>{subcategory.name}</li>
+                        ))}
+                        </ul>)
+                        : ("")}
+                </li>
+            ))}
+        </ul>
+    );
+
+    if (subcategories && needsFull) return (
+        <ul className="fast-filters-list">
+            {subcategories.map(category => (
+                <li key={category.categorySlug} onClick={() => handleClick(category)}>
+                    {category.name}
+                    {category.subcategories && category.subcategories.length > 0
+                        ? (<ul>
+                            {category.subcategories.map(subcategory => (
+                            <li key={subcategory.categorySlug} onClick={() => handleClick(subcategory)}>{subcategory.name}</li>
+                        ))}
+                        </ul>)
+                        : ("")}
+                </li>
+            ))}
+        </ul>
+    );
 };
 
 export default Categories;

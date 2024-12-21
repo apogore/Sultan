@@ -102,7 +102,7 @@
     "sizeType": "volume",
     "size": 450,
     "category": ["Косметика и гигиена", "Уход за лицом", "Маски, скрабы, сыворотки"],
-    "manufacturer":"Булгари Грин",
+    "manufacturer":"Булгари 2 Грин",
     "barcode": 4604049097548,
     "brand": {
       "name": "AOS",
@@ -134,7 +134,7 @@
     "article": 10201,
     "descriptionRu": "средство для мытья посуды Crystal",
     "descriptionEn": "Fairy dishwashing liquid with lemon fragrance.",
-    "price": 148.76,
+    "price": 1500,
     "amount": 200,
     "isPopular": true
   },
@@ -506,7 +506,7 @@
     "article": 10201,
     "descriptionRu": "средство для мытья посуды Crystal",
     "descriptionEn": "Fairy dishwashing liquid with lemon fragrance.",
-    "price": 148.76,
+    "price": 120,
     "amount": 200,
     "isPopular": true
   },

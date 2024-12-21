@@ -5,7 +5,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import MiniCard from "@/app/shared/mini-card/mini-card";
 import "./products.scss";
 
-const FilteredProducts = ({ update }) => {
+const FilteredProducts = ({ update, sortOrder, productView }) => {
     const MOBILE_MAX_WIDTH = 768;
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -43,20 +43,15 @@ const FilteredProducts = ({ update }) => {
 
     useEffect(() => {
         const selectedCategoryFilter = JSON.parse(localStorage.getItem('selectedCategory'));
-        console.log(selectedCategoryFilter);
         const selectedManufacturersFilter = JSON.parse(localStorage.getItem('selectedManufacturers'));
-        console.log(selectedManufacturersFilter);
         const selectedBrandsFilter = JSON.parse(localStorage.getItem('selectedBrands'));
-        console.log(selectedBrandsFilter);
         const selectedMinPriceFilter = JSON.parse(localStorage.getItem('selectedMinPrice'));
-        console.log(selectedMinPriceFilter);
         const selectedMaxPriceFilter = JSON.parse(localStorage.getItem('selectedMaxPrice'));
-        console.log(selectedMaxPriceFilter);
 
         const applyFilters = () => {
             let filtered = products;
 
-            if (selectedCategoryFilter !== null && selectedCategoryFilter !='') {
+            if (selectedCategoryFilter !== null && selectedCategoryFilter != '') {
                 filtered = filtered.filter(product =>
                     product.category.some(category => selectedCategoryFilter.name.includes(category)));
             };
@@ -87,15 +82,38 @@ const FilteredProducts = ({ update }) => {
         applyFilters();
     }, [update]);
 
+    useEffect(() => {
+        const sortedProducts = () => {
+            const sorted = [...filteredProducts]; // Копируем массив товаров
+            if (sortOrder === 'nameAsc') {
+                return sorted.sort((a, b) => a.nameRu.localeCompare(b.nameRu)); // Сортировка по имени от А до Я
+            }
+            else if (sortOrder === 'nameDesc') {
+                return sorted.sort((a, b) => b.nameRu.localeCompare(a.nameRu)); // Сортировка по имени от Я до А
+            }
+            else if (sortOrder === 'priceAsc') {
+                return sorted.sort((a, b) => a.price - b.price); // Сортировка по цене от меньшего к большему
+            }
+            else if (sortOrder === 'priceDesc') {
+                return sorted.sort((a, b) => b.price - a.price); // Сортировка по цене от большего к меньшему
+            };
+            return sorted;
+        };
+
+        const sortedArray = sortedProducts();
+        setFilteredProducts(sortedArray);
+    }, [sortOrder])
+
     return (
         <div className="catalog-products">
-                    {filteredProducts.map((product) => (
-                        <MiniCard
-                            key={product.id}
-                            product={product}
-                            onClick={handleCardClick}
-                        />
-                    ))}
+            {filteredProducts.map((product) => (
+                <MiniCard
+                    className={`${productView ? "card" : "row"}`}
+                    key={product.id}
+                    product={product}
+                    onClick={handleCardClick}
+                />
+            ))}
         </div>
     );
 
