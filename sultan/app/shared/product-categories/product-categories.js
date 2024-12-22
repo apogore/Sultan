@@ -1,11 +1,14 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { productCategoriesData } from "@shared/product-categories-data.js";
 import "./product-categories.scss";
 
 const ProductCategories = () => {
+  const router = useRouter();
+
   const categoryButtonClick = () => {
-    window.location.href = window.location.href;
+      router.push(`/catalog`);
   };
 
   return (

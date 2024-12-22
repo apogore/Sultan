@@ -1,0 +1,29 @@
+@import '../../../styles/vars';
+
+.brands {
+    margin-top: 20px;
+
+    &__title {
+        font-size: $font-size-large;
+        font-weight: $font-weight-500;
+        text-transform: uppercase;
+        color: $black-color;
+    }
+
+    &__images {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 8px;
+
+        &__image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 78px;
+            border-radius: 12px;
+        }
+    }
+}

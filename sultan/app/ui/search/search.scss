@@ -12,25 +12,14 @@
     border-radius: 36px;
     background-color: $input-placeholder-color;
 
-    @media screen and (max-device-width: $mobile-max) {
-        flex-direction: row-reverse;
-        justify-content: center;
-        flex-grow: 1;
-        flex-basis: 0;
-        max-width: 384px;
-        min-width: 160px;
-        height: 40px;
-        padding: 0px;
-        background-color: $white-color;
-    }
-
     * {
         box-sizing: border-box;
         margin: 0;
     }
 
     .search-input {
-        width: 60%;
+        width: 80%;
+        height: 100%;
         margin-left: 16px;
         padding-left: 16px;
         outline: none;
@@ -39,32 +28,8 @@
         border: none;
         transition: .3s linear;
 
-        @media screen and (max-device-width: $mobile-max) {
-            width: 50%;
-            height: 40px;
-            margin-left: 8px;
-            margin-right: 16px;
-            padding-left: 0;
-            border-radius: 0px;
-            border: none;
-            transition: width 0.3s linear;
-        }
-
-        &:focus {
-            @media screen and (max-device-width: $mobile-max) {
-                width: 80%;
-                padding-left: 16px;
-                box-shadow: none;
-            }
-        }
-
         &::placeholder {
             transition: opacity 0.3s ease;
-
-            @media screen and (max-device-width: $mobile-max) {
-                font-size: $font-size-medium;
-                font-weight: 600;
-            }
         }
 
         &:focus::placeholder {
@@ -84,14 +49,6 @@
         background-color: $button-bg-color;
         border: none;
 
-        @media screen and (max-device-width: $mobile-max) {
-            position: inherit;
-            width: 36px;
-            height: 32px;
-            background-color: transparent;
-            transition: transform 0.3s ease;
-        }
-
         img {
             width: 16px;
             height: 16px;
@@ -108,10 +65,6 @@
 
         &:active {
             background-color: $button-active-bg-color;
-
-            @media screen and (max-device-width: $mobile-max) {
-                background: none;
-            }
         }
     }
 }
