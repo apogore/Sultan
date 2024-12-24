@@ -8,6 +8,9 @@ import Search from "@ui/search/search";
 import CartHeader from "./cart/header-cart";
 import OperatorInfo from "./operator-info/operator-info";
 import LogoSultan from "../logo-sultan/logo-sultan";
+import MailLink from "../Mail-link/Mail";
+import AddressInfo from "../adress-info/Address-Info";
+
 import "./header.scss";
 
 const Header = () => {
@@ -21,21 +24,9 @@ const Header = () => {
       <div className="header-desktop">
         <div className="header-section-1">
           <div className="header-info">
-            <div className="header-address">
-              <img src="/icons/geo-icon.svg" alt="geo" width={16} height={18} />
-              <p>
-                <b>г. Кокчетав, ул. Ж. Ташенова 129Б</b>
-              </p>
-              <p className="header-signature">(Рынок Восточный)</p>
-            </div>
+          <AddressInfo></AddressInfo>
 
-            <div className="header-mail">
-              <img src="/icons/mail-icon.svg" alt="geo" width={17} height={14} />
-              <p>
-                <Link href="mailto:opt.sultan@mail.ru">opt.sultan@mail.ru</Link>
-              </p>
-              <p className="header-signature">На связи в любое время</p>
-            </div>
+            <MailLink></MailLink>
           </div>
 
           <section></section>
@@ -95,17 +86,7 @@ const Header = () => {
             icon={popup ? "/icons/menu_button_close.svg" : "/icons/menu_button_open.svg"}
           />
 
-          <div className="header-logo-sultan">
-            <Link href="/" className="logo-sultan-link">
-              <img
-                src="/icons/logo-sultan.svg"
-                alt="Султан"
-                width={97}
-                height={41}
-                className="logo-sultan"
-              />
-            </Link>
-          </div>
+          <LogoSultan></LogoSultan>
 
           <Button
             onClick={() => (catalogButtonClick)}
@@ -139,21 +120,9 @@ const Header = () => {
 
       {popup && (
         <div className="popup-menu-content">
-          <div className="header-address">
-            <img src="/icons/geo-icon.svg" alt="geo" width={16} height={18} />
-            <p>
-              <b>г. Кокчетав, ул. Ж. Ташенова 129Б</b>
-            </p>
-            <p className="header-signature">(Рынок Восточный)</p>
-          </div>
+        <AddressInfo></AddressInfo>
 
-          <div className="header-mail">
-            <img src="/icons/mail-icon.svg" alt="geo" width={17} height={14} />
-            <p>
-              <Link href="mailto:opt.sultan@mail.ru">opt.sultan@mail.ru</Link>
-            </p>
-            <p className="header-signature">На связи в любое время</p>
-          </div>
+        <MailLink></MailLink>
 
           <div className="header-sales-dept">
             <img src="/icons/phone_icon.svg" alt="geo" width={15} height={15} />
