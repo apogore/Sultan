@@ -2,12 +2,11 @@
 
 .cart {
   padding: 16px;
-  background-color: $light-gray;
 
   &__empty {
     text-align: center;
     font-size: $font-size-large;
-    color: $gray-color;
+    
   }
 
   .cart-item {
@@ -22,51 +21,90 @@
     &__image {
       width: 120px;
       height: 120px;
-      object-fit: cover;
+      object-fit: contain; /* Для корректного отображения изображений */
       border-radius: 8px;
       margin-right: 16px;
     }
 
     &__info {
-      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+
+      .cart-item__details {
+        display: flex;
+        flex-direction: column; /* Столбец для имени и описания */
+    
+      }
+      .cart-item__buttons{
+        display: flex;
+        align-items: center;
+        .cart-item__remove{
+          max-width: 60px;
+          max-height: 60px;
+        }
+      }
 
       &__name {
         font-size: $font-size-xlarge;
         font-weight: $font-weight-bold;
         color: $black-color;
         margin-bottom: 8px;
+        text-align: left; /* Выровняем текст по левому краю */
       }
 
       &__description {
         font-size: $font-size-medium;
-        color: $gray-color;
-        margin-bottom: 8px;
+      
+        margin-top: 8px;
       }
 
       &__quantity {
         font-size: $font-size-medium;
         font-weight: $font-weight-semibold;
         color: $green-color;
+        margin-left: 16px; /* Отступ для отдаления от остальных элементов */
+        text-align: center;
       }
     }
   }
-}
 
-// Адаптивность
-@media (max-width: $mobile-max) {
-  .cart-item {
-    flex-direction: column;
-    align-items: center;
+  // Адаптивность
+  @media (max-width: $mobile-max) {
+    .cart-item {
+      flex-direction: column;
+      align-items: center;
 
-    &__image {
-      margin-bottom: 16px;
-    }
+      &__image {
+        margin-bottom: 16px;
+        width: 150px; /* Увеличим ширину изображения на мобильных */
+        height: auto; /* Сохраняем пропорции */
+      }
 
-    &__info {
-      &__name,
-      &__description,
-      &__quantity {
-        text-align: center;
+      &__info {
+        flex-direction: column;
+        align-items: center;
+
+        &__details {
+          align-items: center;
+          text-align: center; /* Центруем текст в мобилке */
+        }
+
+        &__name {
+          text-align: center;
+        }
+
+        &__description {
+          text-align: center;
+          margin-top: 8px;
+        }
+
+        &__quantity {
+          margin-left: 0;
+          text-align: center;
+          margin-top: 8px;
+        }
       }
     }
   }

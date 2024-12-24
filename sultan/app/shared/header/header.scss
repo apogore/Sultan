@@ -19,18 +19,6 @@ header {
     }
 }
 
-.logo-sultan-link {
-    display: inline-block;
-}
-
-.logo-sultan {
-    transition: transform 0.3s, filter 0.3s;
-}
-
-.logo-sultan-link:hover .logo-sultan {
-    transform: scale(1.1);
-    filter: brightness(0.8);
-}
 
 .header-section-1 {
     display: flex;
@@ -312,60 +300,6 @@ p.header-signature {
     }
 }
 
-.header-operator {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    padding-left: 36px;
-}
-
-.header-operator p {
-    margin: 0px;
-    padding-right: 20px;
-    text-align: right;
-    text-justify: right;
-    text-wrap: nowrap;
-    line-height: 2;
-}
-
-.header-operator-info .header-operator-signature {
-    margin: 2px 0;
-    font-size: $font-size-small;
-    line-height: 14px;
-    text-wrap: balance;
-    color: $gray-color;
-}
-
-.header-telephone-number {
-    font-weight: bold;
-    font-size: $font-size-medium;
-    letter-spacing: -0.5px;
-    color: $black-color;
-}
-
-.header-operator a {
-    font-weight: bold;
-    text-decoration: underline;
-    color: $gray-color;
-}
-
-.header-operator-photo img {
-    border-radius: 50px;
-}
-
-.header-operator-shadow-point {
-    position: relative;
-    top: 40px;
-    left: 60px;
-    z-index: 999;
-    width: 8px;
-    height: 8px;
-    margin: 0;
-    border-radius: 50%;
-    background: rgba(31, 216, 93, 1);
-    animation: shadow 1s infinite alternate;
-}
 
 @keyframes shadow {
     from {
@@ -403,43 +337,6 @@ p.header-signature {
     margin-right: 10px;
 }
 
-.header-cart a {
-    position: relative;
-    text-decoration: none;
-    font-size: $font-size-medium;
-    color: inherit;
-    outline: none;
-}
-
-.header-cart a:focus {
-    outline: none;
-}
-
-.header-cart a::before {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: $yellow-color;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
-    visibility: hidden;
-}
-
-.header-cart a:hover::before {
-    transform: scaleX(1);
-    visibility: visible;
-}
-
-.header-cart p {
-    margin: 0;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    text-align: left;
-    text-wrap: nowrap;
-}
 
 .header-mobile {
     @media screen and (min-device-width: $tablet-s) {

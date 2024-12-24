@@ -5,14 +5,14 @@ import { navigationLinks } from "@/app/shared/navigation-links.js";
 import getPriceList from "@functions/price-list";
 import Button from "@ui/button/button";
 import Search from "@ui/search/search";
+import CartHeader from "./cart/header-cart";
+import OperatorInfo from "./operator-info/operator-info";
+import LogoSultan from "../logo-sultan/logo-sultan";
 import "./header.scss";
 
 const Header = () => {
   const catalogButtonClick = () => {
     window.location.href = window.location.href;
-  };
-  const handleCartClick = () => {
-    navigate('/cart'); // Переход на страницу корзины
   };
   const [popup, setPopup] = useState(false);
 
@@ -54,17 +54,7 @@ const Header = () => {
         <hr />
 
         <div className="header-section-2">
-          <div className="header-logo-sultan">
-            <Link href="/" className="logo-sultan-link">
-              <img
-                src="/icons/logo-sultan.svg"
-                alt="Султан"
-                width={156}
-                height={66}
-                className="logo-sultan"
-              />
-            </Link>
-          </div>
+            <LogoSultan></LogoSultan>
 
             <Button
               className="header-catalog-button"
@@ -82,29 +72,7 @@ const Header = () => {
             icon="/icons/search-button.svg"
           />
 
-          <div className="header-operator">
-            <div className="header-operator-info">
-              <p className="header-telephone-number">+ 7 (777) 490-00-91</p>
-              <p className="header-operator-signature">
-                время работы: 9:00-20:00
-              </p>
-              <p className="header-signature">
-                <Link href="tel:77774900091" className="order-call-link">
-                  <b>Заказать звонок</b>
-                </Link>
-              </p>
-            </div>
-
-            <div className="header-operator-photo">
-              <div className="header-operator-shadow-point" />
-              <img
-                src="/header/operator.png"
-                alt="Заказать звонок"
-                width={74}
-                height={100}
-              />
-            </div>
-          </div>
+          <OperatorInfo></OperatorInfo>
 
             <Button
               className="header-price-button"
@@ -112,17 +80,8 @@ const Header = () => {
               text="Прайс-лист"
               icon="/icons/download-icon.svg"
             />
+          <CartHeader></CartHeader>
 
-          <div className="header-cart">
-
-            <img src="/icons/cart-icon.svg" alt="Корзина" width={50} height={38} />
-            <Link href="/cart">
-              <p className="header-signature">Корзина</p>
-              <p>
-                <b>12 478 ₸</b>
-              </p>
-            </Link>
-          </div>
 
           <hr/>
         </div>

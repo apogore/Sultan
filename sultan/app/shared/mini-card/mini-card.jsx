@@ -29,7 +29,7 @@ const MiniCard = ({ product }) => {
       image: product.image,
       text: "Товар добавлен в корзину",
       linkText: "Перейти в корзину",
-      onLinkClick: () => router.push("/cart"),
+      onLinkClick: () => router.push("/shared/cart"),
     });
   };
 
