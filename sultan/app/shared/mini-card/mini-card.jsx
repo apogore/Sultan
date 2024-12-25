@@ -1,14 +1,30 @@
 "use client";
 
-import React from "react";
-import { useRouter } from "next/navigation"; // Или `import { useNavigate } from 'react-router-dom';`
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Button from "@ui/button/button";
-import { useNotifications } from "../Notification/Notification-context";
+import {
+  showSuccessToast,
+  showErrorToast,
+} from "@shared/Notification/toastUtils";
+import QuantityButtons from "@shared/quantity-button/quantity-button"; // Импортируем компонент для кнопок количества
+
+import NotificationContent from "../Notification/NotificationContent";
 import "./mini-card.scss";
 
 const MiniCard = ({ product }) => {
-  const router = useRouter(); // Или `const navigate = useNavigate();`
-  const { addNotification } = useNotifications();
+  const router = useRouter();
+
+  const [inCart, setInCart] = useState(false); // Стейт для проверки, в корзине ли товар
+  const [quantity, setQuantity] = useState(0); // Количество товара в корзине
+
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+    if (cart[product.id]) {
+      setInCart(true);
+      setQuantity(cart[product.id]);
+    }
+  }, [product.id]);
 
   if (!product) {
     return null;
@@ -20,17 +36,58 @@ const MiniCard = ({ product }) => {
 
   const handleAddToCart = (e) => {
     e.stopPropagation(); // Остановка всплытия события
-    const productId = product.id;
-    const cart = JSON.parse(localStorage.getItem("cart")) || {};
-    cart[productId] = (cart[productId] || 0) + 1;
-    localStorage.setItem("cart", JSON.stringify(cart));
+    try {
+      const productId = product.id;
+      const cart = JSON.parse(localStorage.getItem("cart")) || {};
+      cart[productId] = (cart[productId] || 0) + 1;
+      localStorage.setItem("cart", JSON.stringify(cart));
 
-    addNotification({
-      image: product.image,
-      text: "Товар добавлен в корзину",
-      linkText: "Перейти в корзину",
-      onLinkClick: () => router.push("/shared/cart"),
-    });
+      setInCart(true); // Устанавливаем, что товар теперь в корзине
+      setQuantity(cart[productId]); // Обновляем количество товара
+
+      showSuccessToast(
+        <NotificationContent
+          image={product.image}
+          text="Товар добавлен в корзину"
+          linkText="Перейти в корзину"
+          onLinkClick={() => router.push("/shared/cart")}
+        />
+      );
+    } catch (error) {
+      showErrorToast(
+        <NotificationContent
+          image={product.image}
+          text="Ошибка добавления в корзину"
+          linkText="Повторить"
+          onLinkClick={handleAddToCart}
+        />
+      );
+    }
+  };
+
+  const handleToCart = () => {
+    router.push("/shared/cart");
+  };
+
+  const incrementQuantity = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+    cart[product.id] = (cart[product.id] || 0) + 1;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setQuantity(cart[product.id]);
+  };
+
+  const decrementQuantity = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || {};
+    if (cart[product.id] > 1) {
+      cart[product.id] -= 1;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      setQuantity(cart[product.id]);
+    } else {
+      delete cart[product.id];
+      localStorage.setItem("cart", JSON.stringify(cart));
+      setInCart(false);
+      setQuantity(0);
+    }
   };
 
   return (
@@ -54,7 +111,7 @@ const MiniCard = ({ product }) => {
           />
           {product.count !== undefined
             ? product.count + "X" + product.size
-            : product.size}{" "}
+            : product.size} {" "}
           {product.sizeType === "volume" ? "мл" : "г"}
         </p>
         <p className="mini-card__name">
@@ -62,31 +119,50 @@ const MiniCard = ({ product }) => {
         </p>
         <div className="mini-card__manufacturer-brand-info">
           <p>
-            <span className="mini-card__label">Штрихкод:</span>{" "}
-            {product.barcode}
+            <span className="mini-card__label">Штрихкод:</span> {product.barcode}
           </p>
           <p>
-            <span className="mini-card__label">Производитель:</span>{" "}
-            {product.manufacturer}
+            <span className="mini-card__label">Производитель:</span> {product.manufacturer}
           </p>
           <p>
-            <span className="mini-card__label">Бренд:</span>{" "}
-            {product.brand.name}
+            <span className="mini-card__label">Бренд:</span> {product.brand.name}
           </p>
         </div>
 
-        <div
-          className="mini-card__price-button"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <p className="mini-card__price">{product.price.toFixed(2)} ₸</p>
-          <Button
-            onClick={handleAddToCart}
-            text="В корзину"
-            icon="/icons/cart.svg"
-            className="mini-card__button"
-          />
-        </div>
+        {inCart ? (
+          <div className="mini-card__actions">
+            <QuantityButtons
+              quantity={quantity}
+              increment={incrementQuantity}
+              decrement={decrementQuantity}
+              className="mini-card__button"
+              onChange={(newQuantity) => {
+                const cart = JSON.parse(localStorage.getItem("cart")) || {};
+                cart[product.id] = newQuantity;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                setQuantity(newQuantity);
+              }}
+            />
+            <Button
+              onClick={handleToCart}
+              text="Оформить"
+              
+              className="mini-card__button"
+            />
+          </div>
+        ) : (
+          <div
+            className="mini-card__price-button"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Button
+              onClick={handleAddToCart}
+              text="В корзину"
+              icon="/icons/cart.svg"
+              className="mini-card__button"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

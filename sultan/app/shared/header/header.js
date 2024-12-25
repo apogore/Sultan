@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Link from 'next/link';
 import { navigationLinks } from "@/app/shared/navigation-links.js";
+import { useRouter } from "next/navigation";
+
 import getPriceList from "@functions/price-list";
 import Button from "@ui/button/button";
 import Search from "@ui/search/search";
@@ -14,8 +16,14 @@ import AddressInfo from "../adress-info/Address-Info";
 import "./header.scss";
 
 const Header = () => {
+  const router = useRouter();
+
   const catalogButtonClick = () => {
     window.location.href = window.location.href;
+  };
+  const CartButtonClick = () => {
+    router.push(`/shared/cart`);
+
   };
   const [popup, setPopup] = useState(false);
 
@@ -89,7 +97,7 @@ const Header = () => {
           <LogoSultan></LogoSultan>
 
           <Button
-            onClick={() => (catalogButtonClick)}
+            onClick={CartButtonClick}
             className="header-cart-button"
             icon="/icons/cart-icon.svg"
           />
