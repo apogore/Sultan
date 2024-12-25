@@ -1,0 +1,29 @@
+@import '../../../styles/vars';
+
+.sort-dropdown {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+
+    @media screen and (max-device-width: $mobile-max) {
+        margin-top: 24px;
+    }
+
+    &__label {
+        font-size: $font-size-large;
+        font-weight: $font-weight-500;
+    }
+
+    &__select {
+        font-size: $font-size-large;
+        font-weight: $font-weight-regular;
+        color: $gray-color;
+        border: none;
+
+        &__option {
+            font-size: $font-size-large;
+            font-weight: $font-weight-regular;
+            color: $gray-color;
+        }
+    }
+}

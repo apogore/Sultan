@@ -1,0 +1,130 @@
+@import '../styles/vars';
+
+.catalog {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 70%;
+    margin: 20px auto;
+
+    @media screen and (max-device-width: $mobile-max) {
+        max-width: 100%;
+        margin: 24px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        gap: 108px;
+        width: 100%;
+        margin: 48px 0;
+
+        @media screen and (max-device-width: $mobile-max) {
+            flex-direction: column;
+            width: 100%;
+            gap: 24px;
+        }
+
+        &__filters {
+            width: 238px;
+
+            @media screen and (max-device-width: $mobile-max) {
+                width: 100%;
+                margin: 16px 0;
+            }
+        }
+
+        &__products {
+            width: 100%;
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        h1 {
+            font-size: $font-size-40;
+            font-weight: $font-weight-semibold;
+            text-transform: uppercase;
+            color: $black-color;
+    
+            @media screen and (max-device-width: $mobile-max) {
+                font-size: $font-size-xlarge;
+                font-weight: $font-weight-500
+            };
+        } 
+
+        &__sort {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 28px;
+            margin-right: 28px;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        @media screen and (max-device-width: $mobile-max) {
+            gap: 8px;
+        }
+
+        &__back__button.custom-button  {
+            @media screen and (max-device-width: $mobile-max) {
+            display: flex;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background-color: $light-control-button-color;
+
+            img {
+                width: 8px;
+                height: 8px;
+            }
+            }
+        }
+
+        p {
+            @media screen and (max-device-width: $mobile-max) {
+                font-size: $font-size-xsmall;
+                font-weight: $font-weight-semibold;
+                text-transform: uppercase;
+                color: $gray-color;
+            }
+        }
+
+        &__link {
+            margin: 24px 0;
+            padding: 0 8px;
+            font-size: $font-size-medium;
+            font-weight: $font-weight-300;
+            color: $gray-color;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $yellow-color;
+            }
+
+            &:active {
+                color: $orange-color;
+            }
+
+            &:not(:last-child) {
+                border-right: 1px dashed $light-gray;
+            }
+
+            &:last-child {
+                opacity: 50%;
+            }
+        }
+    }
+}

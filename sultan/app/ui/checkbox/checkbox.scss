@@ -1,0 +1,32 @@
+@import '../../styles/vars';
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+
+    &__input {
+        width: 10px;
+        height: 10px;
+        background-color: transparent;
+        border: 1px solid $gray-color;
+        cursor: pointer;
+        appearance: none;
+
+        &:hover {
+            border: 1px solid $yellow-color;
+        }
+
+        &:checked {
+            background-color: $button-active-bg-color;
+            border: 1px solid $button-active-bg-color;
+        }
+    }
+
+    &__text {
+        margin: 4px;
+    }
+
+    &__input:hover + &__text {
+        color: $yellow-color;
+    }
+}

@@ -1,0 +1,257 @@
+[
+      {
+        "name": "Бытовая химия",
+        "categorySlug": "household-chemicals",
+        "subcategories": [
+          {
+            "name": "Средства для стирки",
+            "subcategories": [
+              {
+                "name": "Капсулы для стирки",
+                "categorySlug": "washing-capsules"
+              },
+              {
+                "name": "Гели для стирки",
+                "categorySlug": "washing-gels"
+              },
+              {
+                "name": "Порошки для стирки",
+                "categorySlug": "washing-powders"
+              }
+            ]
+          },
+          {
+            "name": "Средства для мытья посуды",
+            "categorySlug": "dishwashing",
+            "subcategories": [
+              {
+                "name": "Гели для мытья посуды",
+                "categorySlug": "dishawashing-gels"
+              },
+              {
+                "name": "Таблетки для посудомоечных машин",
+                "categorySlug": "dishwasher-tablets"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Косметика и гигиена",
+        "categorySlug": "cosmetics",
+        "subcategories": [
+          {
+            "name": "Уход за телом",
+            "categorySlug": "body-care",
+            "subcategories": [
+              {
+                "name": "Эпиляция и депиляция",
+                "categorySlug": "epilation"
+              },
+              {
+                "name": "Средства для ванны и душа",
+                "categorySlug": "bath-and-shower"
+              },
+              {
+                "name": "Скрабы, пилинги",
+                "categorySlug": "scrubs"
+              },
+              {
+                "name": "Мочалки и губки для тела",
+                "categorySlug": "sponges"
+              },
+              {
+                "name": "Кремы, лосьоны, масла",
+                "categorySlug": "body-lotion"
+              },
+              {
+                "name": "Интимный уход",
+                "categorySlug": "intimate-care"
+              },
+              {
+                "name": "Дезодоранты, антиперспиранты",
+                "categorySlug": "deodorants"
+              },
+              {
+                "name": "Гели для душа",
+                "categorySlug": "shower-gels"
+              }
+            ]
+          },
+          {
+            "name": "Уход за руками",
+            "categorySlug": "hand-care",
+            "subcategories": [
+              {
+                "name": "Увлажнение и питание",
+                "categorySlug": "moisture"
+              },
+              {
+                "name": "Средства для ногтей",
+                "categorySlug": "nail-care"
+              },
+              {
+                "name": "Мыло твердое",
+                "categorySlug": "solid-soap"
+              },
+              {
+                "name": "Мыло жидкое",
+                "categorySlug": "liquid-soap"
+              },
+              {
+                "name": "Крем для рук",
+                "categorySlug": "hand-cream"
+              },
+              {
+                "name": "Защита рук",
+                "categorySlug": "hand-protection"
+              },
+              {
+                "name": "Жидкость для снятия лака",
+                "categorySlug": "nail-polish-remover"
+              }
+            ]
+          },
+          {
+            "name": "Уход за ногами",
+            "categorySlug": "foot-care",
+            "subcategories": [
+              {
+                "name": "Скрабы, пилинги",
+                "categorySlug": "foot-scrubs"
+              },
+              {
+                "name": "Пилки, ролики",
+                "categorySlug": "foot-file"
+              },
+              {
+                "name": "Крем для ног",
+                "categorySlug": "foot-cream"
+              },
+              {
+                "name": "Дезодоранты для ног",
+                "categorySlug": "foot-deodorant"
+              }
+            ]
+          },
+          {
+            "name": "Уход за лицом",
+            "categorySlug": "face-care",
+            "subcategories": [
+              {
+                "name": "Тональные средства",
+                "categorySlug": "foundation"
+              },
+              {
+                "name": "Средства для снятия макияжа",
+                "categorySlug": "makeup-removers"
+              },
+              {
+                "name": "Средства для очищения",
+                "categorySlug": "facial-cleansers"
+              },
+              {
+                "name": "Маски, скрабы, сыворотки",
+                "categorySlug": "face-masks"
+              },
+              {
+                "name": "Крем для лица",
+                "categorySlug": "face-cream"
+              },
+              {
+                "name": "Крем для век",
+                "categorySlug": "eye-cream"
+              },
+              {
+                "name": "Жидкость для снятия макияжа",
+                "categorySlug": "liquid-makeup-removers"
+              },
+              {
+                "name": "Гигиеническая помада",
+                "categorySlug": "hygienic-lipstick"
+              }
+            ]
+          },
+          {
+            "name": "Уход за волосами",
+            "categorySlug": "hair-care",
+            "subcategories": [
+              {
+                "name": "Шампуни",
+                "categorySlug": "shampoo"
+              },
+              {
+                "name": "Средства для укладки",
+                "categorySlug": "hair-styling"
+              },
+              {
+                "name": "Средства для окрашивания волос",
+                "categorySlug": "hair-coloring"
+              },
+              {
+                "name": "Маски, сыворотки, масла",
+                "categorySlug": "hair-mask"
+              },
+              {
+                "name": "Кондиционеры, бальзамы",
+                "categorySlug": "conditioner"
+              }
+            ]
+          },
+          {
+            "name": "Средства для загара",
+            "categorySlug": "tanning",
+            "subcategories": [
+              {
+                "name": "Средства после загара",
+                "categorySlug": "after-sun-products"
+              }
+            ]
+          },
+          {
+            "name": "Средства для бритья",
+            "categorySlug": "shaving",
+            "subcategories": [
+              {
+                "name": "Станки и кассеты",
+                "categorySlug": "razors"
+              },
+              {
+                "name": "После бритья",
+                "categorySlug": "after-shaving"
+              },
+              {
+                "name": "Для бритья",
+                "categorySlug": "for-shaving"
+              }
+            ]
+          },
+          {
+            "name": "Подарочные наборы",
+            "categorySlug": "gift-boxes",
+            "subcategories": [
+              {
+                "name": "Для мужчин",
+                "categorySlug": "gifts-for-men"
+              },
+              {
+                "name": "Для женщин",
+                "categorySlug": "gifts-for-women"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Товары для дома",
+        "categorySlug": "household-goods"
+      },
+      {
+        "name": "Товары для детей и мам",
+        "categorySlug": "mom-and-child"
+      },
+      {
+        "name": "Посуда",
+        "categorySlug": "kitchenware"
+      }
+]
