@@ -9,18 +9,37 @@ import "./cart.scss";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0); // Добавили состояние для общей цены
 
   useEffect(() => {
-    const cartData = getCartData(); // Используем функцию для получения данных из LocalStorage
+    const cartData = getCartData(); // Получаем данные из localStorage
+    //console.log("Cart Data from LocalStorage:", cartData);
+
+    // Если cartData пустой или невалидный, не загружаем данные
+    if (Object.keys(cartData).length === 0) {
+      setCartItems([]);
+      return;
+    }
+
     fetch("/mini-card/product.json")
       .then((response) => response.json())
       .then((data) => {
-        // Добавление данных о количестве из LocalStorage в список товаров
-        const itemsWithQuantity = data.map((item) => ({
-          ...item,
-          quantity: cartData[item.id] || 0, // Количество товара
-        }));
+        const itemsWithQuantity = data
+          .map((item) => ({
+            ...item,
+            quantity: cartData[item.id] || 0, 
+          }))
+          .filter((item) => item.quantity > 0);
+
+        // Обновляем состояние
         setCartItems(itemsWithQuantity);
+
+        // Рассчитываем общую цену
+        const total = itemsWithQuantity.reduce(
+          (acc, item) => acc + item.price * item.quantity,
+          0
+        );
+        setTotalPrice(total.toFixed(2)); // Обновляем цену с округлением до 2 знаков
       });
   }, []);
 
@@ -56,11 +75,11 @@ const Cart = () => {
   const removeItem = (id) => {
     const updatedItems = cartItems.filter((item) => item.id !== id);
     setCartItems(updatedItems);
-    updateLocalStorage(updatedItems);
+    updateLocalStorage(updatedItems); // Обновляем localStorage после удаления
   };
 
   useEffect(() => {
-    updateLocalStorage(cartItems);
+    updateLocalStorage(cartItems); // Сохраняем изменения в localStorage
   }, [cartItems]);
 
   return (
@@ -74,11 +93,11 @@ const Cart = () => {
               className="cart-item__image"
             />
             <div className="cart-item__info">
-              <div class="cart-item__details">
+              <div className="cart-item__details">
                 <h2 className="cart-item__name">{item.nameRu}</h2>
                 <p className="cart-item__description">{item.descriptionRu}</p>
               </div>
-              <div class="cart-item__buttons">
+              <div className="cart-item__buttons">
                 <QuantityButtons
                   quantity={item.quantity}
                   increment={() => incrementQuantity(item.id)}
@@ -92,11 +111,10 @@ const Cart = () => {
                     setCartItems(updatedItems);
                   }}
                 />
-                <DynamicPrice price={item.price} quantity={item.quantity} />
-
+                <DynamicPrice price={item.price} quantity={item.quantity} className="price" />
                 <Button
-                  text="Удалить"
                   onClick={() => removeItem(item.id)}
+                  icon="/icons/Bin.svg"
                   className="cart-item__remove"
                 />
               </div>
@@ -105,6 +123,22 @@ const Cart = () => {
         ))
       ) : (
         <p className="cart__empty">Ваша корзина пуста.</p>
+      )}
+
+      {cartItems.length > 0 && (
+        <div className="cart-summary">
+          <div className="button-offer">
+          <Button className="cart-summary__checkout"
+          text = "Оформить заказ" 
+          onClick={() => alert('Оформление заказа')}>
+           
+          </Button>
+          </div>
+          <div className="cart-summary__total">
+   
+            <span className="total-price">{totalPrice} ₸.</span>
+          </div>
+        </div>
       )}
     </div>
   );
