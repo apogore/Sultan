@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@ui/button/button";
 import "./quantity-buttons.scss";
 
 const QuantityButtons = ({ quantity, increment, decrement, onChange }) => {
+  const [isFilled, setIsFilled] = useState(false);
+
+  useEffect(() => {
+    setIsFilled(quantity !== "" && quantity > 0);
+  }, [quantity]);
+
   const handleInputChange = (e) => {
     const value = parseInt(e.target.value, 10);
     if (!isNaN(value) && value > 0) {
@@ -30,7 +36,7 @@ const QuantityButtons = ({ quantity, increment, decrement, onChange }) => {
         value={quantity}
         onChange={handleInputChange}
         onBlur={handleInputBlur}
-        className="quantity-input"
+        className={`quantity-input ${isFilled ? 'filled' : ''}`} // Добавляем класс filled
       />
       <Button
         onClick={increment}
