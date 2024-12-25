@@ -1,0 +1,31 @@
+@import '../../../styles/vars';
+
+.filter-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+
+    &__show-products {
+        justify-content: center;
+        width: 168px;
+        height: 58px;
+
+        @media screen and (max-device-width: $mobile-max) {
+            max-width: 300px;
+            min-width: 200px;
+            width: 60%;
+        }
+    }
+
+    &__reset-filters {
+        justify-content: center;
+        width: 58px;
+        height: 58px;
+
+        img {
+            width: 18px;
+            height: 20px;
+        }
+    }
+}

@@ -297,8 +297,20 @@ p.header-signature {
     }
 }
 
-.header-search-form {
-    .search-input:focus+.search-button {
+.header .header-search-form {
+    @media screen and (max-device-width: $mobile-max) {
+        flex-direction: row-reverse;
+        justify-content: center;
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 384px;
+        min-width: 160px;
+        height: 40px;
+        padding: 0px;
+        background-color: $white-color;
+    }
+
+    &__input:focus+&__button {
         transform: none;
         margin: 0 0;
 
@@ -309,6 +321,52 @@ p.header-signature {
         @media screen and (max-device-width: $mobile-max) {
             transform: translateX(-20%);
         }
+    }
+
+    &__input {
+        @media screen and (max-device-width: $mobile-max) {
+            width: 50%;
+            height: 40px;
+            margin-left: 8px;
+            margin-right: 16px;
+            padding-left: 0;
+            border-radius: 0px;
+            border: none;
+            transition: width 0.3s linear;
+        }
+
+        &:focus {
+            @media screen and (max-device-width: $mobile-max) {
+                width: 80%;
+                padding-left: 16px;
+                box-shadow: none;
+            }
+        }
+
+        &::placeholder {
+            transition: opacity 0.3s ease;
+
+            @media screen and (max-device-width: $mobile-max) {
+                font-size: $font-size-medium;
+                font-weight: 600;
+            }
+        }
+    }
+
+    button {
+        @media screen and (max-device-width: $mobile-max) {
+            position: inherit;
+            width: 36px;
+            height: 32px;
+            background-color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        &:active {
+            @media screen and (max-device-width: $mobile-max) {
+                background: none;
+            }
+        } 
     }
 }
 
@@ -488,7 +546,7 @@ p.header-signature {
 }
 
 .header-mobile .header-search-form {
-    .header-search-form-button {
+    .header-search-form__button {
         @media screen and (max-device-width: $mobile-max) {
             box-shadow: none;
             

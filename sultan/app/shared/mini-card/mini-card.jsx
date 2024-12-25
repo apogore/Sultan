@@ -4,13 +4,13 @@ import React from "react";
 import Button from "@ui/button/button";
 import "./mini-card.scss";
 
-const MiniCard = ({ product, onClick }) => {
+const MiniCard = ({ product, onClick, className }) => {
   if (!product) {
     return null;
   }
 
   return (
-    <div className="mini-card" onClick={() => onClick(product.id)}>
+    <div className={`mini-card ${className}`} onClick={() => onClick(product.id)}>
       {product.isPopular && <div className="mini-card__badge">Популярное</div>}
       <img
         src={product.image}
