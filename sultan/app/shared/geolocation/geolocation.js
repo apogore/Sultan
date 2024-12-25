@@ -1,10 +1,10 @@
 import React from "react";
-import "./geolocation.css";
+import "./geolocation.scss";
 
 const Geolocation = () => {
   return (
     <div className="geolocation">
-      <img src="/geolocation.png" alt="geolocation"></img>
+      <img src="/geolocation/geolocation.png" alt="geolocation"></img>
     </div>
   );
 };
