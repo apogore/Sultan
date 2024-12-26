@@ -1,7 +1,6 @@
-
-import React from 'react';
-import Link from 'next/link';
-import './logo-sultan.scss';  
+import React from "react";
+import Link from "next/link";
+import "./logo-sultan.scss";
 
 const LogoSultan = () => {
   return (

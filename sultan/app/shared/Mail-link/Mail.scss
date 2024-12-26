@@ -1,4 +1,4 @@
-@import '../../styles/vars';
+@import "../../styles/vars";
 
 .header-mail {
   padding-left: 20px;
@@ -19,7 +19,7 @@
 }
 
 .header-mail a::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -36,18 +36,18 @@
   visibility: visible;
 }
 .header-mail p {
-    margin: 0px;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: $font-size-medium;
-    text-align: left;
-    text-wrap: nowrap;
+  margin: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: $font-size-medium;
+  text-align: left;
+  text-wrap: nowrap;
 }
 .header-mail img {
-    @media screen and (max-device-width: $mobile-max) {
-        float: left;
-        padding-top: 10px;
-        padding-left: 16px;
-        padding-right: 8px;
-    }
+  @media screen and (max-device-width: $mobile-max) {
+    float: left;
+    padding-top: 10px;
+    padding-left: 16px;
+    padding-right: 8px;
+  }
 }

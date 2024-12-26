@@ -1,7 +1,6 @@
-
-import React from 'react';
-import Link from 'next/link';
-import './Mail.scss';  
+import React from "react";
+import Link from "next/link";
+import "./Mail.scss";
 
 const MailLink = () => {
   return (

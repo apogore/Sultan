@@ -36,7 +36,7 @@ const QuantityButtons = ({ quantity, increment, decrement, onChange }) => {
         value={quantity}
         onChange={handleInputChange}
         onBlur={handleInputBlur}
-        className={`quantity-input ${isFilled ? 'filled' : ''}`} // Добавляем класс filled
+        className={`quantity-input ${isFilled ? 'filled' : ''}`}
       />
       <Button
         onClick={increment}

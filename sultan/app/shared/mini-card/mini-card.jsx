@@ -7,7 +7,7 @@ import {
   showSuccessToast,
   showErrorToast,
 } from "@shared/Notification/toastUtils";
-import QuantityButtons from "@shared/quantity-button/quantity-button"; // Импортируем компонент для кнопок количества
+import QuantityButtons from "@shared/quantity-button/quantity-button";
 
 import NotificationContent from "../Notification/NotificationContent";
 import "./mini-card.scss";
@@ -15,8 +15,8 @@ import "./mini-card.scss";
 const MiniCard = ({ product }) => {
   const router = useRouter();
 
-  const [inCart, setInCart] = useState(false); // Стейт для проверки, в корзине ли товар
-  const [quantity, setQuantity] = useState(0); // Количество товара в корзине
+  const [inCart, setInCart] = useState(false);
+  const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || {};
@@ -35,15 +35,15 @@ const MiniCard = ({ product }) => {
   };
 
   const handleAddToCart = (e) => {
-    e.stopPropagation(); // Остановка всплытия события
+    e.stopPropagation();
     try {
       const productId = product.id;
       const cart = JSON.parse(localStorage.getItem("cart")) || {};
       cart[productId] = (cart[productId] || 0) + 1;
       localStorage.setItem("cart", JSON.stringify(cart));
 
-      setInCart(true); // Устанавливаем, что товар теперь в корзине
-      setQuantity(cart[productId]); // Обновляем количество товара
+      setInCart(true);
+      setQuantity(cart[productId]);
 
       showSuccessToast(
         <NotificationContent
@@ -111,7 +111,7 @@ const MiniCard = ({ product }) => {
           />
           {product.count !== undefined
             ? product.count + "X" + product.size
-            : product.size} {" "}
+            : product.size}{" "}
           {product.sizeType === "volume" ? "мл" : "г"}
         </p>
         <p className="mini-card__name">
@@ -119,13 +119,16 @@ const MiniCard = ({ product }) => {
         </p>
         <div className="mini-card__manufacturer-brand-info">
           <p>
-            <span className="mini-card__label">Штрихкод:</span> {product.barcode}
+            <span className="mini-card__label">Штрихкод:</span>{" "}
+            {product.barcode}
           </p>
           <p>
-            <span className="mini-card__label">Производитель:</span> {product.manufacturer}
+            <span className="mini-card__label">Производитель:</span>{" "}
+            {product.manufacturer}
           </p>
           <p>
-            <span className="mini-card__label">Бренд:</span> {product.brand.name}
+            <span className="mini-card__label">Бренд:</span>{" "}
+            {product.brand.name}
           </p>
         </div>
 
@@ -146,7 +149,6 @@ const MiniCard = ({ product }) => {
             <Button
               onClick={handleToCart}
               text="Оформить"
-              
               className="mini-card__button"
             />
           </div>

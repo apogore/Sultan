@@ -1,6 +1,5 @@
-
-import React from 'react';
-import './address-info.scss';  
+import React from "react";
+import "./address-info.scss";
 
 const AddressInfo = () => {
   return (
