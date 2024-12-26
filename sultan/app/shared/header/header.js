@@ -11,7 +11,7 @@ import CartHeader from "./cart/header-cart";
 import OperatorInfo from "./operator-info/operator-info";
 import LogoSultan from "../logo-sultan/logo-sultan";
 import MailLink from "../Mail-link/Mail";
-import AddressInfo from "../adress-info/Address-Info";
+import AddressInfo from "../adress-info/address-Info";
 
 import "./header.scss";
 

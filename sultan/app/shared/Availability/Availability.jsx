@@ -1,5 +1,4 @@
 import React from "react";
-import "./availability.scss";
 
 const Availability = ({ amount }) => {
   const availabilityClass = amount > 0 ? "in-stock" : "out-of-stock";
