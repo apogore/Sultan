@@ -31,9 +31,9 @@ const Header = () => {
       <div className="header-desktop">
         <div className="header-section-1">
           <div className="header-info">
-            <AddressInfo></AddressInfo>
+            <AddressInfo/>
 
-            <MailLink></MailLink>
+            <MailLink/>
           </div>
 
           <section></section>
@@ -55,7 +55,7 @@ const Header = () => {
         <hr />
 
         <div className="header-section-2">
-          <LogoSultan></LogoSultan>
+          <LogoSultan/>
 
           <Button
             className="header-catalog-button"
@@ -73,15 +73,14 @@ const Header = () => {
             icon="/icons/search-button.svg"
           />
 
-          <OperatorInfo></OperatorInfo>
-
+          <OperatorInfo/>
           <Button
             className="header-price-button"
             onClick={getPriceList}
             text="Прайс-лист"
             icon="/icons/download-icon.svg"
           />
-          <CartHeader></CartHeader>
+          <CartHeader/>
 
           <hr />
         </div>
@@ -99,7 +98,7 @@ const Header = () => {
             }
           />
 
-          <LogoSultan></LogoSultan>
+          <LogoSultan/>
 
           <Button
             onClick={CartButtonClick}
@@ -132,9 +131,8 @@ const Header = () => {
 
         {popup && (
           <div className="popup-menu-content">
-            <AddressInfo></AddressInfo>
-
-            <MailLink></MailLink>
+            <AddressInfo/>
+            <MailLink/>
 
             <div className="header-sales-dept">
               <img

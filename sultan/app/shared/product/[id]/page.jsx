@@ -4,10 +4,10 @@ import ProductList from "@shared/product-list/product-list.jsx";
 import getPriceList from "@functions/price-list";
 import Button from "@ui/button/button";
 import Accordion from "@ui/accordion/accordion";
-import QuantityButtons from "../../quantity-button/quantity-button";
-import DynamicPrice from "../../DynamicPrice/DynamicPrice";
-import Availability from "../../Availability/Availability";
-import DeliveryInfo from "../../delivery-info/delivery-info";
+import QuantityButtons from "@shared/quantity-button/quantity-button";
+import DynamicPrice from "@shared/DynamicPrice/DynamicPrice";
+import Availability from "@shared/Availability/Availability";
+import DeliveryInfo from "@shared/delivery-info/delivery-info";
 
 import "./page.scss";
 
