@@ -4,6 +4,11 @@ import ProductList from "@shared/product-list/product-list.jsx";
 import getPriceList from "@functions/price-list";
 import Button from "@ui/button/button";
 import Accordion from "@ui/accordion/accordion";
+import QuantityButtons from "@shared/quantity-button/quantity-button";
+import DynamicPrice from "@shared/DynamicPrice/DynamicPrice";
+import Availability from "@shared/Availability/Availability";
+import DeliveryInfo from "@shared/delivery-info/delivery-info";
+
 import "./page.scss";
 
 const ProductPage = ({ params }) => {
@@ -12,6 +17,8 @@ const ProductPage = ({ params }) => {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const onChangeQuantity = (newQuantity) =>
+    setQuantity(newQuantity === "" ? "" : Math.max(1, newQuantity));
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,34 +66,21 @@ const ProductPage = ({ params }) => {
           <img src={product.image} alt={product.nameRu} />
         </div>
         <div className="product-info">
-          <div
-            className={`available ${product.amount > 0 ? "in-stock" : "out-of-stock"
-              }`}
-          >
-            {product.amount > 0 ? "В наличии" : "Нет в наличии"}
-          </div>
+          <Availability amount={product.amount} />
 
           <p className="product-name">
             <strong>{product.brand.name}</strong> {product.descriptionRu}
           </p>
           <div className="information-grid">
             <div className="quantity-cart-block">
-              <p className="price">{(product.price * quantity).toFixed(2)} ₸</p>
+              <DynamicPrice price={product.price} quantity={quantity} />
 
-              <div className="quantity-buttons">
-                <Button
-                  onClick={decrementQuantity}
-                  text="-"
-                  className="button-control"
-                />
-                <span>{quantity}</span>
-                <Button
-                  onClick={incrementQuantity}
-                  text="+"
-                  className="button-control"
-                />
-              </div>
-
+              <QuantityButtons
+                quantity={quantity}
+                increment={incrementQuantity}
+                decrement={decrementQuantity}
+                onChange={onChangeQuantity}
+              />
             </div>
             <Button
               onClick={addToCart}
@@ -100,10 +94,7 @@ const ProductPage = ({ params }) => {
               icon="/icons/share.svg"
               className="button-share"
             />
-            <p className="delivery-info">
-              При покупке от <strong>10 000 ₸ </strong>бесплатная доставка по
-              Кокчетаву и области
-            </p>
+            <DeliveryInfo></DeliveryInfo>
             <Button
               onClick={getPriceList}
               text="Прайс-лист"
@@ -121,16 +112,15 @@ const ProductPage = ({ params }) => {
                 {renderProductInfo("Бренд", product.brand.name)}
                 {renderProductInfo("Артикул", product.article)}
                 {renderProductInfo("Штрихкод", product.barcode)}
-              </ul>}
+              </ul>
+            }
           />
 
           <Accordion
             className="collapsible expanding-description"
             isAlwaysExpanded={false}
             text="Описание"
-            accordionBody={
-              <p>{product.descriptionRu}</p>
-            }
+            accordionBody={<p>{product.descriptionRu}</p>}
           />
 
           <hr className="dotted-line" />
@@ -158,7 +148,6 @@ const ProductPage = ({ params }) => {
               </ul>
             }
           />
-
         </div>
       </div>
       <div className="section cards">

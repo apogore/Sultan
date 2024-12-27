@@ -67,7 +67,7 @@ const ProductList = () => {
             <MiniCard
               key={product.id}
               product={product}
-              onClick={handleCardClick}
+             
             />
           ))
         )}

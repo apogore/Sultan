@@ -1,4 +1,4 @@
-@import '../../styles/vars';
+@import "../../styles/vars";
 
 .custom-button {
   display: flex;
@@ -14,7 +14,8 @@
   border: none;
   box-shadow: 0 2px 5px $box-shadow-color;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
     background-color: $button-hover-bg-color;

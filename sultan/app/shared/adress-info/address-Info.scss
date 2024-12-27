@@ -1,0 +1,38 @@
+@import "../../styles/vars";
+.header-address {
+  border-right: 1px dashed $light-gray;
+
+  @media screen and (max-device-width: $mobile-max) {
+    padding-top: 20px;
+    font-size: $font-size-medium;
+    font-weight: $font-weight-semibold;
+    border: none;
+  }
+}
+
+.header-address img {
+  @media screen and (max-device-width: $mobile-max) {
+    float: left;
+    padding-top: 10px;
+    padding-left: 16px;
+    padding-right: 8px;
+  }
+}
+
+.header-address p {
+  margin: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: $font-size-medium;
+  text-align: left;
+  text-wrap: nowrap;
+}
+.header-signature {
+  margin: 2px 0;
+  font-size: $font-size-small;
+  color: $gray-color;
+
+  @media screen and (max-device-width: $mobile-max) {
+    font-weight: 300;
+  }
+}
