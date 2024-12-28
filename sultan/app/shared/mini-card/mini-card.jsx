@@ -3,7 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@ui/button/button";
-import { showSuccessToast, showErrorToast,} from "@shared/Notification/toastUtils";
+import {
+  showSuccessToast,
+  showErrorToast,
+} from "@shared/Notification/toastUtils";
 import QuantityButtons from "@shared/quantity-button/quantity-button";
 
 import NotificationContent from "@shared/Notification/NotificationContent";

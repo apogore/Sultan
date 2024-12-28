@@ -5,11 +5,17 @@ import Button from "@ui/button/button";
 import DynamicPrice from "@shared/DynamicPrice/DynamicPrice";
 import QuantityButtons from "@shared/quantity-button/quantity-button";
 import { getCartData } from "@shared/function/getCardData";
+import { useRouter } from "next/navigation";
+
 import "./cart.scss";
 
 const Cart = () => {
+  const router = useRouter();
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const handleorderClick = () => {
+    router.push(`/shared/order-form`);
+  };
 
   useEffect(() => {
     const cartData = getCartData();
@@ -131,7 +137,7 @@ const Cart = () => {
             <Button
               className="cart-summary__checkout"
               text="Оформить заказ"
-              onClick={() => alert("Оформление заказа")}
+              onClick={handleorderClick}
             ></Button>
           </div>
           <div className="cart-summary__total">
