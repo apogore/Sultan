@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
+
+import { useRouter } from "next/navigation";
+import Link from 'next/link';
 import { navigationLinks } from "@/app/shared/navigation-links.js";
 import { useRouter } from "next/navigation";
 
@@ -16,10 +18,12 @@ import AddressInfo from "../adress-info/address-Info";
 import "./header.scss";
 
 const Header = () => {
+
+
   const router = useRouter();
 
   const catalogButtonClick = () => {
-    window.location.href = window.location.href;
+    router.push(`/catalog`);
   };
   const CartButtonClick = () => {
     router.push(`/shared/cart`);
@@ -28,6 +32,7 @@ const Header = () => {
 
   return (
     <header className="header">
+    
       <div className="header-desktop">
         <div className="header-section-1">
           <div className="header-info">

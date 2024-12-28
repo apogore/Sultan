@@ -207,14 +207,17 @@ header {
   }
 }
 
+
 .header-search-form {
   .search-input:focus + .search-button {
     transform: none;
     margin: 0 0;
 
+
     @media screen and ((min-device-width: $mobile-s) and (max-device-width: $mobile-mid)) {
       transform: translateX(-10%);
     }
+
 
     @media screen and (max-device-width: $mobile-max) {
       transform: translateX(-20%);
@@ -305,6 +308,7 @@ header {
 }
 
 .header-mobile .header-search-form {
+
   .header-search-form-button {
     @media screen and (max-device-width: $mobile-max) {
       box-shadow: none;
@@ -312,6 +316,7 @@ header {
       &:hover {
         box-shadow: none;
       }
+
     }
   }
 }

@@ -12,6 +12,7 @@ import QuantityButtons from "@shared/quantity-button/quantity-button";
 import NotificationContent from "@shared/Notification/NotificationContent";
 import "./mini-card.scss";
 
+
 const MiniCard = ({ product }) => {
   const router = useRouter();
 
@@ -25,6 +26,7 @@ const MiniCard = ({ product }) => {
       setQuantity(cart[product.id]);
     }
   }, [product.id]);
+
 
   if (!product) {
     return null;
@@ -91,7 +93,9 @@ const MiniCard = ({ product }) => {
   };
 
   return (
+
     <div className="mini-card" onClick={handleCardClick}>
+
       {product.isPopular && <div className="mini-card__badge">Популярное</div>}
       <img
         src={product.image}
