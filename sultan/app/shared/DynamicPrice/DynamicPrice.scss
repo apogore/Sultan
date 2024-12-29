@@ -1,0 +1,11 @@
+@import "../../styles/vars";
+.price {
+  margin-bottom: 20px;
+  font-size: $font-size-xlarge;
+  font-weight: bold;
+
+  @media screen and (max-device-width: $mobile-max) {
+    margin-right: 10px;
+    font-size: $font-size-large;
+  }
+}

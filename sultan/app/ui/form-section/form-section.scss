@@ -1,0 +1,39 @@
+.form-section {
+  .form-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .form-section-circle {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ffc650;
+    opacity: 0.8;
+    padding: 4px;
+  }
+
+  .form-section-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .form-section-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .form-section-text {
+    font-size: 18px;
+  }
+
+  .form-section-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

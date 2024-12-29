@@ -1,0 +1,38 @@
+@import "../../../styles/vars";
+
+.info-block {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid $card-border-color;
+  border-radius: 4px;
+  background-color: $light-gray;
+
+  .info-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: $yellow-color;
+    opacity: 0.8;
+    padding: 4px;
+
+    .info-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .info-icon-text {
+      font-size: $font-size-small;
+      color: $white-color;
+    }
+  }
+
+  .info-text {
+    font-size: $font-size-medium;
+    color: $black-color;
+  }
+}
